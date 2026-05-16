@@ -27,10 +27,9 @@ const linkColumns = [
   {
     title: 'Help',
     links: [
-      { href: '/faq', label: 'FAQ' },
       { href: '/shipping', label: 'Shipping' },
       { href: '/returns', label: 'Returns' },
-      { href: '/account/subscriptions', label: 'Manage subscription' },
+      { href: '/perks', label: 'Subscriber perks' },
       { href: 'mailto:help@pawbite.com', label: 'Contact us' },
     ],
   },

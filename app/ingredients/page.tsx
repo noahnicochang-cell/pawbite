@@ -9,7 +9,7 @@ import { SITE_URL } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Ingredient glossary — what does what, and how much',
   description:
-    'Plain-English ingredient pages for every probiotic strain, joint active, and supportive nutrient we use (and a few we don&apos;t). Doses, safety, sources.',
+    "Plain-English ingredient pages for every probiotic strain, joint active, and supportive nutrient we use (and a few we don't). Doses, safety, sources.",
   alternates: { canonical: `${SITE_URL}/ingredients` },
 };
 
