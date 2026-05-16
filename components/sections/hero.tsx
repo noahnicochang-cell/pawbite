@@ -25,14 +25,14 @@ export function HeroSection() {
               </div>
               <Image
                 src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=1200&q=80"
-                alt="Sam and Theo"
+                alt="Noah and Theo"
                 width={400}
                 height={500}
                 className="h-auto w-full"
                 priority
               />
               <p className="mt-3 text-center font-sans text-sm italic text-charcoal/70">
-                Sam and Theo, 2023.
+                Noah and Theo, 2023.
               </p>
             </div>
           </div>
@@ -51,7 +51,7 @@ export function HeroSection() {
               I wished existed when Theo needed it. Two products. Vet-formulated. Made by humans who
               actually own dogs.
             </p>
-            <p className="font-hand text-2xl text-terracotta">— Sam Whitlock, founder</p>
+            <p className="font-hand text-2xl text-terracotta">— Noah Chang, founder</p>
 
             <p className="pt-2 text-sm font-medium text-charcoal">
               Vet-formulated. Backed by our 90-day money-back guarantee.
