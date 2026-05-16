@@ -4,9 +4,9 @@ A new DTC dog supplement brand. Launching with 2 SKUs: a daily probiotic chew an
 
 ## Status
 
-**Phases 6 + 7 complete** — Brand pages live (About, Vets advisory + dynamic bios, Science, Reviews, Perks) plus legal pages (Privacy, Terms, Shipping, Returns, Editorial). 100+ total routes prerendering. Legal pages flagged for pre-launch counsel review.
+**Phase 10 (Pre-launch QA) in progress** — site is complete except for Shopify wiring (Phase 8) and 3rd-party integrations (Phase 9). 105+ static pages prerendered. Audit fixes applied. Pre-launch operator checklist below.
 
-Phase 8 next: Shopify wiring (cart, checkout, customer portal, subscriptions).
+Phases 8 + 9 are gated on Shopify credentials, Klaviyo/Stamped/Help Scout accounts, and real founder/vet/product photography.
 
 ## Repository layout
 

@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { Menu, ShoppingBag, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
 import { Mascot } from '@/components/brand/illustrations/characters/mascot';
@@ -16,7 +16,7 @@ const navLinks = [
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const cartCount = 0; // Will be wired in Phase 4
+  // Cart icon hidden until Phase 8 (Shopify wiring) ships functional cart
 
   return (
     <header className="sticky top-0 z-40 border-b border-forest/10 bg-cream/95 backdrop-blur-sm">
@@ -45,18 +45,6 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link
-              href="/cart"
-              aria-label="Cart"
-              className="relative p-2 text-forest transition-colors hover:text-terracotta"
-            >
-              <ShoppingBag size={22} />
-              {cartCount > 0 && (
-                <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-terracotta text-[10px] font-bold text-cream">
-                  {cartCount}
-                </span>
-              )}
-            </Link>
             <Button variant="primary" size="sm" asChild className="hidden md:inline-flex">
               <Link href="/quiz">Take the quiz</Link>
             </Button>

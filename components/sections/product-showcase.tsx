@@ -77,7 +77,7 @@ export function ProductShowcase() {
                   </div>
 
                   <Button variant="primary" size="md" className="w-full" asChild>
-                    <span>Add to cart</span>
+                    <span>View product</span>
                   </Button>
                 </div>
               </Link>

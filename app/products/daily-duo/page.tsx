@@ -131,8 +131,8 @@ export default function DailyDuoPage() {
                   Ships every 30 days. Free shipping. Skip, swap, pause, or cancel in one click.
                 </p>
 
-                <Button variant="primary" size="lg" className="w-full">
-                  Add the Duo to cart
+                <Button variant="primary" size="lg" className="w-full" disabled>
+                  Pre-order — coming soon
                 </Button>
               </div>
 

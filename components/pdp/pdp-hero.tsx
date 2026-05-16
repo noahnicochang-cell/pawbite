@@ -91,8 +91,8 @@ export function PdpHero({ product }: { product: ProductDetail }) {
               : 'One-time delivery. Free shipping over $40.'}
           </p>
 
-          <Button variant="primary" size="lg" className="w-full">
-            Add to cart
+          <Button variant="primary" size="lg" className="w-full" disabled>
+            Pre-order — coming soon
           </Button>
         </div>
 
