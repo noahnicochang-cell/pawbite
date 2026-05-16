@@ -4,9 +4,9 @@ A new DTC dog supplement brand. Launching with 2 SKUs: a daily probiotic chew an
 
 ## Status
 
-**Phase 1 complete** — foundation, design system, sitewide layout, and SEO plumbing built and tested. Local production build passes. Deploy to Vercel + Lighthouse audit pending operator action (see "Phase 1 handoff" below).
+**Phase 2 complete** — Design 8 hybrid homepage is live with all 13 sections componentized and responsive. Production build passes. Deployed to Vercel.
 
-Phase 2 next: homepage (Design 8 hybrid) as a real React app.
+Phase 3 next: product catalog + PDPs (Daily Probiotic, Hip + Joint, Daily Duo) + Shopify Storefront API integration.
 
 ## Repository layout
 
