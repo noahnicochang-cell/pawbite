@@ -4,7 +4,9 @@ A new DTC dog supplement brand. Launching with 2 SKUs: a daily probiotic chew an
 
 ## Status
 
-Pre-implementation. Design locked. Implementation plan pending (via `superpowers:writing-plans`).
+**Phase 1 complete** — foundation, design system, sitewide layout, and SEO plumbing built and tested. Local production build passes. Deploy to Vercel + Lighthouse audit pending operator action (see "Phase 1 handoff" below).
+
+Phase 2 next: homepage (Design 8 hybrid) as a real React app.
 
 ## Repository layout
 
