@@ -4,9 +4,9 @@ A new DTC dog supplement brand. Launching with 2 SKUs: a daily probiotic chew an
 
 ## Status
 
-**Phase 3 complete** — Product catalog, 2 PDPs (Daily Probiotic, Hip + Joint), Daily Duo bundle landing, and placeholder cart shipped. All using mock product data; Shopify wiring is Phase 8.
+**Phase 4 complete** — 5-question quiz funnel live at `/quiz` with rules-based SKU recommendation at `/quiz/results`. Mock $5-off code (deterministic from email hash). Real Klaviyo wiring is Phase 9.
 
-Phase 4 next: quiz funnel (5-question flow with personalization, mock recommendation logic).
+Phase 5 next: SEO content layer (~80 pages — blog + breeds + concerns + ingredients + competitor comparisons).
 
 ## Repository layout
 
