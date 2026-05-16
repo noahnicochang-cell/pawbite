@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About PawBite',
     description:
-      'Two products. Vet-formulated. Made by humans who actually own dogs. The story behind PawBite, written by founder Sam Whitlock.',
+      'Two products. Vet-formulated. Made by humans who actually own dogs. The story behind PawBite, written by founder Noah Chang.',
     type: 'website',
   },
 };
@@ -54,10 +54,10 @@ const promises = [
 
 const team = [
   {
-    name: 'Sam Whitlock',
+    name: 'Noah Chang',
     role: 'Founder',
-    bio: "Sam started PawBite in 2024 after spending two years and an embarrassing amount of money trying to fix his rescue dog Theo's gut. Background in consumer product design. Lives in the Hudson Valley with Theo and a confused cat named Wallace.",
-    initials: 'SW',
+    bio: "Noah started PawBite in 2024 after spending two years and an embarrassing amount of money trying to fix his rescue dog Theo's gut. Background in consumer product design. Lives in the Hudson Valley with Theo and a confused cat named Wallace.",
+    initials: 'NC',
     color: 'bg-warmyellow',
   },
   {
@@ -90,14 +90,14 @@ export default function AboutPage() {
                 </div>
                 <Image
                   src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=1600&q=80"
-                  alt="Sam Whitlock with his rescue dog Theo"
+                  alt="Noah Chang with his rescue dog Theo"
                   width={600}
                   height={750}
                   className="h-auto w-full"
                   priority
                 />
                 <p className="mt-3 text-center font-sans text-sm italic text-charcoal/70">
-                  Sam and Theo, 2023.
+                  Noah and Theo, 2023.
                 </p>
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function AboutPage() {
                   people who feed them to their own dogs every morning.
                 </p>
               </div>
-              <p className="font-hand text-2xl text-terracotta">— Sam Whitlock, founder</p>
+              <p className="font-hand text-2xl text-terracotta">— Noah Chang, founder</p>
 
               <div className="flex flex-col gap-3 pt-2 sm:flex-row">
                 <Button variant="primary" size="lg" asChild>
