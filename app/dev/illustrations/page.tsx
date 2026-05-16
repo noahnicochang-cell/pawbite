@@ -17,6 +17,10 @@ import {
   Mascot,
   DogAvatar,
   CalloutPill,
+  DogChewScene,
+  BowlIllustration,
+  BoneWithSparkle,
+  ClockIllustration,
 } from '@/components/brand/illustrations';
 import { Canister } from '@/components/brand/canister';
 
@@ -161,6 +165,20 @@ export default function DevIllustrationsPage() {
           </Item>
           <Item label="With sticker">
             <Canister name="Daily" bandColor="warmyellow" sticker="VET" stickerColor="pinky" />
+          </Item>
+        </Group>
+        <Group title="Phase 2 illustrations" subtitle="Homepage sections">
+          <Item label="Dog chew scene">
+            <DogChewScene size={300} />
+          </Item>
+          <Item label="Bowl illustration">
+            <BowlIllustration size={140} />
+          </Item>
+          <Item label="Bone with sparkle">
+            <BoneWithSparkle size={140} />
+          </Item>
+          <Item label="Clock illustration">
+            <ClockIllustration size={140} />
           </Item>
         </Group>
       </Container>
