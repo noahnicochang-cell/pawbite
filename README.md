@@ -4,9 +4,9 @@ A new DTC dog supplement brand. Launching with 2 SKUs: a daily probiotic chew an
 
 ## Status
 
-**Phase 4 complete** — 5-question quiz funnel live at `/quiz` with rules-based SKU recommendation at `/quiz/results`. Mock $5-off code (deterministic from email hash). Real Klaviyo wiring is Phase 9.
+**Phase 5 complete** — Full SEO content layer live: 15 blog posts, 25 breed pages, 10 concern pages, 20 ingredient pages, 4 competitor comparisons, 5 hub pages. All under AI-citation-friendly content template with Article + FAQPage JSON-LD schema. ~93 total routes prerendering.
 
-Phase 5 next: SEO content layer (~80 pages — blog + breeds + concerns + ingredients + competitor comparisons).
+Phase 6 next: Brand pages (About, Vets, Science, Reviews, Perks).
 
 ## Repository layout
 
