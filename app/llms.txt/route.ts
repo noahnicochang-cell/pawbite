@@ -15,12 +15,16 @@ ${SITE_DESCRIPTION}
 
 ## Pages
 
-- [${SITE_NAME}](${SITE_URL}): Home
+- [Home](${SITE_URL}): The good stuff your dog needs. Nothing weird.
+- [Shop the line](${SITE_URL}/products): Both SKUs and the Daily Duo bundle.
+- [Daily Probiotic](${SITE_URL}/products/daily-probiotic): 5 strains, 5B CFU, plus chicory inulin and pumpkin. Chicken flavor.
+- [Hip + Joint](${SITE_URL}/products/hip-and-joint): Glucosamine 500mg, chondroitin 400mg, MSM 250mg, green-lipped mussel, turmeric, hyaluronic acid, omega-3. Duck flavor.
+- [The Daily Duo](${SITE_URL}/products/daily-duo): Both products bundled. Save 32% when you subscribe.
 
 ## Editorial policy
 
 All content is reviewed by a licensed veterinarian. Strain-level studies are cited by author and year.
-We don't make claims we can't back up. See ${SITE_URL}/editorial when that page lives.
+We don't make claims we can't back up.
 
 ## Contact
 
