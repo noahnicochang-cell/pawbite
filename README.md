@@ -52,3 +52,40 @@ docs/superpowers/specs/2026-05-06-pawbite-site-design.md
 - Vet advisory board (2–3 DVMs)
 - cGMP + NASC certification verification
 - Legal review (ToS, privacy, Prop 65, FDA disclaimers)
+
+## Local setup
+
+```bash
+nvm use # uses .nvmrc → Node 20
+cp .env.example .env.local
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`.
+
+### Useful routes
+
+- `/` — Placeholder home page (Phase 1)
+- `/dev/colors` — Brand palette swatches
+- `/dev/fonts` — Typography specimens
+- `/dev/illustrations` — SVG component library
+- `/sitemap.xml`, `/robots.txt`, `/llms.txt` — SEO + AI plumbing
+
+### Available scripts
+
+| Command                | Purpose                      |
+| ---------------------- | ---------------------------- |
+| `npm run dev`          | Start dev server             |
+| `npm run build`        | Production build             |
+| `npm run start`        | Run production build locally |
+| `npm run lint`         | ESLint                       |
+| `npm run type-check`   | TypeScript without emit      |
+| `npm run format`       | Prettier format all files    |
+| `npm run format:check` | Prettier check only          |
+| `npm run test`         | Vitest watch mode            |
+| `npm run test:run`     | Vitest single run            |
+
+### Deploy
+
+Pushes to `main` deploy to Vercel automatically. PRs deploy preview URLs.
