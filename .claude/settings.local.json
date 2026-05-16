@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:thepetlabco.com)",
+      "WebFetch(domain:nativepet.com)",
+      "WebFetch(domain:finnpet.com)",
+      "WebFetch(domain:zestypaws.com)",
+      "WebFetch(domain:honestpaws.com)"
+    ]
+  }
+}

@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PawBite — An introduction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600;1,9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F5EFE6',
+            forest: '#1F3A2E',
+            terracotta: '#C8765B',
+            warmyellow: '#E8B547',
+            offwhite: '#FAFAFA',
+            charcoal: '#2A2A2A',
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F5EFE6;
+      color: #2A2A2A;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Editorial drop cap */
+    .dropcap::first-letter {
+      font-family: 'Fraunces', serif;
+      font-weight: 800;
+      float: left;
+      font-size: 5.5rem;
+      line-height: 0.85;
+      padding: 0.45rem 0.6rem 0 0;
+      color: #1F3A2E;
+    }
+
+    /* Hairline divider */
+    .hairline {
+      height: 1px;
+      background: rgba(31, 58, 46, 0.18);
+      width: 100%;
+    }
+
+    /* CANISTER */
+    .canister {
+      position: relative;
+      width: 240px;
+      height: 320px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, #FAFAFA 0%, #F5EFE6 100%);
+      box-shadow:
+        0 30px 50px -20px rgba(31, 58, 46, 0.25),
+        0 12px 24px -10px rgba(31, 58, 46, 0.12),
+        inset 0 -2px 0 rgba(0,0,0,0.04),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 18px 24px;
+      overflow: hidden;
+    }
+    .canister::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 30px;
+      border-bottom: 1px solid rgba(31,58,46,0.07);
+      background: linear-gradient(180deg, rgba(31,58,46,0.03), transparent);
+      border-radius: 28px 28px 0 0;
+    }
+    .canister::after {
+      content: "";
+      position: absolute;
+      left: 8%; right: 8%;
+      bottom: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(31,58,46,0.07);
+      filter: blur(3px);
+    }
+    .canister .brand {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      color: #1F3A2E;
+      margin-top: 4px;
+    }
+    .canister .band {
+      width: 86%;
+      margin: 18px 0 14px;
+      height: 78px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+    }
+    .canister .band .name {
+      font-family: 'Fraunces', serif;
+      font-weight: 800;
+      color: #1F3A2E;
+      text-align: center;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+    }
+    .canister .band.yellow { background: #E8B547; }
+    .canister .band.terra  { background: #C8765B; }
+    .canister .band.terra .name { color: #FAFAFA; }
+    .canister .band.forest { background: #1F3A2E; }
+    .canister .band.forest .name { color: #F5EFE6; }
+    .canister .footer {
+      margin-top: auto;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      color: #1F3A2E;
+      text-transform: uppercase;
+      padding-bottom: 6px;
+    }
+    .canister .meta {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 0.72rem;
+      color: rgba(31,58,46,0.6);
+      margin-top: -4px;
+    }
+
+    .canister-sm {
+      width: 170px;
+      height: 230px;
+      border-radius: 22px;
+      padding: 22px 12px 16px;
+    }
+    .canister-sm .band { height: 56px; margin: 12px 0 10px; }
+    .canister-sm .band .name { font-size: 1.2rem; }
+    .canister-sm .footer { font-size: 0.55rem; }
+
+    .canister-lg {
+      width: 280px;
+      height: 380px;
+    }
+    .canister-lg .band { height: 100px; }
+    .canister-lg .band .name { font-size: 2rem; }
+
+    /* Hero massive headline */
+    .mega {
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      line-height: 0.86;
+      color: #1F3A2E;
+      font-size: clamp(3.2rem, 14vw, 9.5rem);
+    }
+
+    .editorial-link {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 600;
+      color: #C8765B;
+      border-bottom: 1px solid rgba(200, 118, 91, 0.4);
+      padding-bottom: 2px;
+      transition: border-color 0.2s ease;
+    }
+    .editorial-link:hover { border-color: #C8765B; }
+
+    /* Marquee tape for editorial flair */
+    .rule-text {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      color: rgba(31,58,46,0.55);
+    }
+
+    /* small caps utility */
+    .smallcaps {
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #1F3A2E;
+    }
+
+    /* pull quote */
+    .pull-quote {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-style: italic;
+      color: #1F3A2E;
+      letter-spacing: -0.015em;
+      line-height: 1.05;
+    }
+
+    /* nav blur */
+    .nav-blur {
+      backdrop-filter: saturate(140%) blur(10px);
+      background: rgba(245, 239, 230, 0.82);
+    }
+
+    /* scroll cue animation */
+    @keyframes cue {
+      0%, 100% { transform: translateY(0); opacity: 0.6; }
+      50% { transform: translateY(6px); opacity: 1; }
+    }
+    .scroll-cue { animation: cue 2.2s ease-in-out infinite; }
+
+    /* soft underline for nav */
+    .nav-link {
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover { color: #1F3A2E; }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0; right: 0;
+      height: 1px;
+      background: #1F3A2E;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .nav-link:hover::after { transform: scaleX(1); }
+
+    /* terracotta cta */
+    .cta-terra {
+      background: #C8765B;
+      color: #FAFAFA;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .cta-terra:hover { background: #b8654c; }
+
+    /* generous reading column */
+    .reading-col { max-width: 65ch; }
+
+    /* magazine masthead style for footer */
+    .masthead-letter {
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      color: #1F3A2E;
+      line-height: 0.85;
+    }
+
+    /* Issue number rotated */
+    .vert-label {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.35em;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: rgba(31,58,46,0.6);
+      text-transform: uppercase;
+    }
+
+    /* selection color */
+    ::selection {
+      background: #E8B547;
+      color: #1F3A2E;
+    }
+  </style>
+</head>
+<body class="bg-cream text-charcoal">
+
+  <!-- ============ STICKY TOP NAV ============ -->
+  <header class="sticky top-0 z-50 nav-blur border-b border-forest/10">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
+      <!-- Wordmark -->
+      <a href="#" class="font-serif font-bold text-2xl text-forest tracking-tight">PawBite</a>
+
+      <!-- Nav -->
+      <nav class="hidden md:flex items-center gap-10 text-sm text-forest/80">
+        <a href="#shop" class="nav-link">Shop</a>
+        <a href="#quiz" class="nav-link">Quiz</a>
+        <a href="#learn" class="nav-link">Learn</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+
+      <!-- Right -->
+      <div class="flex items-center gap-5">
+        <button aria-label="Cart" class="text-forest hover:opacity-70 transition">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3h2l2.5 12.5a2 2 0 0 0 2 1.5h7a2 2 0 0 0 2-1.5L21 7H6"/>
+            <circle cx="9" cy="20" r="1.2"/>
+            <circle cx="17" cy="20" r="1.2"/>
+          </svg>
+        </button>
+        <a href="#shop" class="cta-terra hidden sm:inline-block px-5 py-2.5 rounded-full text-sm font-medium tracking-wide">
+          Shop
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="relative overflow-hidden">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 pt-16 lg:pt-24 pb-20 lg:pb-28 grid grid-cols-12 gap-6">
+
+      <!-- Vertical issue label -->
+      <div class="hidden lg:flex col-span-1 items-start justify-end pt-4">
+        <div class="vert-label">Issue 01 — Spring 2026</div>
+      </div>
+
+      <!-- Headline / intro -->
+      <div class="col-span-12 lg:col-span-8">
+        <p class="font-serif italic text-forest/70 text-base lg:text-lg mb-8">An introduction —</p>
+
+        <h1 class="mega lowercase">
+          it starts<br/>
+          with the <span class="italic font-serif text-terracotta" style="font-weight:800">gut.</span>
+        </h1>
+
+        <div class="mt-12 lg:mt-16 max-w-[44ch] text-base lg:text-[17px] leading-relaxed text-charcoal/85">
+          <p>
+            PawBite is a new line of vet-formulated dog supplements. We make
+            two products: a daily probiotic and a hip + joint chew. They're
+            built on real ingredients, tested by real labs, and reviewed by
+            real veterinarians. Start here.
+          </p>
+        </div>
+
+        <div class="mt-10 lg:mt-14 flex items-center gap-6">
+          <a href="#shop" class="cta-terra inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium tracking-wide">
+            See the products
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#feature" class="text-sm text-forest/80 hover:text-forest transition border-b border-forest/30 pb-0.5">
+            Or read why we started here
+          </a>
+        </div>
+      </div>
+
+      <!-- Editorial still-life canister, off-axis -->
+      <div class="hidden lg:flex col-span-3 items-end justify-end relative">
+        <div class="relative">
+          <div class="absolute -top-6 -left-6 smallcaps">Pl. 01</div>
+          <div class="canister canister-sm">
+            <div class="brand">PawBite</div>
+            <div class="band yellow">
+              <div class="name">Daily<br/>Probiotic</div>
+            </div>
+            <div class="footer">30 Soft Chews</div>
+          </div>
+          <div class="rule-text mt-3 text-xs text-right max-w-[170px] ml-auto">
+            Daily Probiotic, photographed in studio, 2026.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="flex flex-col items-center pb-10 -mt-4">
+      <div class="smallcaps text-forest/50 mb-2">Read on</div>
+      <svg class="scroll-cue text-forest/60" width="14" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 4v16M5 13l7 7 7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-12"><div class="hairline"></div></div>
+
+  <!-- ============ TRUST STRIP ============ -->
+  <section class="py-10 lg:py-12">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="flex flex-wrap items-center justify-between gap-y-6 gap-x-10 text-forest">
+        <!-- Vet -->
+        <div class="flex items-center gap-3">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v6M9 5h6M6 14a6 6 0 0 0 12 0V8H6v6zM9 20h6"/>
+          </svg>
+          <span class="font-serif italic text-sm">Vet-formulated</span>
+        </div>
+        <!-- Reviews -->
+        <div class="flex items-center gap-3">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l2.9 6.4 6.9.7-5.2 4.7 1.6 6.8L12 17l-6.2 3.6 1.6-6.8L2.2 9.1l6.9-.7L12 2z"/>
+          </svg>
+          <span class="font-serif italic text-sm">10,000+ 5-star reviews</span>
+        </div>
+        <!-- Guarantee -->
+        <div class="flex items-center gap-3">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+          <span class="font-serif italic text-sm">90-day money-back guarantee</span>
+        </div>
+        <!-- Shipping -->
+        <div class="flex items-center gap-3">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="13" height="10" rx="1"/>
+            <path d="M15 10h4l3 3v4h-7z"/>
+            <circle cx="6" cy="19" r="1.6"/>
+            <circle cx="18" cy="19" r="1.6"/>
+          </svg>
+          <span class="font-serif italic text-sm">Free shipping over $40</span>
+        </div>
+        <!-- USA -->
+        <div class="flex items-center gap-3">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 7l9-4 9 4v10l-9 4-9-4V7z"/>
+            <path d="M3 7l9 4 9-4M12 11v10"/>
+          </svg>
+          <span class="font-serif italic text-sm">Made in the USA, cGMP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-12"><div class="hairline"></div></div>
+
+  <!-- ============ LONG-FORM EDITORIAL FEATURE ============ -->
+  <section id="feature" class="py-24 lg:py-36">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 grid grid-cols-12 gap-6">
+
+      <div class="col-span-12 lg:col-span-2">
+        <div class="smallcaps text-forest/60">Feature No. 01</div>
+        <div class="font-serif italic text-forest/60 text-sm mt-2">An essay</div>
+      </div>
+
+      <div class="col-span-12 lg:col-span-9">
+        <h2 class="font-serif font-semibold text-forest text-4xl lg:text-6xl leading-[1.02] tracking-tight max-w-[18ch]">
+          On the gut, <span class="italic font-normal">and why we started here.</span>
+        </h2>
+
+        <p class="dropcap mt-12 text-charcoal/90 text-lg lg:text-[19px] leading-[1.7] reading-col">
+          Most dogs are walking around with chronic low-grade digestive issues.
+          Not the kind you take them to the vet for &mdash; the loose stool that
+          comes and goes, the gas after dinner, the itchy skin that no shampoo
+          really fixes. A lot of it traces back to the same place: the gut. So
+          that's where we start.
+        </p>
+
+        <div class="mt-10 reading-col">
+          <a href="/science" class="editorial-link inline-flex items-center gap-3 text-lg">
+            Read the science
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-12"><div class="hairline"></div></div>
+
+  <!-- ============ PRODUCT SHOWCASE — EDITORIAL STILL LIFES ============ -->
+  <section id="shop" class="py-24 lg:py-36">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+
+      <!-- Section header -->
+      <div class="grid grid-cols-12 gap-6 mb-20 lg:mb-28">
+        <div class="col-span-12 lg:col-span-2">
+          <div class="smallcaps text-forest/60">The Catalog</div>
+        </div>
+        <div class="col-span-12 lg:col-span-9">
+          <h2 class="font-serif text-forest text-4xl lg:text-6xl leading-[1] tracking-tight">
+            Two products, <span class="italic font-normal">made carefully.</span>
+          </h2>
+          <p class="font-serif italic text-forest/70 text-lg mt-6 max-w-[60ch]">
+            We resisted the temptation to launch with a wall of SKUs. These two
+            cover the foundation of what most adult dogs need.
+          </p>
+        </div>
+      </div>
+
+      <!-- PRODUCT 01 — Daily Probiotic -->
+      <article class="grid grid-cols-12 gap-6 lg:gap-12 mb-28 lg:mb-36 items-center">
+        <div class="col-span-12 lg:col-span-5 flex justify-center lg:justify-start">
+          <div class="relative">
+            <div class="absolute -top-8 left-0 smallcaps text-forest/50">Pl. 01 — Daily Probiotic</div>
+            <div class="canister canister-lg">
+              <div class="brand">PawBite</div>
+              <div class="band yellow">
+                <div class="name">Daily<br/>Probiotic</div>
+              </div>
+              <div class="meta">chicken</div>
+              <div class="footer">30 Soft Chews</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-span-12 lg:col-span-7">
+          <div class="smallcaps text-terracotta">Product No. 01</div>
+          <h3 class="font-serif font-semibold text-forest text-5xl lg:text-7xl leading-[0.95] tracking-tight mt-4">
+            Daily Probiotic
+          </h3>
+          <p class="font-serif italic text-forest/70 text-2xl mt-5">Start with the gut.</p>
+
+          <p class="mt-8 text-charcoal/85 text-lg leading-[1.7] max-w-[55ch]">
+            A soft chew formulated around five live strains, dosed at five
+            billion CFU and supported by chicory inulin and pumpkin powder.
+            Designed for daily use. Chicken-flavored, because dogs prefer it
+            that way.
+          </p>
+
+          <dl class="mt-10 grid grid-cols-2 gap-y-4 gap-x-8 text-sm max-w-md">
+            <dt class="text-forest/60 font-medium">Strains</dt>
+            <dd class="font-serif text-forest">5</dd>
+            <dt class="text-forest/60 font-medium">Live cultures</dt>
+            <dd class="font-serif text-forest">5 billion CFU</dd>
+            <dt class="text-forest/60 font-medium">Prebiotic</dt>
+            <dd class="font-serif text-forest">Chicory inulin</dd>
+            <dt class="text-forest/60 font-medium">Count</dt>
+            <dd class="font-serif text-forest">30 chews</dd>
+          </dl>
+
+          <div class="mt-10 flex items-baseline gap-6">
+            <div class="font-serif text-3xl text-forest">$32</div>
+            <div class="font-serif italic text-terracotta text-lg">$26 with Subscribe &amp; Save</div>
+          </div>
+
+          <a href="#" class="editorial-link inline-flex items-center gap-3 mt-8 text-lg">
+            Read more
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <div class="hairline mb-28 lg:mb-36"></div>
+
+      <!-- PRODUCT 02 — Hip + Joint -->
+      <article class="grid grid-cols-12 gap-6 lg:gap-12 mb-28 lg:mb-36 items-center">
+        <div class="col-span-12 lg:col-span-7 order-2 lg:order-1">
+          <div class="smallcaps text-terracotta">Product No. 02</div>
+          <h3 class="font-serif font-semibold text-forest text-5xl lg:text-7xl leading-[0.95] tracking-tight mt-4">
+            Hip + Joint
+          </h3>
+          <p class="font-serif italic text-forest/70 text-2xl mt-5">Built to keep moving.</p>
+
+          <p class="mt-8 text-charcoal/85 text-lg leading-[1.7] max-w-[55ch]">
+            A clinically-dosed soft chew formulated for the joints that have to
+            carry a dog through a long, full life. Glucosamine, chondroitin and
+            MSM at the doses the literature actually calls for, with green-lipped
+            mussel, turmeric and salmon oil for the rest of the picture.
+          </p>
+
+          <dl class="mt-10 grid grid-cols-2 gap-y-4 gap-x-8 text-sm max-w-md">
+            <dt class="text-forest/60 font-medium">Glucosamine HCl</dt>
+            <dd class="font-serif text-forest">500mg</dd>
+            <dt class="text-forest/60 font-medium">Chondroitin</dt>
+            <dd class="font-serif text-forest">400mg</dd>
+            <dt class="text-forest/60 font-medium">MSM</dt>
+            <dd class="font-serif text-forest">250mg</dd>
+            <dt class="text-forest/60 font-medium">Count</dt>
+            <dd class="font-serif text-forest">60 chews</dd>
+          </dl>
+
+          <div class="mt-10 flex items-baseline gap-6">
+            <div class="font-serif text-3xl text-forest">$38</div>
+            <div class="font-serif italic text-terracotta text-lg">$30 with Subscribe &amp; Save</div>
+          </div>
+
+          <a href="#" class="editorial-link inline-flex items-center gap-3 mt-8 text-lg">
+            Read more
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="col-span-12 lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div class="relative">
+            <div class="absolute -top-8 right-0 smallcaps text-forest/50 text-right">Pl. 02 — Hip + Joint</div>
+            <div class="canister canister-lg">
+              <div class="brand">PawBite</div>
+              <div class="band terra">
+                <div class="name">Hip<br/>+ Joint</div>
+              </div>
+              <div class="meta">duck</div>
+              <div class="footer">60 Soft Chews</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="hairline mb-28 lg:mb-36"></div>
+
+      <!-- PRODUCT 03 — Daily Duo -->
+      <article class="grid grid-cols-12 gap-6 lg:gap-12 items-center">
+        <div class="col-span-12 lg:col-span-5 flex justify-center lg:justify-start">
+          <div class="relative">
+            <div class="absolute -top-8 left-0 smallcaps text-forest/50">Pl. 03 — The Daily Duo</div>
+            <div class="canister canister-lg">
+              <div class="brand">PawBite</div>
+              <div class="band forest">
+                <div class="name">The<br/>Daily Duo</div>
+              </div>
+              <div class="meta">bundle</div>
+              <div class="footer">Set of Two</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-span-12 lg:col-span-7">
+          <div class="smallcaps text-terracotta">Product No. 03 — Bundle</div>
+          <h3 class="font-serif font-semibold text-forest text-5xl lg:text-7xl leading-[0.95] tracking-tight mt-4">
+            The Daily Duo
+          </h3>
+          <p class="font-serif italic text-forest/70 text-2xl mt-5">Both, together. Most popular.</p>
+
+          <p class="mt-8 text-charcoal/85 text-lg leading-[1.7] max-w-[55ch]">
+            The Daily Probiotic and the Hip + Joint chew, paired and shipped on
+            the same monthly cadence. The way most owners end up buying them,
+            so we made it the cleanest path.
+          </p>
+
+          <dl class="mt-10 grid grid-cols-2 gap-y-4 gap-x-8 text-sm max-w-md">
+            <dt class="text-forest/60 font-medium">Includes</dt>
+            <dd class="font-serif text-forest">Both products</dd>
+            <dt class="text-forest/60 font-medium">Cadence</dt>
+            <dd class="font-serif text-forest">Monthly</dd>
+            <dt class="text-forest/60 font-medium">Savings</dt>
+            <dd class="font-serif text-forest">32% off retail</dd>
+            <dt class="text-forest/60 font-medium">Shipping</dt>
+            <dd class="font-serif text-forest">Free</dd>
+          </dl>
+
+          <div class="mt-10 flex items-baseline gap-6">
+            <div class="font-serif text-3xl text-forest">$70</div>
+            <div class="font-serif italic text-terracotta text-lg">$47.60 bundled &amp; subscribed</div>
+          </div>
+
+          <a href="#" class="editorial-link inline-flex items-center gap-3 mt-8 text-lg">
+            Read more
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-12"><div class="hairline"></div></div>
+
+  <!-- ============ EDITORIAL IMAGE INTERLUDE ============ -->
+  <section class="py-20 lg:py-28">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 grid grid-cols-12 gap-6">
+      <div class="col-span-12 lg:col-span-7">
+        <div class="aspect-[4/3] overflow-hidden rounded-sm">
+          <img
+            src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1600&q=80"
+            alt="A dog in soft afternoon light"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <p class="font-serif italic text-sm text-forest/60 mt-3">
+          Photographed by an owner. The dog, not pictured because she is moving, is six.
+        </p>
+      </div>
+      <div class="col-span-12 lg:col-span-4 lg:col-start-9 flex flex-col justify-end">
+        <div class="smallcaps text-forest/60 mb-4">A Note</div>
+        <p class="font-serif text-2xl lg:text-3xl text-forest leading-[1.15] tracking-tight">
+          We make supplements. We don't make miracles. The miracles are
+          <span class="italic">already in the room with you.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-12"><div class="hairline"></div></div>
+
+  <!-- ============ EDUCATIONAL / BLOG TEASER ============ -->
+  <section id="learn" class="py-24 lg:py-32">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+
+      <div class="grid grid-cols-12 gap-6 mb-16 lg:mb-20">
+        <div class="col-span-12 lg:col-span-2">
+          <div class="smallcaps text-forest/60">Department</div>
+        </div>
+        <div class="col-span-12 lg:col-span-9 flex items-end justify-between flex-wrap gap-4">
+          <h2 class="font-serif text-forest text-4xl lg:text-5xl leading-[1] tracking-tight">
+            From the journal.
+          </h2>
+          <a href="#" class="editorial-link text-base">View all writing &rarr;</a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-10 lg:gap-12">
+        <!-- Article 1 -->
+        <article class="col-span-12 md:col-span-4 group">
+          <div class="smallcaps text-terracotta mb-3">Gut Health</div>
+          <h3 class="font-serif text-forest text-3xl leading-tight tracking-tight">
+            <a href="#" class="hover:italic transition">A short field guide to your dog's stool.</a>
+          </h3>
+          <p class="mt-5 text-charcoal/80 leading-relaxed text-[15px]">
+            What firmness, color, and frequency are quietly telling you, and
+            when something has actually gone sideways.
+          </p>
+          <div class="mt-6 flex items-center gap-4 text-xs text-forest/60 font-serif italic">
+            <span>Six minute read</span>
+            <span>—</span>
+            <span>Dr. Lena Park, DVM</span>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="col-span-12 md:col-span-4 group">
+          <div class="smallcaps text-terracotta mb-3">Mobility</div>
+          <h3 class="font-serif text-forest text-3xl leading-tight tracking-tight">
+            <a href="#" class="hover:italic transition">Why glucosamine dose matters more than the label.</a>
+          </h3>
+          <p class="mt-5 text-charcoal/80 leading-relaxed text-[15px]">
+            Most joint chews under-deliver on the very ingredient they're
+            named for. Here is what the studies actually require.
+          </p>
+          <div class="mt-6 flex items-center gap-4 text-xs text-forest/60 font-serif italic">
+            <span>Eight minute read</span>
+            <span>—</span>
+            <span>Dr. Marcus Hale, DVM</span>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="col-span-12 md:col-span-4 group">
+          <div class="smallcaps text-terracotta mb-3">Ingredients</div>
+          <h3 class="font-serif text-forest text-3xl leading-tight tracking-tight">
+            <a href="#" class="hover:italic transition">The case for green-lipped mussel.</a>
+          </h3>
+          <p class="mt-5 text-charcoal/80 leading-relaxed text-[15px]">
+            An unlikely New Zealand bivalve has quietly become one of the
+            best-supported additions to a working joint formula.
+          </p>
+          <div class="mt-6 flex items-center gap-4 text-xs text-forest/60 font-serif italic">
+            <span>Five minute read</span>
+            <span>—</span>
+            <span>The PawBite Editors</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-12"><div class="hairline"></div></div>
+
+  <!-- ============ REVIEWS — PULL QUOTES ============ -->
+  <section class="py-24 lg:py-36">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+
+      <div class="grid grid-cols-12 gap-6 mb-20 lg:mb-24">
+        <div class="col-span-12 lg:col-span-2">
+          <div class="smallcaps text-forest/60">Letters In</div>
+        </div>
+        <div class="col-span-12 lg:col-span-9">
+          <h2 class="font-serif text-forest text-4xl lg:text-5xl leading-[1] tracking-tight">
+            What owners <span class="italic">have written to us.</span>
+          </h2>
+        </div>
+      </div>
+
+      <!-- Quote 1 -->
+      <figure class="grid grid-cols-12 gap-6 mb-24 lg:mb-32">
+        <div class="col-span-12 lg:col-span-1 lg:col-start-2">
+          <div class="font-serif text-terracotta text-7xl leading-none -mt-2" aria-hidden="true">&ldquo;</div>
+        </div>
+        <div class="col-span-12 lg:col-span-9">
+          <blockquote class="pull-quote text-3xl lg:text-5xl">
+            Three weeks in, the chronic itching that had survived four shampoos
+            and two food trials simply stopped. I am genuinely a little
+            suspicious of how well it worked.
+          </blockquote>
+          <figcaption class="mt-8 flex items-center gap-4 text-sm">
+            <span class="smallcaps text-forest">Annie R.</span>
+            <span class="font-serif italic text-forest/60">Brooklyn, NY — verified buyer</span>
+          </figcaption>
+        </div>
+      </figure>
+
+      <div class="hairline mb-24 lg:mb-32"></div>
+
+      <!-- Quote 2 -->
+      <figure class="grid grid-cols-12 gap-6 mb-24 lg:mb-32">
+        <div class="col-span-12 lg:col-span-1 lg:col-start-2">
+          <div class="font-serif text-terracotta text-7xl leading-none -mt-2" aria-hidden="true">&ldquo;</div>
+        </div>
+        <div class="col-span-12 lg:col-span-9">
+          <blockquote class="pull-quote text-3xl lg:text-5xl">
+            My ten-year-old retriever started taking the stairs again. That is
+            the only sentence I have for what has been a very emotional six
+            weeks at our house.
+          </blockquote>
+          <figcaption class="mt-8 flex items-center gap-4 text-sm">
+            <span class="smallcaps text-forest">David L.</span>
+            <span class="font-serif italic text-forest/60">Portland, OR — verified buyer</span>
+          </figcaption>
+        </div>
+      </figure>
+
+      <div class="hairline mb-24 lg:mb-32"></div>
+
+      <!-- Quote 3 -->
+      <figure class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 lg:col-span-1 lg:col-start-2">
+          <div class="font-serif text-terracotta text-7xl leading-none -mt-2" aria-hidden="true">&ldquo;</div>
+        </div>
+        <div class="col-span-12 lg:col-span-9">
+          <blockquote class="pull-quote text-3xl lg:text-5xl">
+            They taste, by my dog's determination, exactly the same as a
+            treat. We have not had a single negotiation about taking them.
+          </blockquote>
+          <figcaption class="mt-8 flex items-center gap-4 text-sm">
+            <span class="smallcaps text-forest">Priya K.</span>
+            <span class="font-serif italic text-forest/60">Austin, TX — verified buyer</span>
+          </figcaption>
+        </div>
+      </figure>
+
+      <div class="mt-20 text-center">
+        <p class="font-serif italic text-forest/60 text-base">
+          From a body of more than ten thousand five-star reviews.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-12"><div class="hairline"></div></div>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="py-24 lg:py-32">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 grid grid-cols-12 gap-6">
+
+      <div class="col-span-12 lg:col-span-2">
+        <div class="smallcaps text-forest/60">Subscribe</div>
+      </div>
+
+      <div class="col-span-12 lg:col-span-9">
+        <h2 class="font-serif text-forest text-4xl lg:text-6xl leading-[1.02] tracking-tight max-w-[20ch]">
+          Get the journal, <span class="italic">monthly.</span>
+        </h2>
+        <p class="mt-8 text-charcoal/80 text-lg leading-relaxed max-w-[55ch]">
+          One short letter a month. Notes from the lab, longer pieces from our
+          veterinary editors, the occasional discount. We do not sell email
+          addresses to anyone, ever.
+        </p>
+
+        <form class="mt-10 max-w-xl flex flex-col sm:flex-row items-stretch border-b border-forest/30 pb-1 gap-3 sm:gap-0">
+          <input
+            type="email"
+            placeholder="your email"
+            class="flex-1 bg-transparent font-serif italic text-xl text-forest placeholder-forest/40 py-3 focus:outline-none"
+          />
+          <button type="submit" class="cta-terra px-6 py-3 rounded-full text-sm font-medium tracking-wide self-start sm:self-center">
+            Subscribe
+          </button>
+        </form>
+
+        <p class="font-serif italic text-xs text-forest/50 mt-4">
+          By subscribing, you agree to receive the PawBite journal. Unsubscribe in any issue.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-12"><div class="hairline"></div></div>
+
+  <!-- ============ FOOTER — MASTHEAD ============ -->
+  <footer class="pt-20 lg:pt-28 pb-12">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+
+      <!-- Masthead-style giant wordmark -->
+      <div class="grid grid-cols-12 gap-6 items-end mb-16 lg:mb-24 pb-12 border-b border-forest/20">
+        <div class="col-span-12 lg:col-span-8">
+          <div class="masthead-letter text-7xl lg:text-[10rem]">PawBite.</div>
+          <div class="font-serif italic text-forest/60 text-base lg:text-lg mt-4">
+            A small American company making vet-formulated supplements for dogs.
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-4 lg:text-right">
+          <div class="smallcaps text-forest/60 mb-2">Issue 01</div>
+          <div class="font-serif italic text-forest/70">Spring 2026</div>
+          <div class="font-serif italic text-forest/70">Founded in Brooklyn</div>
+        </div>
+      </div>
+
+      <!-- Columns: typographic, not boxy -->
+      <div class="grid grid-cols-12 gap-10 lg:gap-12 text-sm">
+
+        <div class="col-span-6 md:col-span-3">
+          <div class="smallcaps text-forest/60 mb-5">Shop</div>
+          <ul class="space-y-3 font-serif text-forest text-base">
+            <li><a href="#" class="hover:italic">Daily Probiotic</a></li>
+            <li><a href="#" class="hover:italic">Hip + Joint</a></li>
+            <li><a href="#" class="hover:italic">The Daily Duo</a></li>
+            <li><a href="#" class="hover:italic">Subscribe &amp; Save</a></li>
+          </ul>
+        </div>
+
+        <div class="col-span-6 md:col-span-3">
+          <div class="smallcaps text-forest/60 mb-5">The Brand</div>
+          <ul class="space-y-3 font-serif text-forest text-base">
+            <li><a href="#" class="hover:italic">About</a></li>
+            <li><a href="#" class="hover:italic">Veterinary board</a></li>
+            <li><a href="#" class="hover:italic">Our standards</a></li>
+            <li><a href="#" class="hover:italic">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="col-span-6 md:col-span-3">
+          <div class="smallcaps text-forest/60 mb-5">Department</div>
+          <ul class="space-y-3 font-serif text-forest text-base">
+            <li><a href="#" class="hover:italic">Journal</a></li>
+            <li><a href="#" class="hover:italic">The science</a></li>
+            <li><a href="#" class="hover:italic">Take the quiz</a></li>
+            <li><a href="#" class="hover:italic">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div class="col-span-6 md:col-span-3">
+          <div class="smallcaps text-forest/60 mb-5">Service</div>
+          <ul class="space-y-3 font-serif text-forest text-base">
+            <li><a href="#" class="hover:italic">Contact</a></li>
+            <li><a href="#" class="hover:italic">Shipping</a></li>
+            <li><a href="#" class="hover:italic">Returns</a></li>
+            <li><a href="#" class="hover:italic">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Colophon row -->
+      <div class="hairline mt-16 mb-8"></div>
+      <div class="flex flex-wrap items-center justify-between gap-4 text-xs text-forest/60">
+        <div class="font-serif italic">
+          &copy; 2026 PawBite, Inc. — Set in Fraunces and Inter. Made with care in the United States.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-forest transition">Privacy</a>
+          <a href="#" class="hover:text-forest transition">Terms</a>
+          <a href="#" class="hover:text-forest transition">Accessibility</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

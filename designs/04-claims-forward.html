@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PawBite — America's gut-first dog probiotic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#F5EFE6',
+          forest: '#1F3A2E',
+          terracotta: '#C8765B',
+          warmyellow: '#E8B547',
+          offwhite: '#FAFAFA',
+          charcoal: '#2A2A2A',
+        },
+        fontFamily: {
+          serif: ['Fraunces', 'serif'],
+          sans: ['Inter', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background-color: #F5EFE6; color: #2A2A2A; }
+  h1, h2, h3, h4, .font-serif { font-family: 'Fraunces', serif; }
+
+  /* Canister mockup */
+  .canister {
+    position: relative;
+    width: 240px;
+    height: 320px;
+    border-radius: 28px;
+    background: linear-gradient(180deg, #FDFBF7 0%, #F5EFE6 100%);
+    box-shadow:
+      0 30px 60px -20px rgba(31, 58, 46, 0.35),
+      0 12px 24px -8px rgba(31, 58, 46, 0.18),
+      inset 0 -8px 20px rgba(0, 0, 0, 0.06),
+      inset 6px 0 14px rgba(255, 255, 255, 0.7),
+      inset -6px 0 14px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 18px 22px;
+  }
+  .canister::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 22px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0));
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+  }
+  .canister::after {
+    content: '';
+    position: absolute;
+    left: 12%;
+    top: 6%;
+    bottom: 6%;
+    width: 14px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0));
+    filter: blur(6px);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .canister-band {
+    position: absolute;
+    left: 0; right: 0;
+    top: 38%;
+    height: 38%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #1F3A2E;
+    padding: 0 14px;
+  }
+  .canister-band.dark { color: #F5EFE6; }
+  .canister-wordmark {
+    position: relative;
+    z-index: 2;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    color: #1F3A2E;
+  }
+  .canister-bottom {
+    position: relative;
+    z-index: 2;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: #1F3A2E;
+    font-weight: 600;
+  }
+  .canister-band .name {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .canister-band .sub {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  /* size variants */
+  .canister-sm { width: 170px; height: 230px; padding: 18px 14px 16px; border-radius: 22px; }
+  .canister-sm .canister-wordmark { font-size: 14px; }
+  .canister-sm .canister-band .name { font-size: 18px; }
+  .canister-sm .canister-band .sub { font-size: 8px; }
+  .canister-sm .canister-bottom { font-size: 7px; }
+  .canister-lg { width: 290px; height: 380px; }
+  .canister-lg .canister-wordmark { font-size: 22px; }
+  .canister-lg .canister-band .name { font-size: 32px; }
+
+  /* Floating callouts */
+  .callout {
+    background: #FAFAFA;
+    border: 1px solid rgba(31,58,46,0.12);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1F3A2E;
+    box-shadow: 0 6px 18px -6px rgba(31,58,46,0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  /* Star rating */
+  .star { width: 16px; height: 16px; fill: #E8B547; }
+
+  /* Bar chart for before/after */
+  .bar-track { height: 10px; background: rgba(31,58,46,0.08); border-radius: 999px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 999px; }
+
+  /* Marquee */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee { display: flex; animation: marquee 30s linear infinite; }
+
+  /* Badge tilt */
+  .save-badge {
+    transform: rotate(-6deg);
+  }
+
+  /* Scrollbar hide for mobile cards */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Subtle floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .float-anim { animation: float 4s ease-in-out infinite; }
+  .float-anim-delay { animation: float 4s ease-in-out infinite; animation-delay: 1.5s; }
+</style>
+</head>
+<body class="bg-cream text-charcoal antialiased">
+
+<!-- ============= URGENT BANNER ============= -->
+<div class="bg-terracotta text-cream text-sm font-medium sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-2.5 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
+    <div class="flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      <span><strong class="font-semibold">New customer offer:</strong> 30% OFF + FREE SHIPPING on your first order. Code: <span class="font-bold tracking-wider bg-cream/15 px-2 py-0.5 rounded">WELCOME</span></span>
+    </div>
+    <span class="hidden sm:block opacity-70">|</span>
+    <div class="flex items-center gap-1.5 text-cream/90">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span>Offer ends in <strong class="font-semibold">24h 12m</strong></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============= NAV ============= -->
+<nav class="bg-cream/95 backdrop-blur-md border-b border-forest/10 sticky top-[44px] sm:top-[40px] z-40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center gap-10">
+        <a href="#" class="font-serif font-bold text-2xl text-forest tracking-tight">PawBite</a>
+        <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-charcoal/80">
+          <a href="#shop" class="hover:text-forest transition">Shop</a>
+          <a href="#science" class="hover:text-forest transition">The Science</a>
+          <a href="#reviews" class="hover:text-forest transition">Reviews</a>
+          <a href="#learn" class="hover:text-forest transition">Learn</a>
+          <a href="#" class="hover:text-forest transition">Take the Quiz</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 sm:gap-4">
+        <button aria-label="Cart" class="relative p-2 hover:bg-forest/5 rounded-full transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-forest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="absolute -top-0.5 -right-0.5 bg-terracotta text-cream text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">2</span>
+        </button>
+        <a href="#shop" class="bg-terracotta hover:bg-terracotta/90 text-cream px-4 sm:px-5 py-2.5 rounded-full text-sm font-semibold transition shadow-sm">Shop now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============= HERO ============= -->
+<section class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 lg:pt-20 pb-16 lg:pb-24">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- LEFT: copy -->
+      <div>
+        <!-- eyebrow -->
+        <div class="inline-flex items-center gap-2 bg-forest/5 border border-forest/10 rounded-full px-3 py-1.5 mb-6">
+          <span class="w-2 h-2 rounded-full bg-warmyellow"></span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-forest">America's gut-first dog probiotic</span>
+        </div>
+
+        <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-forest leading-[0.95] tracking-tight mb-6">
+          America's gut-first dog probiotic.
+        </h1>
+
+        <p class="text-lg sm:text-xl text-charcoal/75 leading-relaxed mb-7 max-w-xl">
+          Vet-formulated. 5 strains. 5 billion CFUs. Real ingredients, real results — backed by our 90-day money-back guarantee.
+        </p>
+
+        <!-- Star rating -->
+        <div class="flex items-center gap-3 mb-7">
+          <div class="flex items-center gap-0.5">
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <span class="text-sm font-semibold text-forest">4.9 out of 5</span>
+          <span class="text-sm text-charcoal/65">from 10,000+ dog parents</span>
+        </div>
+
+        <!-- 3 inline trust stats -->
+        <ul class="space-y-2.5 mb-8">
+          <li class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-forest text-cream flex items-center justify-center mt-0.5">
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span class="text-charcoal"><strong class="font-semibold text-forest">87% saw firmer stool in 2 weeks</strong><sup class="text-terracotta font-bold">*</sup></span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-forest text-cream flex items-center justify-center mt-0.5">
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span class="text-charcoal">Free shipping over $40</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-forest text-cream flex items-center justify-center mt-0.5">
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span class="text-charcoal">90-day money-back guarantee</span>
+          </li>
+        </ul>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
+          <a href="#shop" class="inline-flex items-center justify-center gap-2 bg-terracotta hover:bg-terracotta/90 text-cream px-7 py-4 rounded-full font-semibold text-base shadow-lg shadow-terracotta/20 transition">
+            Shop now — 30% off
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#" class="text-forest font-semibold text-sm hover:underline underline-offset-4 decoration-2">
+            or take our quiz <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <p class="text-xs text-charcoal/55 italic">*Based on a survey of 500 PawBite customers, 2025.</p>
+      </div>
+
+      <!-- RIGHT: hero canister with floating callouts -->
+      <div class="relative flex items-center justify-center min-h-[420px] lg:min-h-[540px]">
+        <!-- soft backdrop -->
+        <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+          <div class="w-[380px] h-[380px] lg:w-[460px] lg:h-[460px] rounded-full bg-warmyellow/25 blur-2xl"></div>
+        </div>
+
+        <div class="relative">
+          <!-- canister -->
+          <div class="canister canister-lg float-anim">
+            <div class="canister-wordmark">PawBite</div>
+            <div class="canister-band" style="background: #E8B547;">
+              <div class="sub mb-1">Daily</div>
+              <div class="name">Probiotic</div>
+              <div class="sub mt-2">Chicken · Soft Chew</div>
+            </div>
+            <div class="canister-bottom">30 SOFT CHEWS</div>
+          </div>
+
+          <!-- floating callouts -->
+          <div class="callout absolute -top-2 -left-12 sm:-left-20 hidden sm:inline-flex">
+            <span class="w-2 h-2 rounded-full bg-warmyellow"></span>
+            5B CFU
+          </div>
+          <div class="callout absolute top-20 -right-10 sm:-right-16 hidden sm:inline-flex">
+            <svg class="w-3.5 h-3.5 text-terracotta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            5 strains
+          </div>
+          <div class="callout absolute bottom-28 -left-16 sm:-left-24 hidden sm:inline-flex">
+            <svg class="w-3.5 h-3.5 text-forest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            + Pumpkin
+          </div>
+          <div class="callout absolute -bottom-2 -right-8 sm:-right-12 hidden sm:inline-flex">
+            <svg class="w-3.5 h-3.5 text-forest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Vet-formulated
+          </div>
+          <div class="callout absolute top-44 -left-20 sm:-left-28 hidden lg:inline-flex">
+            <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
+            Chicken flavor dogs love
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============= TRUST STRIP ============= -->
+<section class="bg-forest text-cream">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4">
+      <div class="flex flex-col items-center text-center gap-2">
+        <svg class="w-7 h-7 text-warmyellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 5v7c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        <p class="text-xs font-semibold uppercase tracking-wider">Vet-formulated</p>
+      </div>
+      <div class="flex flex-col items-center text-center gap-2">
+        <svg class="w-7 h-7 text-warmyellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        <p class="text-xs font-semibold uppercase tracking-wider">10,000+ 5-star reviews</p>
+      </div>
+      <div class="flex flex-col items-center text-center gap-2">
+        <svg class="w-7 h-7 text-warmyellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/><polyline points="9 12 11 14 15 10"/></svg>
+        <p class="text-xs font-semibold uppercase tracking-wider">90-day money-back</p>
+      </div>
+      <div class="flex flex-col items-center text-center gap-2">
+        <svg class="w-7 h-7 text-warmyellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <p class="text-xs font-semibold uppercase tracking-wider">Free shipping over $40</p>
+      </div>
+      <div class="flex flex-col items-center text-center gap-2 col-span-2 md:col-span-1">
+        <svg class="w-7 h-7 text-warmyellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <p class="text-xs font-semibold uppercase tracking-wider">Made in USA · cGMP</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= PRODUCT SHOWCASE (BUNDLE-LED) ============= -->
+<section id="shop" class="py-16 sm:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta mb-3">Most popular</p>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-forest leading-tight">
+          Built for results. Priced to keep going.
+        </h2>
+      </div>
+      <p class="text-charcoal/70 max-w-md">
+        Subscribe and save up to 32%. Skip, swap, or cancel any time — no fine print.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+
+      <!-- BUNDLE — featured (2x size) -->
+      <div class="lg:col-span-2 relative bg-forest text-cream rounded-3xl p-8 sm:p-10 overflow-hidden">
+        <!-- save badge -->
+        <div class="absolute top-6 right-6 save-badge bg-warmyellow text-forest font-serif font-bold text-base px-4 py-3 rounded-full shadow-lg z-20">
+          SAVE 32%
+        </div>
+
+        <div class="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-warmyellow/10 blur-3xl" aria-hidden="true"></div>
+
+        <div class="relative grid sm:grid-cols-2 gap-8 items-center h-full">
+          <div class="order-2 sm:order-1">
+            <div class="inline-flex items-center gap-2 bg-warmyellow/20 border border-warmyellow/30 rounded-full px-3 py-1 mb-5">
+              <svg class="w-3.5 h-3.5 text-warmyellow" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+              <span class="text-xs font-semibold uppercase tracking-wider text-warmyellow">Most popular</span>
+            </div>
+
+            <h3 class="font-serif text-4xl sm:text-5xl font-bold mb-3 leading-tight">The Daily Duo</h3>
+            <p class="text-cream/80 text-base mb-6 leading-relaxed">
+              Daily Probiotic + Hip &amp; Joint, together. The complete gut-and-mobility stack for dogs of every age.
+            </p>
+
+            <ul class="space-y-2 mb-7 text-sm">
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-warmyellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span class="text-cream/90">Both formulas, delivered monthly</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-warmyellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span class="text-cream/90">Best value — locks in lowest pricing</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-warmyellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span class="text-cream/90">Free shipping, every order</span>
+              </li>
+            </ul>
+
+            <!-- pricing -->
+            <div class="mb-6">
+              <div class="flex items-baseline gap-3 mb-1">
+                <span class="font-serif text-4xl sm:text-5xl font-bold text-warmyellow">$47.60</span>
+                <span class="text-cream/50 line-through text-lg">$70</span>
+              </div>
+              <p class="text-sm text-cream/75">with bundle + subscribe · <span class="text-warmyellow font-semibold">Save $22.40/month</span></p>
+            </div>
+
+            <button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-terracotta hover:bg-terracotta/90 text-cream px-7 py-4 rounded-full font-semibold transition shadow-lg shadow-black/20">
+              Add Daily Duo to cart
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+
+          <!-- two canisters -->
+          <div class="order-1 sm:order-2 relative flex items-center justify-center min-h-[280px]">
+            <div class="absolute" style="left: 8%; top: 10%; transform: rotate(-8deg);">
+              <div class="canister canister-sm float-anim">
+                <div class="canister-wordmark">PawBite</div>
+                <div class="canister-band" style="background: #E8B547;">
+                  <div class="name">Probiotic</div>
+                  <div class="sub">Daily</div>
+                </div>
+                <div class="canister-bottom">30 CHEWS</div>
+              </div>
+            </div>
+            <div class="absolute" style="right: 8%; bottom: 0; transform: rotate(8deg);">
+              <div class="canister canister-sm float-anim-delay">
+                <div class="canister-wordmark">PawBite</div>
+                <div class="canister-band" style="background: #C8765B; color: #F5EFE6;">
+                  <div class="name">Hip+Joint</div>
+                  <div class="sub">Daily</div>
+                </div>
+                <div class="canister-bottom">60 CHEWS</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- right column: 2 stacked -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+
+        <!-- Daily Probiotic -->
+        <div class="bg-offwhite rounded-3xl p-6 border border-forest/8 flex flex-col">
+          <div class="flex items-center justify-center bg-warmyellow/15 rounded-2xl py-6 mb-4 relative">
+            <div class="canister canister-sm">
+              <div class="canister-wordmark">PawBite</div>
+              <div class="canister-band" style="background: #E8B547;">
+                <div class="name">Probiotic</div>
+                <div class="sub">Daily</div>
+              </div>
+              <div class="canister-bottom">30 CHEWS</div>
+            </div>
+            <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-forest bg-cream px-2 py-1 rounded-full">5B CFU</span>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-forest mb-1">Daily Probiotic</h3>
+          <p class="text-sm text-charcoal/70 mb-4">5 strains + chicory inulin + pumpkin · Chicken</p>
+          <div class="flex items-baseline gap-2 mb-4">
+            <span class="font-serif text-2xl font-bold text-forest">$26</span>
+            <span class="text-charcoal/50 line-through text-sm">$32</span>
+            <span class="text-xs text-terracotta font-semibold">/ subscribe</span>
+          </div>
+          <button class="mt-auto w-full bg-terracotta hover:bg-terracotta/90 text-cream py-3 rounded-full font-semibold text-sm transition">Add to cart</button>
+        </div>
+
+        <!-- Hip + Joint -->
+        <div class="bg-offwhite rounded-3xl p-6 border border-forest/8 flex flex-col">
+          <div class="flex items-center justify-center bg-terracotta/10 rounded-2xl py-6 mb-4 relative">
+            <div class="canister canister-sm">
+              <div class="canister-wordmark">PawBite</div>
+              <div class="canister-band" style="background: #C8765B; color: #F5EFE6;">
+                <div class="name">Hip+Joint</div>
+                <div class="sub">Daily</div>
+              </div>
+              <div class="canister-bottom">60 CHEWS</div>
+            </div>
+            <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-forest bg-cream px-2 py-1 rounded-full">500mg Glucos.</span>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-forest mb-1">Hip + Joint</h3>
+          <p class="text-sm text-charcoal/70 mb-4">Glucosamine, Chondroitin, MSM, GLM · Duck</p>
+          <div class="flex items-baseline gap-2 mb-4">
+            <span class="font-serif text-2xl font-bold text-forest">$30</span>
+            <span class="text-charcoal/50 line-through text-sm">$38</span>
+            <span class="text-xs text-terracotta font-semibold">/ subscribe</span>
+          </div>
+          <button class="mt-auto w-full bg-terracotta hover:bg-terracotta/90 text-cream py-3 rounded-full font-semibold text-sm transition">Add to cart</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============= BEFORE/AFTER TESTIMONIALS ============= -->
+<section class="py-16 sm:py-24 bg-offwhite">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta mb-3">Real customers, real data</p>
+      <h2 class="font-serif text-4xl sm:text-5xl font-bold text-forest mb-4 leading-tight">Real dogs. Real differences.</h2>
+      <p class="text-charcoal/70 text-lg">Self-reported scores from PawBite customers, tracked over the first 14 days.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div class="bg-cream rounded-3xl overflow-hidden border border-forest/8 flex flex-col">
+        <div class="relative h-56">
+          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1600&q=80" alt="Theo, golden retriever" class="w-full h-full object-cover">
+          <div class="absolute top-3 left-3 bg-cream/95 backdrop-blur-sm text-forest text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full flex items-center gap-1.5">
+            <svg class="w-3 h-3 text-terracotta" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            Verified buyer
+          </div>
+        </div>
+        <div class="p-6 flex flex-col gap-4 flex-1">
+          <div>
+            <h4 class="font-serif text-xl font-bold text-forest">Theo, 5 yo Labrador</h4>
+            <p class="text-sm text-charcoal/65">on Daily Probiotic, 14 days</p>
+          </div>
+
+          <!-- Bar chart -->
+          <div class="bg-offwhite border border-forest/10 rounded-2xl p-4">
+            <p class="text-xs uppercase tracking-wider text-charcoal/60 font-semibold mb-3">Stool quality score</p>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-charcoal/70 font-medium">Day 1 (Before)</span>
+                  <span class="font-bold text-forest">2 / 10</span>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill bg-terracotta/40" style="width: 20%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-charcoal/70 font-medium">Day 14 (After)</span>
+                  <span class="font-bold text-forest">9 / 10</span>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill bg-forest" style="width: 90%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-charcoal/85 italic leading-relaxed">"I'd tried four probiotics before PawBite. This is the first one that actually worked."</p>
+          <p class="text-sm font-semibold text-forest mt-auto">— Sarah B., Boston</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-cream rounded-3xl overflow-hidden border border-forest/8 flex flex-col">
+        <div class="relative h-56">
+          <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1600&q=80" alt="Mango, mixed breed" class="w-full h-full object-cover">
+          <div class="absolute top-3 left-3 bg-cream/95 backdrop-blur-sm text-forest text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full flex items-center gap-1.5">
+            <svg class="w-3 h-3 text-terracotta" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            Verified buyer
+          </div>
+        </div>
+        <div class="p-6 flex flex-col gap-4 flex-1">
+          <div>
+            <h4 class="font-serif text-xl font-bold text-forest">Mango, 8 yo Mixed</h4>
+            <p class="text-sm text-charcoal/65">on Daily Duo, 30 days</p>
+          </div>
+
+          <div class="bg-offwhite border border-forest/10 rounded-2xl p-4">
+            <p class="text-xs uppercase tracking-wider text-charcoal/60 font-semibold mb-3">Mobility score</p>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-charcoal/70 font-medium">Day 1 (Before)</span>
+                  <span class="font-bold text-forest">4 / 10</span>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill bg-terracotta/40" style="width: 40%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-charcoal/70 font-medium">Day 30 (After)</span>
+                  <span class="font-bold text-forest">8 / 10</span>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill bg-forest" style="width: 80%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-charcoal/85 italic leading-relaxed">"Mango is back to taking the stairs without me holding her collar. It's a small thing that's a huge thing."</p>
+          <p class="text-sm font-semibold text-forest mt-auto">— Ravi P., Austin</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-cream rounded-3xl overflow-hidden border border-forest/8 flex flex-col">
+        <div class="relative h-56">
+          <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=1600&q=80" alt="Biscuit, Cavalier" class="w-full h-full object-cover">
+          <div class="absolute top-3 left-3 bg-cream/95 backdrop-blur-sm text-forest text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full flex items-center gap-1.5">
+            <svg class="w-3 h-3 text-terracotta" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            Verified buyer
+          </div>
+        </div>
+        <div class="p-6 flex flex-col gap-4 flex-1">
+          <div>
+            <h4 class="font-serif text-xl font-bold text-forest">Biscuit, 3 yo Cavalier</h4>
+            <p class="text-sm text-charcoal/65">on Daily Probiotic, 21 days</p>
+          </div>
+
+          <div class="bg-offwhite border border-forest/10 rounded-2xl p-4">
+            <p class="text-xs uppercase tracking-wider text-charcoal/60 font-semibold mb-3">Coat &amp; itch frequency</p>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-charcoal/70 font-medium">Day 1 (Before)</span>
+                  <span class="font-bold text-forest">3 / 10</span>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill bg-terracotta/40" style="width: 30%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-charcoal/70 font-medium">Day 21 (After)</span>
+                  <span class="font-bold text-forest">9 / 10</span>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill bg-forest" style="width: 90%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-charcoal/85 italic leading-relaxed">"Three weeks in and the constant scratching is finally gone. My vet noticed before I even mentioned it."</p>
+          <p class="text-sm font-semibold text-forest mt-auto">— Jamie L., Seattle</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============= WHY DOGS DO BETTER (4 STATS) ============= -->
+<section id="science" class="py-16 sm:py-24 bg-cream">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta mb-3">The numbers</p>
+      <h2 class="font-serif text-4xl sm:text-5xl font-bold text-forest leading-tight">Why dogs do better on PawBite</h2>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+
+      <div class="bg-offwhite rounded-3xl p-6 sm:p-8 border border-forest/8 text-center">
+        <div class="w-12 h-12 mx-auto mb-5 rounded-2xl bg-warmyellow/20 flex items-center justify-center">
+          <svg class="w-6 h-6 text-warmyellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <p class="font-serif text-3xl sm:text-4xl font-bold text-forest leading-none mb-2">5 Billion</p>
+        <p class="text-xs uppercase tracking-wider font-semibold text-charcoal/65">CFUs per chew</p>
+      </div>
+
+      <div class="bg-offwhite rounded-3xl p-6 sm:p-8 border border-forest/8 text-center">
+        <div class="w-12 h-12 mx-auto mb-5 rounded-2xl bg-terracotta/15 flex items-center justify-center">
+          <svg class="w-6 h-6 text-terracotta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <p class="font-serif text-3xl sm:text-4xl font-bold text-forest leading-none mb-2">5 Strains</p>
+        <p class="text-xs uppercase tracking-wider font-semibold text-charcoal/65">all clinically studied</p>
+      </div>
+
+      <div class="bg-offwhite rounded-3xl p-6 sm:p-8 border border-forest/8 text-center">
+        <div class="w-12 h-12 mx-auto mb-5 rounded-2xl bg-forest/10 flex items-center justify-center">
+          <svg class="w-6 h-6 text-forest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 5v7c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <p class="font-serif text-3xl sm:text-4xl font-bold text-forest leading-none mb-2">90 Days</p>
+        <p class="text-xs uppercase tracking-wider font-semibold text-charcoal/65">money-back guarantee</p>
+      </div>
+
+      <div class="bg-offwhite rounded-3xl p-6 sm:p-8 border border-forest/8 text-center">
+        <div class="w-12 h-12 mx-auto mb-5 rounded-2xl bg-warmyellow/20 flex items-center justify-center">
+          <svg class="w-6 h-6 text-warmyellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <p class="font-serif text-3xl sm:text-4xl font-bold text-forest leading-none mb-2">10,000+</p>
+        <p class="text-xs uppercase tracking-wider font-semibold text-charcoal/65">happy dogs</p>
+      </div>
+
+    </div>
+
+    <!-- comparison strip -->
+    <div class="mt-12 bg-forest text-cream rounded-3xl p-8 sm:p-10">
+      <div class="grid lg:grid-cols-3 gap-8 items-center">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-warmyellow mb-3">Side by side</p>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold leading-tight">Most "dog probiotics" don't survive the trip down.</h3>
+          <p class="text-cream/75 mt-3 text-sm leading-relaxed">Our chews are formulated for gastric survival, with prebiotic fiber to help the strains stick the landing.</p>
+        </div>
+
+        <div class="lg:col-span-2 grid sm:grid-cols-2 gap-4">
+          <div class="bg-cream/5 border border-cream/10 rounded-2xl p-5">
+            <p class="text-xs uppercase tracking-wider text-cream/60 font-semibold mb-2">Other probiotics</p>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-cream/40 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg> Often 1-2 strains</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-cream/40 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg> No prebiotic fiber</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-cream/40 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg> Powders dogs reject</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-cream/40 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg> Vague guarantees</li>
+            </ul>
+          </div>
+          <div class="bg-warmyellow/15 border border-warmyellow/30 rounded-2xl p-5">
+            <p class="text-xs uppercase tracking-wider text-warmyellow font-semibold mb-2">PawBite</p>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-warmyellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> 5 studied strains, 5B CFU</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-warmyellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Chicory inulin + pumpkin</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-warmyellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Soft chew, chicken flavor</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-warmyellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> 90-day, full refund</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============= REVIEWS ============= -->
+<section id="reviews" class="py-16 sm:py-24 bg-offwhite">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta mb-3">10,000+ five-star reviews</p>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-forest leading-tight">Loved by dogs. Trusted by their people.</h2>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-0.5">
+          <svg class="star w-5 h-5" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star w-5 h-5" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star w-5 h-5" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star w-5 h-5" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star w-5 h-5" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <span class="font-semibold text-forest">4.9 average</span>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <article class="bg-cream rounded-3xl p-7 border border-forest/8 flex flex-col">
+        <div class="flex items-center gap-0.5 mb-4">
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <h4 class="font-serif text-lg font-bold text-forest mb-3">"Two weeks and a different dog"</h4>
+        <p class="text-charcoal/80 leading-relaxed mb-5 text-sm">Honestly skeptical at first. By week two his stool was back to normal and he stopped scooting. Subscribing for life.</p>
+        <div class="flex items-center justify-between mt-auto pt-4 border-t border-forest/10">
+          <div>
+            <p class="font-semibold text-forest text-sm">Maria S.</p>
+            <p class="text-xs text-charcoal/60">Mojo · 6 yo Frenchie</p>
+          </div>
+          <span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-forest bg-warmyellow/30 px-2.5 py-1 rounded-full">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Verified buyer
+          </span>
+        </div>
+      </article>
+
+      <article class="bg-cream rounded-3xl p-7 border border-forest/8 flex flex-col">
+        <div class="flex items-center gap-0.5 mb-4">
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <h4 class="font-serif text-lg font-bold text-forest mb-3">"My senior is moving like she's 4 again"</h4>
+        <p class="text-charcoal/80 leading-relaxed mb-5 text-sm">The Daily Duo has been a small daily ritual that's added up to a huge change. Worth every dollar.</p>
+        <div class="flex items-center justify-between mt-auto pt-4 border-t border-forest/10">
+          <div>
+            <p class="font-semibold text-forest text-sm">David K.</p>
+            <p class="text-xs text-charcoal/60">Olive · 11 yo Golden</p>
+          </div>
+          <span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-forest bg-warmyellow/30 px-2.5 py-1 rounded-full">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Verified buyer
+          </span>
+        </div>
+      </article>
+
+      <article class="bg-cream rounded-3xl p-7 border border-forest/8 flex flex-col">
+        <div class="flex items-center gap-0.5 mb-4">
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <h4 class="font-serif text-lg font-bold text-forest mb-3">"Picky eater, ate it from day one"</h4>
+        <p class="text-charcoal/80 leading-relaxed mb-5 text-sm">My dog turns her nose up at every supplement we've tried. She thinks PawBite is a treat. Saw real changes by week three.</p>
+        <div class="flex items-center justify-between mt-auto pt-4 border-t border-forest/10">
+          <div>
+            <p class="font-semibold text-forest text-sm">Priya R.</p>
+            <p class="text-xs text-charcoal/60">Ziggy · 4 yo Aussie</p>
+          </div>
+          <span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-forest bg-warmyellow/30 px-2.5 py-1 rounded-full">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Verified buyer
+          </span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============= EDUCATIONAL / BLOG ============= -->
+<section id="learn" class="py-16 sm:py-24 bg-cream">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta mb-3">From the journal</p>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-forest leading-tight">Learn the science.</h2>
+      </div>
+      <a href="#" class="text-sm font-semibold text-forest hover:underline underline-offset-4 decoration-2">Read all articles →</a>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <a href="#" class="group bg-offwhite rounded-3xl overflow-hidden border border-forest/8 hover:shadow-xl hover:-translate-y-1 transition">
+        <div class="h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <div class="p-6">
+          <span class="text-xs uppercase tracking-wider font-semibold text-terracotta">Gut Health · 6 min read</span>
+          <h3 class="font-serif text-xl font-bold text-forest mt-2 mb-3 leading-snug">Why your dog's gut runs the show: a beginner's guide to the canine microbiome</h3>
+          <p class="text-sm text-charcoal/70 leading-relaxed">If digestion isn't smooth, almost nothing else will be. Here's where to start.</p>
+        </div>
+      </a>
+
+      <a href="#" class="group bg-offwhite rounded-3xl overflow-hidden border border-forest/8 hover:shadow-xl hover:-translate-y-1 transition">
+        <div class="h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=1600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <div class="p-6">
+          <span class="text-xs uppercase tracking-wider font-semibold text-terracotta">Joint Health · 5 min read</span>
+          <h3 class="font-serif text-xl font-bold text-forest mt-2 mb-3 leading-snug">Glucosamine, chondroitin, MSM: which actually does what for your dog</h3>
+          <p class="text-sm text-charcoal/70 leading-relaxed">A plain-English breakdown of what each ingredient does, and why we put all four in one chew.</p>
+        </div>
+      </a>
+
+      <a href="#" class="group bg-offwhite rounded-3xl overflow-hidden border border-forest/8 hover:shadow-xl hover:-translate-y-1 transition">
+        <div class="h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <div class="p-6">
+          <span class="text-xs uppercase tracking-wider font-semibold text-terracotta">Buying guide · 4 min read</span>
+          <h3 class="font-serif text-xl font-bold text-forest mt-2 mb-3 leading-snug">How to read a dog supplement label without losing your mind</h3>
+          <p class="text-sm text-charcoal/70 leading-relaxed">CFU counts, "proprietary blends," and the small print that tells you whether a product is real or marketing.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============= URGENT NEWSLETTER CTA ============= -->
+<section class="py-16 sm:py-20 bg-forest text-cream relative overflow-hidden">
+  <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-warmyellow/15 blur-3xl" aria-hidden="true"></div>
+  <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-terracotta/15 blur-3xl" aria-hidden="true"></div>
+
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="inline-flex items-center gap-2 bg-warmyellow/15 border border-warmyellow/30 rounded-full px-4 py-1.5 mb-6">
+      <svg class="w-3.5 h-3.5 text-warmyellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      <span class="text-xs font-semibold uppercase tracking-wider text-warmyellow">Limited time</span>
+    </div>
+
+    <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] mb-5">
+      Get 30% off your first box.
+    </h2>
+    <p class="text-cream/75 text-lg max-w-xl mx-auto mb-8 leading-relaxed">
+      Drop your email for the welcome code, plus the gut-health field guide we send to every new PawBite household.
+    </p>
+
+    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+      <input type="email" placeholder="Your email" class="flex-1 bg-cream/10 border border-cream/20 rounded-full px-5 py-3.5 text-cream placeholder-cream/50 focus:outline-none focus:border-warmyellow text-sm">
+      <button type="submit" class="bg-terracotta hover:bg-terracotta/90 text-cream px-6 py-3.5 rounded-full font-semibold text-sm transition shadow-lg">Send my code</button>
+    </form>
+
+    <p class="text-xs text-cream/55">Code <span class="font-bold text-warmyellow tracking-wider">WELCOME</span> — applied automatically. Offer ends in 24h 12m.</p>
+  </div>
+</section>
+
+<!-- ============= FOOTER ============= -->
+<footer class="bg-cream border-t border-forest/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+
+      <div class="col-span-2">
+        <a href="#" class="font-serif font-bold text-3xl text-forest tracking-tight">PawBite</a>
+        <p class="text-charcoal/65 text-sm mt-3 max-w-xs leading-relaxed">Vet-formulated daily supplements for dogs. Made in the USA, in a cGMP-certified facility, third-party tested.</p>
+
+        <div class="flex items-center gap-3 mt-6">
+          <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-forest/5 hover:bg-forest/10 flex items-center justify-center text-forest transition">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok" class="w-9 h-9 rounded-full bg-forest/5 hover:bg-forest/10 flex items-center justify-center text-forest transition">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.5a8.24 8.24 0 0 0 4.93 1.62V6.69h-2z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full bg-forest/5 hover:bg-forest/10 flex items-center justify-center text-forest transition">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="font-semibold text-forest text-sm uppercase tracking-wider mb-4">Shop</p>
+        <ul class="space-y-2.5 text-sm text-charcoal/70">
+          <li><a href="#shop" class="hover:text-forest transition">Daily Probiotic</a></li>
+          <li><a href="#shop" class="hover:text-forest transition">Hip + Joint</a></li>
+          <li><a href="#shop" class="hover:text-forest transition">Daily Duo</a></li>
+          <li><a href="#" class="hover:text-forest transition">Take the quiz</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-semibold text-forest text-sm uppercase tracking-wider mb-4">Learn</p>
+        <ul class="space-y-2.5 text-sm text-charcoal/70">
+          <li><a href="#science" class="hover:text-forest transition">The science</a></li>
+          <li><a href="#" class="hover:text-forest transition">Ingredient sourcing</a></li>
+          <li><a href="#" class="hover:text-forest transition">Journal</a></li>
+          <li><a href="#" class="hover:text-forest transition">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-semibold text-forest text-sm uppercase tracking-wider mb-4">Company</p>
+        <ul class="space-y-2.5 text-sm text-charcoal/70">
+          <li><a href="#" class="hover:text-forest transition">About</a></li>
+          <li><a href="#" class="hover:text-forest transition">Reviews</a></li>
+          <li><a href="#" class="hover:text-forest transition">Contact</a></li>
+          <li><a href="#" class="hover:text-forest transition">Refund policy</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-forest/10 pt-8 flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between text-xs text-charcoal/55">
+      <p>© 2025 PawBite, Inc. Made in the USA in a cGMP-certified facility. Third-party tested for purity and potency.</p>
+      <div class="flex items-center gap-5">
+        <a href="#" class="hover:text-forest">Privacy</a>
+        <a href="#" class="hover:text-forest">Terms</a>
+        <a href="#" class="hover:text-forest">Accessibility</a>
+      </div>
+    </div>
+
+    <p class="mt-6 text-[11px] text-charcoal/50 italic leading-relaxed max-w-3xl">
+      *Based on a survey of 500 PawBite customers conducted in 2025. Individual results may vary. PawBite supplements are intended to support general wellness and are not intended to diagnose, treat, cure, or prevent any disease. Consult your veterinarian before starting any new supplement.
+    </p>
+  </div>
+</footer>
+
+<!-- ============= STICKY ADD-TO-CART BAR (mobile + desktop) ============= -->
+<div class="sticky bottom-0 z-40 bg-cream/95 backdrop-blur-md border-t border-forest/10 shadow-[0_-8px_24px_-12px_rgba(31,58,46,0.15)]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3 min-w-0">
+      <div class="hidden sm:flex w-11 h-11 rounded-full bg-warmyellow/25 items-center justify-center flex-shrink-0">
+        <svg class="w-5 h-5 text-forest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="min-w-0">
+        <p class="font-serif font-bold text-sm sm:text-base text-forest leading-tight truncate">Daily Duo · Save 32%</p>
+        <p class="text-xs text-charcoal/65"><span class="font-semibold text-forest">$47.60</span> <span class="line-through text-charcoal/45">$70</span> · with subscribe</p>
+      </div>
+    </div>
+    <a href="#shop" class="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-terracotta hover:bg-terracotta/90 text-cream px-5 sm:px-6 py-3 rounded-full font-semibold text-sm transition shadow-md">
+      <span class="hidden sm:inline">Add to cart — 30% off</span>
+      <span class="sm:hidden">Add — 30% off</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PawBite — 7 Homepage Design Directions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F5EFE6',
+            forest: '#1F3A2E',
+            terracotta: '#C8765B',
+            warmyellow: '#E8B547',
+            offwhite: '#FAFAFA',
+            charcoal: '#2A2A2A',
+            'cream-2': '#EFE7D8',
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #F5EFE6; color: #1F3A2E; }
+    .serif { font-family: 'Fraunces', serif; }
+    .card-hover { transition: transform .2s ease, box-shadow .2s ease; }
+    .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 32px -8px rgba(31, 58, 46, 0.18); }
+  </style>
+</head>
+<body class="bg-cream text-forest min-h-screen">
+
+  <!-- Header -->
+  <header class="border-b border-forest/10">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+      <div class="serif text-2xl font-bold text-forest">
+        PawBite <span class="text-terracotta">/</span> <span class="text-sm font-normal italic text-forest/70">design mockups</span>
+      </div>
+      <div class="text-sm text-forest/60">7 directions · pick one or mix</div>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-12 text-center">
+    <p class="serif italic text-terracotta mb-4">Homepage exploration</p>
+    <h1 class="serif text-5xl md:text-6xl font-bold leading-tight mb-6">
+      Seven directions for the PawBite homepage.
+    </h1>
+    <p class="text-lg text-forest/80 max-w-2xl mx-auto leading-relaxed">
+      Each one is a genuinely different strategic posture — not just a paint job.
+      Open them in new tabs, flip through, and pick the one that wins.
+      Mix-and-match across directions is fair game.
+    </p>
+    <div class="mt-8 inline-flex flex-wrap gap-3 items-center justify-center text-sm">
+      <span class="px-3 py-1 rounded-full bg-forest/10 text-forest">Brand: PawBite</span>
+      <span class="px-3 py-1 rounded-full bg-forest/10 text-forest">2 SKUs: Daily Probiotic + Hip+Joint</span>
+      <span class="px-3 py-1 rounded-full bg-forest/10 text-forest">Altitude: cute / fun / professional</span>
+      <span class="px-3 py-1 rounded-full bg-forest/10 text-forest">Palette: cream · forest · terracotta · yellow</span>
+    </div>
+  </section>
+
+  <!-- Hybrid Pick (featured) -->
+  <section class="max-w-7xl mx-auto px-6 pb-12">
+    <div class="rounded-3xl border-2 border-terracotta bg-white overflow-hidden shadow-lg">
+      <a href="./08-hybrid-favorite.html" target="_blank" class="block group">
+        <div class="grid md:grid-cols-5 gap-0">
+          <!-- thumbnail block -->
+          <div class="md:col-span-2 h-64 md:h-auto relative overflow-hidden" style="background: linear-gradient(135deg, #F5EFE6 0%, #E8B547 40%, #F4B8A8 70%, #C8765B 100%);">
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-terracotta text-cream text-xs font-bold uppercase tracking-wider">Recommended</div>
+            <div class="absolute serif text-7xl font-bold text-forest" style="right: 1.5rem; bottom: 1rem;">08</div>
+            <div class="absolute text-cream/90 italic" style="left: 1.5rem; top: 4rem; font-family: 'Caveat', cursive; font-size: 1.5rem;">your pick &mdash;</div>
+          </div>
+          <!-- copy block -->
+          <div class="md:col-span-3 p-8 md:p-10">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs uppercase tracking-wider text-terracotta font-bold">The Hybrid &middot; D4 + D6 + D7</span>
+              <span class="text-xs text-forest/50 group-hover:text-terracotta transition">Open in browser →</span>
+            </div>
+            <h3 class="serif text-3xl font-bold mb-3 leading-tight">Founder warmth + playful illustration + sneakily commercial.</h3>
+            <p class="text-base text-forest/80 leading-relaxed mb-5">
+              Design 7's visual joy as the wrapper. Design 6's founder voice as the soul. Design 4's conversion discipline at the edges (welcome banner, trust stats woven in, sticky ATC, bundle math, "Save 32%" badge).
+              One real photo only &mdash; the founder polaroid. Everything else is custom illustration.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 rounded bg-warmyellow/30 text-forest">Bagel Fat One wordmark</span>
+              <span class="px-2 py-1 rounded bg-pinky/30 text-forest" style="background: rgba(244, 184, 168, 0.3);">Caveat handwriting</span>
+              <span class="px-2 py-1 rounded text-forest" style="background: rgba(184, 212, 196, 0.4);">Mint + pink accents</span>
+              <span class="px-2 py-1 rounded bg-terracotta/15 text-terracotta">Founder polaroid</span>
+              <span class="px-2 py-1 rounded bg-forest/10 text-forest">Illustrated dog avatars</span>
+              <span class="px-2 py-1 rounded bg-forest/10 text-forest">Bundle-led + sticky ATC</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <p class="text-center text-sm text-forest/60 mt-4 italic">Originals below for reference &mdash; the hybrid is built on top of these.</p>
+  </section>
+
+  <!-- Designs Grid -->
+  <section class="max-w-7xl mx-auto px-6 pb-24">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Design 1 -->
+      <a href="./01-modern-storefront.html" target="_blank" class="card-hover block rounded-2xl bg-white border border-forest/10 overflow-hidden">
+        <div class="h-40 bg-cream-2 relative flex items-center justify-center overflow-hidden">
+          <!-- mini hero illustration: dog photo placeholder + cream overlay block -->
+          <div class="absolute inset-0" style="background: linear-gradient(135deg, #F5EFE6 30%, #C8765B 30%, #C8765B 60%, #E8B547 60%);"></div>
+          <div class="relative serif text-4xl font-bold text-forest">01</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs uppercase tracking-wider text-terracotta font-semibold">Modern Storefront</span>
+            <span class="text-xs text-forest/50">Finn-style</span>
+          </div>
+          <h3 class="serif text-xl font-bold mb-2">Photographic & accessible</h3>
+          <p class="text-sm text-forest/70 leading-relaxed mb-4">
+            Big lifestyle dog photo + cream overlay headline. Photo-led, friendly, the "safe baseline." Closest to what works for most DTC brands.
+          </p>
+          <span class="text-sm font-semibold text-terracotta">View design →</span>
+        </div>
+      </a>
+
+      <!-- Design 2 -->
+      <a href="./02-editorial.html" target="_blank" class="card-hover block rounded-2xl bg-white border border-forest/10 overflow-hidden">
+        <div class="h-40 bg-cream relative flex items-center justify-center overflow-hidden">
+          <div class="serif text-5xl font-bold text-forest leading-none lowercase">it<br/>starts</div>
+          <div class="absolute top-3 right-3 serif text-xs font-bold text-forest">02</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs uppercase tracking-wider text-terracotta font-semibold">Editorial</span>
+            <span class="text-xs text-forest/50">NYT / magazine</span>
+          </div>
+          <h3 class="serif text-xl font-bold mb-2">Type-led & premium</h3>
+          <p class="text-sm text-forest/70 leading-relaxed mb-4">
+            Giant serif headline, no hero photo, generous whitespace. Brand-over-store. Looks like a Pentagram project, not an ecom landing page.
+          </p>
+          <span class="text-sm font-semibold text-terracotta">View design →</span>
+        </div>
+      </a>
+
+      <!-- Design 3 -->
+      <a href="./03-quiz-first.html" target="_blank" class="card-hover block rounded-2xl bg-white border border-forest/10 overflow-hidden">
+        <div class="h-40 bg-cream-2 relative flex items-center justify-center overflow-hidden p-4">
+          <div class="bg-white rounded-xl border border-forest/10 p-4 w-full max-w-xs shadow">
+            <div class="text-[10px] uppercase tracking-wider text-forest/60 mb-2">Question 1 of 5</div>
+            <div class="h-1 bg-forest/10 rounded mb-3"><div class="h-1 bg-terracotta rounded" style="width:20%"></div></div>
+            <div class="serif font-bold text-sm text-forest mb-3">How much does your dog weigh?</div>
+            <div class="grid grid-cols-2 gap-2">
+              <div class="text-xs border border-forest/20 rounded p-1.5 text-center text-forest">Under 25 lbs</div>
+              <div class="text-xs border border-forest/20 rounded p-1.5 text-center text-forest">25–50 lbs</div>
+            </div>
+          </div>
+          <div class="absolute top-3 right-3 serif text-xs font-bold text-forest">03</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs uppercase tracking-wider text-terracotta font-semibold">Quiz-First</span>
+            <span class="text-xs text-forest/50">Care/Of, BetterHelp</span>
+          </div>
+          <h3 class="serif text-xl font-bold mb-2">Personalization-first</h3>
+          <p class="text-sm text-forest/70 leading-relaxed mb-4">
+            The quiz IS the hero. Products are downstream. Helpful, low-friction onboarding. Best for paid acquisition where the quiz is the conversion event.
+          </p>
+          <span class="text-sm font-semibold text-terracotta">View design →</span>
+        </div>
+      </a>
+
+      <!-- Design 4 -->
+      <a href="./04-claims-forward.html" target="_blank" class="card-hover block rounded-2xl bg-white border border-forest/10 overflow-hidden">
+        <div class="h-40 relative flex items-center justify-center overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 bg-terracotta text-cream text-[10px] py-1 text-center font-semibold">NEW CUSTOMER · 30% OFF + FREE SHIPPING</div>
+          <div class="bg-cream w-full h-full flex items-center justify-center pt-3">
+            <div class="text-center">
+              <div class="serif text-2xl font-bold text-forest leading-tight px-4">America's gut-first dog probiotic.</div>
+              <div class="mt-2 text-[10px] text-forest/60">★★★★★ 4.9 · 10,000+ dogs</div>
+            </div>
+          </div>
+          <div class="absolute top-2 right-2 serif text-xs font-bold text-forest">04</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs uppercase tracking-wider text-terracotta font-semibold">Claims-Forward</span>
+            <span class="text-xs text-forest/50">PetLab Lite</span>
+          </div>
+          <h3 class="serif text-xl font-bold mb-2">Conversion-optimized</h3>
+          <p class="text-sm text-forest/70 leading-relaxed mb-4">
+            Discount banner, big stars, before/after, stat callouts. Aggressive but on-brand — keeps our palette and typography. Highest expected conversion.
+          </p>
+          <span class="text-sm font-semibold text-terracotta">View design →</span>
+        </div>
+      </a>
+
+      <!-- Design 5 -->
+      <a href="./05-science-sheet.html" target="_blank" class="card-hover block rounded-2xl bg-white border border-forest/10 overflow-hidden">
+        <div class="h-40 bg-forest relative flex items-center justify-center overflow-hidden">
+          <div class="text-center text-cream">
+            <div class="serif text-3xl font-bold leading-tight">5 strains.</div>
+            <div class="serif text-3xl font-bold leading-tight">5B CFU.</div>
+            <div class="serif text-3xl font-bold leading-tight text-terracotta">0 fluff.</div>
+          </div>
+          <div class="absolute top-3 right-3 serif text-xs font-bold text-cream">05</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs uppercase tracking-wider text-terracotta font-semibold">Science Sheet</span>
+            <span class="text-xs text-forest/50">Eight Sleep · dark mode</span>
+          </div>
+          <h3 class="serif text-xl font-bold mb-2">Technical & premium</h3>
+          <p class="text-sm text-forest/70 leading-relaxed mb-4">
+            Dark forest background. Big stats. A real strain table on the homepage. Looks like a health-tech company that happens to make dog chews.
+          </p>
+          <span class="text-sm font-semibold text-terracotta">View design →</span>
+        </div>
+      </a>
+
+      <!-- Design 6 -->
+      <a href="./06-story-first.html" target="_blank" class="card-hover block rounded-2xl bg-white border border-forest/10 overflow-hidden">
+        <div class="h-40 bg-cream-2 relative flex items-center px-6 overflow-hidden">
+          <div class="flex-shrink-0 w-16 h-16 rounded-full bg-terracotta/20 mr-3 flex items-center justify-center serif font-bold text-terracotta">S</div>
+          <div class="flex-1">
+            <div class="text-[10px] uppercase tracking-wider text-terracotta italic">A note from our founder</div>
+            <div class="serif text-sm font-bold text-forest leading-tight mt-1">"I started PawBite because Theo's gut was a wreck."</div>
+          </div>
+          <div class="absolute top-3 right-3 serif text-xs font-bold text-forest">06</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs uppercase tracking-wider text-terracotta font-semibold">Story-First</span>
+            <span class="text-xs text-forest/50">Magic Spoon / founder</span>
+          </div>
+          <h3 class="serif text-xl font-bold mb-2">Personal & narrative</h3>
+          <p class="text-sm text-forest/70 leading-relaxed mb-4">
+            Founder photo + personal story above the fold. Brand over commerce. Reads like a substack. Builds trust through voice instead of trust badges.
+          </p>
+          <span class="text-sm font-semibold text-terracotta">View design →</span>
+        </div>
+      </a>
+
+      <!-- Design 7 -->
+      <a href="./07-playful-illustration.html" target="_blank" class="card-hover block rounded-2xl bg-white border border-forest/10 overflow-hidden">
+        <div class="h-40 bg-cream relative flex items-center justify-center overflow-hidden">
+          <div class="absolute" style="left: 30%; top: 10%; width: 65%; height: 80%; background: #E8B547; border-radius: 60% 40% 70% 30% / 50% 50% 60% 40%;"></div>
+          <div class="absolute" style="right: 18%; top: 30%;">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="40" cy="50" rx="22" ry="18" fill="#1F3A2E"/>
+              <ellipse cx="40" cy="40" rx="16" ry="14" fill="#1F3A2E"/>
+              <ellipse cx="28" cy="34" rx="4" ry="6" fill="#1F3A2E"/>
+              <ellipse cx="52" cy="34" rx="4" ry="6" fill="#1F3A2E"/>
+              <circle cx="33" cy="42" r="1.5" fill="#F5EFE6"/>
+              <circle cx="47" cy="42" r="1.5" fill="#F5EFE6"/>
+              <path d="M37 47 Q40 50 43 47" stroke="#F5EFE6" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="absolute serif text-base font-bold text-forest leading-tight max-w-[140px]" style="left: 6%; top: 32%;">Big dog energy</div>
+          <div class="absolute top-3 right-3 serif text-xs font-bold text-forest">07</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs uppercase tracking-wider text-terracotta font-semibold">Playful Illustration</span>
+            <span class="text-xs text-forest/50">Liquid Death cute · Mochi</span>
+          </div>
+          <h3 class="serif text-xl font-bold mb-2">Maximum cute</h3>
+          <p class="text-sm text-forest/70 leading-relaxed mb-4">
+            Heavy custom illustration, mascot-led, color-pop everywhere. NO real dog photos — all custom SVG. The scroll-stopping IG-bait option.
+          </p>
+          <span class="text-sm font-semibold text-terracotta">View design →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- How to use -->
+  <section class="bg-forest text-cream py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="serif text-3xl font-bold mb-6">How to pick</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-sm leading-relaxed">
+        <div>
+          <div class="serif italic text-warmyellow mb-2">1.</div>
+          <p>Open all 7 in new tabs. Skim them — first impression matters most.</p>
+        </div>
+        <div>
+          <div class="serif italic text-warmyellow mb-2">2.</div>
+          <p>Pick the one that makes you feel "yes, that's PawBite." If two are close, tell Claude which one and what to borrow from the other.</p>
+        </div>
+        <div>
+          <div class="serif italic text-warmyellow mb-2">3.</div>
+          <p>The winner becomes the template for every other page in the site (PDP, Learn, About, etc).</p>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-cream/20 text-sm text-cream/70">
+        <strong class="text-cream">Note:</strong> these are static HTML mockups (Tailwind via CDN). Real production stack gets decided once design is locked.
+        Trust signals shown are aspirational placeholders. Images from Unsplash. Product canisters are CSS — not real product shots yet.
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

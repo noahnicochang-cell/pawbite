@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PawBite — Vet-formulated supplements. Third-party tested.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#F5EFE6',
+          forest: '#1F3A2E',
+          'forest-deep': '#142A20',
+          'forest-mid': '#2A4538',
+          terracotta: '#C8765B',
+          warmyellow: '#E8B547',
+          'cream-muted': '#D4CFC4',
+        },
+        fontFamily: {
+          serif: ['Fraunces', 'serif'],
+          sans: ['Inter', 'sans-serif'],
+          mono: ['JetBrains Mono', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1F3A2E;
+    color: #F5EFE6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hairline { border-color: rgba(245, 239, 230, 0.12); }
+  .hairline-strong { border-color: rgba(245, 239, 230, 0.22); }
+  .data-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #D4CFC4; }
+  .grain {
+    background-image: radial-gradient(rgba(245,239,230,0.025) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+  .canister {
+    position: relative;
+    width: 240px;
+    height: 340px;
+    background: linear-gradient(180deg, #142A20 0%, #0F2018 100%);
+    border-radius: 18px;
+    border: 1px solid rgba(245, 239, 230, 0.14);
+    box-shadow:
+      0 30px 60px -20px rgba(0,0,0,0.6),
+      inset 0 1px 0 rgba(245,239,230,0.06),
+      inset 0 -40px 60px -40px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 16px;
+    overflow: hidden;
+  }
+  .canister-cap {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    height: 22px;
+    background: linear-gradient(180deg, #2A4538 0%, #1A3328 100%);
+    border-radius: 6px;
+    border: 1px solid rgba(245,239,230,0.12);
+    border-bottom: none;
+  }
+  .band { width: 100%; height: 6px; border-radius: 1px; margin: 8px 0 14px; }
+  .canister .lot {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: rgba(245,239,230,0.45);
+  }
+  .moody-img { filter: brightness(0.78) contrast(1.12) saturate(0.9); }
+  /* Star fill via masked overlay using terracotta */
+  .star { color: #C8765B; }
+  /* Scroll-aligned table styling */
+  .strain-table tr td { vertical-align: middle; }
+  .strain-table tr:nth-child(odd) td { background-color: rgba(20, 42, 32, 0.55); }
+  .strain-table tr:nth-child(even) td { background-color: rgba(20, 42, 32, 0.25); }
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgba(245,239,230,0.05) 1px, transparent 1px);
+    background-size: 8.333% 100%;
+  }
+  .pulse-dot {
+    width: 6px; height: 6px; border-radius: 999px; background: #E8B547;
+    box-shadow: 0 0 0 4px rgba(232, 181, 71, 0.18);
+    display: inline-block;
+  }
+  .ticker-track { animation: ticker 38s linear infinite; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  details summary { list-style: none; cursor: pointer; }
+  details summary::-webkit-details-marker { display: none; }
+  .underline-link { background-image: linear-gradient(to right, rgba(245,239,230,0.6), rgba(245,239,230,0.6)); background-size: 100% 1px; background-position: 0 100%; background-repeat: no-repeat; }
+  .underline-link:hover { background-image: linear-gradient(to right, #C8765B, #C8765B); }
+</style>
+</head>
+<body class="bg-forest text-cream">
+
+<!-- ============================== STICKY NAV ============================== -->
+<header class="sticky top-0 z-50 backdrop-blur bg-forest/80 border-b hairline">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-10">
+      <a href="#" class="flex items-center gap-2">
+        <!-- Mark -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-cream">
+          <path d="M12 3l2.5 5 5.5 1-4 4 1 5.5L12 16l-5 2.5 1-5.5-4-4 5.5-1L12 3z" />
+        </svg>
+        <span class="font-serif text-xl tracking-tight text-cream">PawBite</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-[13px] text-cream-muted">
+        <a href="#strains" class="hover:text-cream">Probiotic</a>
+        <a href="#joint" class="hover:text-cream">Hip + Joint</a>
+        <a href="#duo" class="hover:text-cream">Daily Duo</a>
+        <a href="#science" class="hover:text-cream">Science</a>
+        <a href="#reviews" class="hover:text-cream">Reviews</a>
+        <a href="#journal" class="hover:text-cream">Journal</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-5">
+      <span class="hidden md:flex items-center gap-2 text-[11px] font-mono uppercase tracking-widest text-cream-muted">
+        <span class="pulse-dot"></span> In stock — ships today
+      </span>
+      <button class="hidden sm:flex items-center gap-2 text-cream-muted hover:text-cream" aria-label="Cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 4h2l2.4 12.3a2 2 0 002 1.7h7.2a2 2 0 002-1.6L21 8H6"/>
+          <circle cx="9" cy="21" r="1"/><circle cx="18" cy="21" r="1"/>
+        </svg>
+        <span class="text-[12px] font-mono">0</span>
+      </button>
+      <a href="#products" class="bg-terracotta text-cream text-[13px] font-medium px-4 py-2 rounded-sm hover:opacity-90">Shop</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<section class="relative overflow-hidden grain border-b hairline">
+  <!-- Background grid lines -->
+  <div class="absolute inset-0 grid-lines opacity-60 pointer-events-none"></div>
+
+  <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-24 lg:pb-32">
+    <div class="flex items-center justify-between mb-12 lg:mb-16">
+      <div class="flex items-center gap-4">
+        <span class="data-label">PRODUCT 01 — DAILY PROBIOTIC</span>
+      </div>
+      <div class="hidden lg:flex items-center gap-6">
+        <span class="data-label">REV 2.4</span>
+        <span class="data-label">SKU PB-DPR-30</span>
+        <span class="data-label">UPDATED 05.15.26</span>
+      </div>
+    </div>
+
+    <h1 class="font-serif font-semibold tracking-tight text-cream leading-[0.92] text-[16vw] sm:text-[12vw] lg:text-[8.5rem] xl:text-[10rem]">
+      5 strains.<br/>
+      5B CFU.<br/>
+      <span class="text-terracotta">0 fluff.</span>
+    </h1>
+
+    <div class="mt-12 lg:mt-16 grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-6">
+        <p class="text-cream-muted text-lg leading-relaxed max-w-xl">
+          PawBite Daily Probiotic is a vet-formulated chew built on five clinically referenced strains. Every batch is third-party tested. Every label says exactly what's in it.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-3">
+          <a href="#products" class="bg-terracotta text-cream px-6 py-3.5 text-[13px] tracking-wide rounded-sm hover:opacity-90 inline-flex items-center gap-2">
+            Shop Daily — $32
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#strains" class="border hairline-strong text-cream px-6 py-3.5 text-[13px] tracking-wide rounded-sm hover:bg-forest-mid inline-flex items-center gap-2">
+            See the strain breakdown
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Stat callouts -->
+      <div class="lg:col-span-6 lg:pl-10 lg:border-l hairline">
+        <div class="grid grid-cols-3 gap-6">
+          <div>
+            <span class="data-label block">CFU PER CHEW</span>
+            <div class="font-mono text-cream text-2xl lg:text-3xl mt-2">5,000,000,000</div>
+            <div class="text-[11px] text-cream-muted mt-1 font-mono">±0.5B per assay</div>
+          </div>
+          <div>
+            <span class="data-label block">STRAINS</span>
+            <div class="font-mono text-cream text-2xl lg:text-3xl mt-2">05</div>
+            <div class="text-[11px] text-cream-muted mt-1 font-mono">named, no blends</div>
+          </div>
+          <div>
+            <span class="data-label block">DAILY SUPPLY</span>
+            <div class="font-mono text-cream text-2xl lg:text-3xl mt-2">30 d</div>
+            <div class="text-[11px] text-cream-muted mt-1 font-mono">1 chew / day</div>
+          </div>
+        </div>
+
+        <div class="mt-8 border-t hairline pt-6">
+          <div class="grid grid-cols-3 gap-6">
+            <div>
+              <span class="data-label block">3RD-PARTY TESTED</span>
+              <div class="font-mono text-warmyellow text-base mt-2">EVERY BATCH</div>
+            </div>
+            <div>
+              <span class="data-label block">MANUFACTURING</span>
+              <div class="font-mono text-warmyellow text-base mt-2">cGMP / USA</div>
+            </div>
+            <div>
+              <span class="data-label block">GUARANTEE</span>
+              <div class="font-mono text-warmyellow text-base mt-2">90-DAY MBG</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bottom rule with serial -->
+    <div class="mt-20 lg:mt-28 flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-cream-muted border-t hairline pt-4">
+      <span>FORMULATED BY DR. M. HAYES, DVM</span>
+      <span class="hidden md:inline">VERSION 2.4 — LOT 26-AC-118</span>
+      <span>SCROLL ↓</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TRUST STRIP ============================== -->
+<section class="border-b hairline bg-forest-deep/50">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-2">
+      <!-- Item -->
+      <div class="flex items-start gap-3">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="text-warmyellow shrink-0 mt-0.5"><path d="M12 2l3 6 6.5 1-4.7 4.6 1.1 6.4L12 17l-5.9 3 1.1-6.4L2.5 9 9 8z"/></svg>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-cream-muted">01</div>
+          <div class="text-[13px] text-cream leading-snug mt-0.5">Vet-formulated<br/><span class="text-cream-muted text-[11px]">Dr. M. Hayes, DVM</span></div>
+        </div>
+      </div>
+      <div class="flex items-start gap-3">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="text-warmyellow shrink-0 mt-0.5"><path d="M9 11l3 3 7-7"/><circle cx="12" cy="12" r="9"/></svg>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-cream-muted">02</div>
+          <div class="text-[13px] text-cream leading-snug mt-0.5">Third-party tested<br/><span class="text-cream-muted text-[11px]">every batch</span></div>
+        </div>
+      </div>
+      <div class="flex items-start gap-3">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="text-warmyellow shrink-0 mt-0.5"><rect x="3" y="6" width="18" height="14" rx="1"/><path d="M3 10h18M8 6V3M16 6V3"/></svg>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-cream-muted">03</div>
+          <div class="text-[13px] text-cream leading-snug mt-0.5">cGMP-certified<br/><span class="text-cream-muted text-[11px]">manufacturing</span></div>
+        </div>
+      </div>
+      <div class="flex items-start gap-3">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="text-warmyellow shrink-0 mt-0.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-cream-muted">04</div>
+          <div class="text-[13px] text-cream leading-snug mt-0.5">Made in the USA<br/><span class="text-cream-muted text-[11px]">Wisconsin facility</span></div>
+        </div>
+      </div>
+      <div class="flex items-start gap-3">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="text-warmyellow shrink-0 mt-0.5"><circle cx="12" cy="12" r="9"/><path d="M5 5l14 14"/></svg>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-cream-muted">05</div>
+          <div class="text-[13px] text-cream leading-snug mt-0.5">No artificial<br/><span class="text-cream-muted text-[11px]">colors, flavors, preservatives</span></div>
+        </div>
+      </div>
+      <div class="flex items-start gap-3">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="text-warmyellow shrink-0 mt-0.5"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="6"/></svg>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-cream-muted">06</div>
+          <div class="text-[13px] text-cream leading-snug mt-0.5">90-day guarantee<br/><span class="text-cream-muted text-[11px]">money back, no questions</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STRAIN TABLE — CENTERPIECE ============================== -->
+<section id="strains" class="border-b hairline">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+
+    <!-- Header -->
+    <div class="grid lg:grid-cols-12 gap-10 mb-16 lg:mb-20">
+      <div class="lg:col-span-7">
+        <span class="data-label">SECTION 01 / FORMULATION</span>
+        <h2 class="font-serif text-cream font-semibold leading-[0.95] tracking-tight text-5xl lg:text-7xl mt-5">
+          What's in every chew.
+        </h2>
+      </div>
+      <div class="lg:col-span-5 lg:pt-12">
+        <p class="text-cream-muted text-base leading-relaxed">
+          Five strains, named by their study designation. All third-party tested. No proprietary blends, no rounding up, no hand-waving. Each strain delivers a specified colony-forming-unit count at the label dose.
+        </p>
+      </div>
+    </div>
+
+    <!-- Table header -->
+    <div class="border-t hairline-strong">
+      <table class="w-full strain-table border-collapse">
+        <thead>
+          <tr class="border-b hairline-strong">
+            <th class="text-left py-4 px-4 lg:px-6 font-mono text-[10px] uppercase tracking-widest text-cream-muted">Strain</th>
+            <th class="text-left py-4 px-4 lg:px-6 font-mono text-[10px] uppercase tracking-widest text-cream-muted hidden md:table-cell">CFU</th>
+            <th class="text-left py-4 px-4 lg:px-6 font-mono text-[10px] uppercase tracking-widest text-cream-muted">Role</th>
+            <th class="text-left py-4 px-4 lg:px-6 font-mono text-[10px] uppercase tracking-widest text-cream-muted hidden lg:table-cell">Study Reference</th>
+          </tr>
+        </thead>
+        <tbody class="text-[13.5px]">
+          <tr class="border-b hairline">
+            <td class="py-5 px-4 lg:px-6">
+              <span class="font-mono text-cream text-[13px]">Bacillus coagulans GBI-30, 6086</span>
+              <div class="md:hidden mt-1 font-mono text-warmyellow text-[12px]">1B CFU</div>
+            </td>
+            <td class="py-5 px-4 lg:px-6 hidden md:table-cell font-mono text-warmyellow">1B</td>
+            <td class="py-5 px-4 lg:px-6 text-cream">Gut barrier integrity</td>
+            <td class="py-5 px-4 lg:px-6 hidden lg:table-cell font-mono italic text-cream-muted text-[12px]">Kalman et al., 2009</td>
+          </tr>
+          <tr class="border-b hairline">
+            <td class="py-5 px-4 lg:px-6">
+              <span class="font-mono text-cream text-[13px]">Bifidobacterium animalis subsp. lactis BB-12</span>
+              <div class="md:hidden mt-1 font-mono text-warmyellow text-[12px]">1B CFU</div>
+            </td>
+            <td class="py-5 px-4 lg:px-6 hidden md:table-cell font-mono text-warmyellow">1B</td>
+            <td class="py-5 px-4 lg:px-6 text-cream">Stool consistency</td>
+            <td class="py-5 px-4 lg:px-6 hidden lg:table-cell font-mono italic text-cream-muted text-[12px]">Eskesen et al., 2015</td>
+          </tr>
+          <tr class="border-b hairline">
+            <td class="py-5 px-4 lg:px-6">
+              <span class="font-mono text-cream text-[13px]">Lactobacillus acidophilus LA-5</span>
+              <div class="md:hidden mt-1 font-mono text-warmyellow text-[12px]">1B CFU</div>
+            </td>
+            <td class="py-5 px-4 lg:px-6 hidden md:table-cell font-mono text-warmyellow">1B</td>
+            <td class="py-5 px-4 lg:px-6 text-cream">Pathogen exclusion</td>
+            <td class="py-5 px-4 lg:px-6 hidden lg:table-cell font-mono italic text-cream-muted text-[12px]">Saggioro, 2004</td>
+          </tr>
+          <tr class="border-b hairline">
+            <td class="py-5 px-4 lg:px-6">
+              <span class="font-mono text-cream text-[13px]">Lactobacillus plantarum 299v</span>
+              <div class="md:hidden mt-1 font-mono text-warmyellow text-[12px]">1B CFU</div>
+            </td>
+            <td class="py-5 px-4 lg:px-6 hidden md:table-cell font-mono text-warmyellow">1B</td>
+            <td class="py-5 px-4 lg:px-6 text-cream">SCFA production</td>
+            <td class="py-5 px-4 lg:px-6 hidden lg:table-cell font-mono italic text-cream-muted text-[12px]">Nobaek et al., 2000</td>
+          </tr>
+          <tr>
+            <td class="py-5 px-4 lg:px-6">
+              <span class="font-mono text-cream text-[13px]">Lactobacillus rhamnosus GG</span>
+              <div class="md:hidden mt-1 font-mono text-warmyellow text-[12px]">1B CFU</div>
+            </td>
+            <td class="py-5 px-4 lg:px-6 hidden md:table-cell font-mono text-warmyellow">1B</td>
+            <td class="py-5 px-4 lg:px-6 text-cream">Immune modulation</td>
+            <td class="py-5 px-4 lg:px-6 hidden lg:table-cell font-mono italic text-cream-muted text-[12px]">Hatakka et al., 2001</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="border-t hairline-strong">
+            <td colspan="4" class="py-6 px-4 lg:px-6 text-cream-muted italic text-[13px]">
+              Plus chicory inulin (200mg) and pumpkin powder (250mg) for prebiotic support and digestibility.
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <!-- Below: COA / lot info -->
+    <div class="mt-10 grid md:grid-cols-3 gap-6 text-[12px] font-mono">
+      <div class="border hairline rounded-sm p-5">
+        <div class="data-label mb-2">CURRENT BATCH</div>
+        <div class="text-cream">LOT 26-AC-118</div>
+        <div class="text-cream-muted text-[11px] mt-1">manufactured 04.22.26</div>
+      </div>
+      <div class="border hairline rounded-sm p-5">
+        <div class="data-label mb-2">CFU AT EXPIRY</div>
+        <div class="text-cream">5.4 × 10⁹</div>
+        <div class="text-cream-muted text-[11px] mt-1">verified 24-mo shelf-life</div>
+      </div>
+      <div class="border hairline rounded-sm p-5">
+        <div class="data-label mb-2">CONTAMINANT PANEL</div>
+        <div class="text-warmyellow">PASS — NDL</div>
+        <div class="text-cream-muted text-[11px] mt-1">heavy metals, microbial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PRODUCT SHOWCASE — SPEC SHEETS ============================== -->
+<section id="products" class="border-b hairline bg-forest-deep/40">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+
+    <div class="flex items-end justify-between mb-16 lg:mb-20 border-b hairline pb-10">
+      <div>
+        <span class="data-label">SECTION 02 / PRODUCTS</span>
+        <h2 class="font-serif text-cream font-semibold leading-[0.95] tracking-tight text-5xl lg:text-6xl mt-4">
+          Three SKUs.<br/>One standard.
+        </h2>
+      </div>
+      <span class="hidden lg:block data-label">03 / 03</span>
+    </div>
+
+    <!-- ====== PRODUCT 01 — DAILY PROBIOTIC ====== -->
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start py-16 border-b hairline">
+      <!-- Left: canister -->
+      <div class="lg:col-span-5 flex flex-col items-center">
+        <div class="text-[10px] font-mono uppercase tracking-widest text-cream-muted mb-6">PRODUCT 01 / DAILY PROBIOTIC</div>
+        <div class="canister">
+          <div class="canister-cap"></div>
+          <div class="font-serif text-cream text-sm mt-4">PawBite</div>
+          <div class="band" style="background: linear-gradient(90deg, #E8B547 0%, #D4A03C 100%);"></div>
+          <div class="text-[10px] font-mono uppercase tracking-widest text-cream-muted">Product 01</div>
+          <div class="font-serif text-cream text-3xl leading-tight text-center mt-3">Daily<br/>Probiotic</div>
+          <div class="mt-auto pb-12">
+            <div class="text-center">
+              <div class="font-mono text-warmyellow text-xs">5B CFU · 5 STRAINS</div>
+              <div class="text-[10px] font-mono uppercase tracking-widest text-cream-muted mt-2">30 SOFT CHEWS</div>
+            </div>
+          </div>
+          <div class="lot">LOT 26-AC-118 / BATCH CERTIFIED</div>
+        </div>
+        <div class="mt-6 text-[10px] font-mono uppercase tracking-widest text-cream-muted">SKU PB-DPR-30</div>
+      </div>
+
+      <!-- Right: spec -->
+      <div class="lg:col-span-7">
+        <h3 class="font-serif text-5xl lg:text-6xl text-cream font-semibold tracking-tight leading-[0.95]">Daily Probiotic</h3>
+        <p class="text-cream-muted text-base mt-4 max-w-xl">A vet-formulated chew with five clinically referenced strains, plus chicory inulin and pumpkin powder for prebiotic support.</p>
+
+        <!-- Spec table -->
+        <div class="mt-10 border-t hairline">
+          <dl class="divide-y divide-[rgba(245,239,230,0.08)]">
+            <div class="grid grid-cols-12 gap-4 py-3.5">
+              <dt class="col-span-5 font-mono text-[11px] uppercase tracking-widest text-cream-muted self-center">Format</dt>
+              <dd class="col-span-7 font-mono text-cream text-[13px] self-center">Soft chew, chicken-flavor</dd>
+            </div>
+            <div class="grid grid-cols-12 gap-4 py-3.5">
+              <dt class="col-span-5 font-mono text-[11px] uppercase tracking-widest text-cream-muted self-center">CFU per chew</dt>
+              <dd class="col-span-7 font-mono text-cream text-[13px] self-center">5,000,000,000</dd>
+            </div>
+            <div class="grid grid-cols-12 gap-4 py-3.5">
+              <dt class="col-span-5 font-mono text-[11px] uppercase tracking-widest text-cream-muted self-center">Strains</dt>
+              <dd class="col-span-7 font-mono text-cream text-[13px] self-center">5 (named, no blends)</dd>
+            </div>
+            <div class="grid grid-cols-12 gap-4 py-3.5">
+              <dt class="col-span-5 font-mono text-[11px] uppercase tracking-widest text-cream-muted self-center">Prebiotics</dt>
+              <dd class="col-span-7 font-mono text-cream text-[13px] self-center">Inulin 200mg · Pumpkin 250mg</dd>
+            </div>
+            <div class="grid grid-cols-12 gap-4 py-3.5">
+              <dt class="col-span-5 font-mono text-[11px] uppercase tracking-widest text-cream-muted self-center">Daily dose</dt>
+              <dd class="col-span-7 font-mono text-cream text-[13px] self-center">1 chew · all dog sizes</dd>
+            </div>
+            <div class="grid grid-cols-12 gap-4 py-3.5">
+              <dt class="col-span-5 font-mono text-[11px] uppercase tracking-widest text-cream-muted self-center">Count</dt>
+              <dd class="col-span-7 font-mono text-cream text-[13px] self-center">30 chews / 30-day supply</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Price -->
+        <div class="mt-10 flex items-end gap-6 border-t hairline pt-8">
+          <div>
+            <div class="data-label mb-1">ONE-TIME</div>
+            <div class="font-serif text-cream text-5xl">$32</div>
+          </div>
+          <div class="border-l hairline pl-6">
+            <div class="data-label mb-1">SUBSCRIBE & SAVE 20%</div>
+            <div class="font-serif text-cream text-3xl">$26<span class="text-base text-cream-muted font-mono align-middle"> / mo</span></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#" class="bg-terracotta text-cream px-6 py-3 text-[13px] tracking-wide rounded-sm hover:opacity-90">Shop Daily Probiotic</a>
+          <a href="#science" class="border hairline-strong text-cream px-6 py-3 text-[13px] tracking-wide rounded-sm hover:bg-forest-mid">Read the science →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== PRODUCT 02 — HIP + JOINT ====== -->
+    <div id="joint" class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start py-16 border-b hairline">
+      <!-- Right side first on desktop (flip layout) -->
+      <div class="lg:col-span-7 lg:order-2">
+        <h3 class="font-serif text-5xl lg:text-6xl text-cream font-semibold tracking-tight leading-[0.95]">Hip + Joint</h3>
+        <p class="text-cream-muted text-base mt-4 max-w-xl">Seven active ingredients dosed at clinically referenced levels — glucosamine, chondroitin, MSM, green-lipped mussel, turmeric, hyaluronic acid, and salmon oil.</p>
+
+        <div class="mt-10 border-t hairline">
+          <dl class="divide-y divide-[rgba(245,239,230,0.08)]">
+            <div class="grid grid-cols-12 gap-4 py-3">
+              <dt class="col-span-6 font-mono text-[11px] uppercase tracking-widest text-cream-muted self-center">Glucosamine HCl</dt>
+              <dd class="col-span-6 font-mono text-warmyellow text-[13px] self-center text-right">500 mg</dd>
+            </div>
+            <div class="grid grid-cols-12 gap-4 py-3">
+              <dt class="col-span-6 font-mono text-[11px] uppercase tracking-widest text-cream-muted self-center">Chondroitin sulfate</dt>
+              <dd class="col-span-6 font-mono text-warmyellow text-[13px] self-center text-right">400 mg</dd>
+            </div>
+            <div class="grid grid-cols-12 gap-4 py-3">
+              <dt class="col-span-6 font-mono text-[11px] uppercase tracking-widest text-cream-muted self-center">MSM</dt>
+              <dd class="col-span-6 font-mono text-warmyellow text-[13px] self-center text-right">250 mg</dd>
+            </div>
+            <div class="grid grid-cols-12 gap-4 py-3">
+              <dt class="col-span-6 font-mono text-[11px] uppercase tracking-widest text-cream-muted self-center">Green-lipped mussel</dt>
+              <dd class="col-span-6 font-mono text-warmyellow text-[13px] self-center text-right">150 mg</dd>
+            </div>
+            <div class="grid grid-cols-12 gap-4 py-3">
+              <dt class="col-span-6 font-mono text-[11px] uppercase tracking-widest text-cream-muted self-center">Turmeric (curcumin std.)</dt>
+              <dd class="col-span-6 font-mono text-warmyellow text-[13px] self-center text-right">100 mg</dd>
+            </div>
+            <div class="grid grid-cols-12 gap-4 py-3">
+              <dt class="col-span-6 font-mono text-[11px] uppercase tracking-widest text-cream-muted self-center">Hyaluronic acid</dt>
+              <dd class="col-span-6 font-mono text-warmyellow text-[13px] self-center text-right">10 mg</dd>
+            </div>
+            <div class="grid grid-cols-12 gap-4 py-3">
+              <dt class="col-span-6 font-mono text-[11px] uppercase tracking-widest text-cream-muted self-center">Salmon oil ω-3 (EPA/DHA)</dt>
+              <dd class="col-span-6 font-mono text-warmyellow text-[13px] self-center text-right">50 mg</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="mt-10 flex items-end gap-6 border-t hairline pt-8">
+          <div>
+            <div class="data-label mb-1">ONE-TIME</div>
+            <div class="font-serif text-cream text-5xl">$38</div>
+          </div>
+          <div class="border-l hairline pl-6">
+            <div class="data-label mb-1">SUBSCRIBE & SAVE 20%</div>
+            <div class="font-serif text-cream text-3xl">$30<span class="text-base text-cream-muted font-mono align-middle"> / mo</span></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#" class="bg-terracotta text-cream px-6 py-3 text-[13px] tracking-wide rounded-sm hover:opacity-90">Shop Hip + Joint</a>
+          <a href="#science" class="border hairline-strong text-cream px-6 py-3 text-[13px] tracking-wide rounded-sm hover:bg-forest-mid">Read the science →</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 lg:order-1 flex flex-col items-center">
+        <div class="text-[10px] font-mono uppercase tracking-widest text-cream-muted mb-6">PRODUCT 02 / HIP + JOINT</div>
+        <div class="canister">
+          <div class="canister-cap"></div>
+          <div class="font-serif text-cream text-sm mt-4">PawBite</div>
+          <div class="band" style="background: linear-gradient(90deg, #C8765B 0%, #A45B45 100%);"></div>
+          <div class="text-[10px] font-mono uppercase tracking-widest text-cream-muted">Product 02</div>
+          <div class="font-serif text-cream text-3xl leading-tight text-center mt-3">Hip<br/>+ Joint</div>
+          <div class="mt-auto pb-12">
+            <div class="text-center">
+              <div class="font-mono text-terracotta text-xs">7 ACTIVES · 1,460 MG</div>
+              <div class="text-[10px] font-mono uppercase tracking-widest text-cream-muted mt-2">60 SOFT CHEWS</div>
+            </div>
+          </div>
+          <div class="lot">LOT 26-HJ-204 / BATCH CERTIFIED</div>
+        </div>
+        <div class="mt-6 text-[10px] font-mono uppercase tracking-widest text-cream-muted">SKU PB-HJT-60</div>
+      </div>
+    </div>
+
+    <!-- ====== PRODUCT 03 — DAILY DUO ====== -->
+    <div id="duo" class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start py-16">
+      <div class="lg:col-span-5 flex flex-col items-center">
+        <div class="text-[10px] font-mono uppercase tracking-widest text-cream-muted mb-6">PRODUCT 03 / DAILY DUO BUNDLE</div>
+        <div class="relative">
+          <div class="canister" style="transform: translateX(-22px) rotate(-3deg);">
+            <div class="canister-cap"></div>
+            <div class="font-serif text-cream text-sm mt-4">PawBite</div>
+            <div class="band" style="background: linear-gradient(90deg, #E8B547 0%, #D4A03C 100%);"></div>
+            <div class="text-[10px] font-mono uppercase tracking-widest text-cream-muted">Product 01</div>
+            <div class="font-serif text-cream text-3xl leading-tight text-center mt-3">Daily<br/>Probiotic</div>
+            <div class="mt-auto pb-12">
+              <div class="text-center">
+                <div class="font-mono text-warmyellow text-xs">5B CFU</div>
+                <div class="text-[10px] font-mono uppercase tracking-widest text-cream-muted mt-2">30 SOFT CHEWS</div>
+              </div>
+            </div>
+            <div class="lot">LOT 26-AC-118</div>
+          </div>
+          <div class="canister absolute top-0 left-0 ml-32" style="transform: translateX(22px) rotate(3deg); background: linear-gradient(180deg, #1A3328 0%, #142A20 100%);">
+            <div class="canister-cap"></div>
+            <div class="font-serif text-cream text-sm mt-4">PawBite</div>
+            <div class="band" style="background: linear-gradient(90deg, #C8765B 0%, #A45B45 100%);"></div>
+            <div class="text-[10px] font-mono uppercase tracking-widest text-cream-muted">Product 02</div>
+            <div class="font-serif text-cream text-3xl leading-tight text-center mt-3">Hip<br/>+ Joint</div>
+            <div class="mt-auto pb-12">
+              <div class="text-center">
+                <div class="font-mono text-terracotta text-xs">7 ACTIVES</div>
+                <div class="text-[10px] font-mono uppercase tracking-widest text-cream-muted mt-2">60 SOFT CHEWS</div>
+              </div>
+            </div>
+            <div class="lot">LOT 26-HJ-204</div>
+          </div>
+        </div>
+        <div class="mt-6 text-[10px] font-mono uppercase tracking-widest text-cream-muted">SKU PB-DUO-90</div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <h3 class="font-serif text-5xl lg:text-6xl text-cream font-semibold tracking-tight leading-[0.95]">The Daily Duo</h3>
+        <p class="text-cream-muted text-base mt-4 max-w-xl">Daily Probiotic and Hip + Joint, paired. The full coverage stack — gut, immunity, mobility, recovery — at a 32% discount versus buying separately.</p>
+
+        <!-- Math callout -->
+        <div class="mt-10 border hairline rounded-sm p-6 bg-forest">
+          <div class="data-label mb-4">BUNDLE MATH</div>
+          <div class="grid grid-cols-3 gap-4 font-mono text-[13px]">
+            <div class="text-cream-muted">Daily Probiotic</div>
+            <div class="text-cream text-right">$32.00</div>
+            <div class="text-cream-muted text-right text-[11px]">30 chews</div>
+
+            <div class="text-cream-muted">Hip + Joint</div>
+            <div class="text-cream text-right">$38.00</div>
+            <div class="text-cream-muted text-right text-[11px]">60 chews</div>
+
+            <div class="col-span-3 border-t hairline pt-3 grid grid-cols-3 gap-4">
+              <div class="text-cream-muted">Subtotal</div>
+              <div class="text-cream text-right line-through opacity-60">$70.00</div>
+              <div class="text-warmyellow text-right text-[11px]">— 32%</div>
+            </div>
+
+            <div class="col-span-3 grid grid-cols-3 gap-4 mt-1">
+              <div class="text-cream font-medium">Bundle</div>
+              <div class="text-warmyellow text-right text-base">$47.60</div>
+              <div class="text-cream-muted text-right text-[11px]">/ month sub</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 flex items-end gap-6 border-t hairline pt-8">
+          <div>
+            <div class="data-label mb-1">ONE-TIME</div>
+            <div class="font-serif text-cream text-5xl">$70</div>
+          </div>
+          <div class="border-l hairline pl-6">
+            <div class="data-label mb-1">SUBSCRIBE — SAVE 32%</div>
+            <div class="font-serif text-warmyellow text-3xl">$47.60<span class="text-base text-cream-muted font-mono align-middle"> / mo</span></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#" class="bg-terracotta text-cream px-6 py-3 text-[13px] tracking-wide rounded-sm hover:opacity-90">Shop the Duo</a>
+          <a href="#" class="border hairline-strong text-cream px-6 py-3 text-[13px] tracking-wide rounded-sm hover:bg-forest-mid">Compare plans →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== HOW IT WORKS — INFOGRAPHIC ============================== -->
+<section id="science" class="border-b hairline">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+
+    <div class="grid lg:grid-cols-12 gap-10 mb-16 lg:mb-20">
+      <div class="lg:col-span-7">
+        <span class="data-label">SECTION 03 / MECHANISM</span>
+        <h2 class="font-serif text-cream font-semibold leading-[0.95] tracking-tight text-5xl lg:text-7xl mt-5">
+          What 5 billion CFUs<br/>actually do.
+        </h2>
+      </div>
+      <div class="lg:col-span-5 lg:pt-12">
+        <p class="text-cream-muted text-base leading-relaxed">
+          Beneficial bacteria don't work by magic. They survive, colonize, and produce. Here's the three-step pathway from chew to gut wall.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3 step grid -->
+    <div class="grid md:grid-cols-3 border-t hairline-strong border-l">
+      <!-- Step 01 -->
+      <div class="border-b border-r hairline-strong p-8 lg:p-10 relative">
+        <div class="flex items-start justify-between mb-10">
+          <span class="data-label">STEP 01</span>
+          <span class="font-mono text-cream-muted text-[10px]">T = 0–60 min</span>
+        </div>
+        <div class="mb-8">
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" class="text-warmyellow">
+            <path d="M32 6c-8 0-14 6-14 14v6c0 6 4 10 4 16v10c0 4 4 6 10 6s10-2 10-6V42c0-6 4-10 4-16v-6c0-8-6-14-14-14z"/>
+            <path d="M22 26c4-2 16-2 20 0M22 36c4-2 16-2 20 0"/>
+            <circle cx="28" cy="20" r="1.2" fill="currentColor"/>
+            <circle cx="36" cy="22" r="1.2" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-cream text-2xl leading-tight">Survive stomach acid.</h3>
+        <p class="text-cream-muted text-sm leading-relaxed mt-3">
+          Strains are selected and microencapsulated to survive low-pH gastric conditions and reach the small intestine alive.
+        </p>
+        <div class="mt-6 font-mono text-[11px] text-cream-muted border-t hairline pt-4 flex justify-between">
+          <span>pH 2.0 → 6.5</span>
+          <span class="text-warmyellow">≥ 90% viability</span>
+        </div>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="border-b border-r hairline-strong p-8 lg:p-10 relative">
+        <div class="flex items-start justify-between mb-10">
+          <span class="data-label">STEP 02</span>
+          <span class="font-mono text-cream-muted text-[10px]">T = 1–24 hr</span>
+        </div>
+        <div class="mb-8">
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" class="text-warmyellow">
+            <path d="M6 32h52M14 24l6 8-6 8M50 24l-6 8 6 8"/>
+            <circle cx="22" cy="32" r="3"/><circle cx="32" cy="32" r="3"/><circle cx="42" cy="32" r="3"/>
+            <path d="M22 12v6M32 12v6M42 12v6M22 46v6M32 46v6M42 46v6"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-cream text-2xl leading-tight">Colonize the gut wall.</h3>
+        <p class="text-cream-muted text-sm leading-relaxed mt-3">
+          Probiotics adhere to the intestinal mucosa, occupy binding sites, and outcompete opportunistic pathogens.
+        </p>
+        <div class="mt-6 font-mono text-[11px] text-cream-muted border-t hairline pt-4 flex justify-between">
+          <span>colonies × 10⁶/g</span>
+          <span class="text-warmyellow">+ adhesion 4–8×</span>
+        </div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="border-b hairline-strong p-8 lg:p-10 relative">
+        <div class="flex items-start justify-between mb-10">
+          <span class="data-label">STEP 03</span>
+          <span class="font-mono text-cream-muted text-[10px]">T = 24+ hr</span>
+        </div>
+        <div class="mb-8">
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" class="text-warmyellow">
+            <path d="M32 8v12M22 18l5 6M42 18l-5 6M14 32h12M50 32H38M22 46l5-6M42 46l-5-6M32 56V44"/>
+            <circle cx="32" cy="32" r="6"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-cream text-2xl leading-tight">Produce SCFAs.</h3>
+        <p class="text-cream-muted text-sm leading-relaxed mt-3">
+          Fermentation of fibers produces short-chain fatty acids — butyrate, acetate, propionate — which support epithelial cells, stool quality, and immune signaling.
+        </p>
+        <div class="mt-6 font-mono text-[11px] text-cream-muted border-t hairline pt-4 flex justify-between">
+          <span>butyrate ↑</span>
+          <span class="text-warmyellow">+ immune IL-10 ↑</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Below: dog photo -->
+    <div class="mt-16 grid lg:grid-cols-12 gap-10 items-center border-t hairline pt-16">
+      <div class="lg:col-span-7">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1600&q=80" alt="Golden retriever" class="w-full h-[420px] object-cover rounded-sm moody-img"/>
+      </div>
+      <div class="lg:col-span-5">
+        <span class="data-label">FORMULATOR'S NOTE</span>
+        <blockquote class="font-serif text-cream text-3xl lg:text-4xl leading-tight tracking-tight mt-5">
+          "Naming the strain matters. CFU at expiry matters. A blend label that just says 'probiotic blend, 5B CFU' tells you nothing about what your dog is actually getting."
+        </blockquote>
+        <div class="mt-8 flex items-center gap-4 border-t hairline pt-6">
+          <div class="w-10 h-10 rounded-full bg-forest-mid flex items-center justify-center font-serif text-cream">H</div>
+          <div>
+            <div class="text-cream text-[14px]">Dr. M. Hayes, DVM</div>
+            <div class="font-mono text-[11px] text-cream-muted uppercase tracking-widest">Lead formulator · 14 yrs in canine nutrition</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== REVIEWS ============================== -->
+<section id="reviews" class="border-b hairline bg-forest-deep/40">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+
+    <div class="flex items-end justify-between mb-12 lg:mb-16 border-b hairline pb-10">
+      <div>
+        <span class="data-label">SECTION 04 / VERIFIED REVIEWS</span>
+        <h2 class="font-serif text-cream font-semibold leading-[0.95] tracking-tight text-5xl lg:text-6xl mt-4">
+          What customers report.
+        </h2>
+      </div>
+      <div class="hidden md:flex items-end gap-6">
+        <div>
+          <div class="data-label">AVG RATING</div>
+          <div class="font-mono text-warmyellow text-2xl mt-1">4.87 / 5.00</div>
+        </div>
+        <div>
+          <div class="data-label">REVIEWS</div>
+          <div class="font-mono text-cream text-2xl mt-1">2,841</div>
+        </div>
+        <div>
+          <div class="data-label">REPURCHASE</div>
+          <div class="font-mono text-cream text-2xl mt-1">78%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-px bg-[rgba(245,239,230,0.08)]">
+      <!-- Review 01 -->
+      <div class="bg-forest p-8 lg:p-10">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex gap-1 star">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+          </div>
+          <div class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-warmyellow">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            VERIFIED
+          </div>
+        </div>
+        <h4 class="font-serif text-cream text-xl leading-snug">"Stool quality changed in week two."</h4>
+        <p class="text-cream-muted text-[14px] leading-relaxed mt-4">Started Daily Probiotic for our 4-yr-old border collie after IBD flare-ups. By week two, stool consistency was noticeably better. Three months in, no flare-ups. The strain transparency is what got me to try it.</p>
+        <div class="mt-8 pt-6 border-t hairline">
+          <div class="text-cream text-[13px]">Sarah K.</div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-cream-muted mt-1">Verified purchase: Daily Probiotic, 3 months</div>
+          <div class="font-mono text-[10px] text-cream-muted mt-1">Posted 04.18.26 · Dog: Border Collie, 4 yr</div>
+        </div>
+      </div>
+
+      <!-- Review 02 -->
+      <div class="bg-forest p-8 lg:p-10">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex gap-1 star">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+          </div>
+          <div class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-warmyellow">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            VERIFIED
+          </div>
+        </div>
+        <h4 class="font-serif text-cream text-xl leading-snug">"He's getting on the couch again."</h4>
+        <p class="text-cream-muted text-[14px] leading-relaxed mt-4">Our lab is 11. Started Hip + Joint after his last vet visit flagged early arthritis. The dosing on the chondroitin and MSM is on par with what our vet recommended separately. After ~6 weeks he's jumping on the couch unprompted again.</p>
+        <div class="mt-8 pt-6 border-t hairline">
+          <div class="text-cream text-[13px]">Marcus T.</div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-cream-muted mt-1">Verified purchase: Hip + Joint, 6 weeks</div>
+          <div class="font-mono text-[10px] text-cream-muted mt-1">Posted 04.02.26 · Dog: Labrador, 11 yr</div>
+        </div>
+      </div>
+
+      <!-- Review 03 -->
+      <div class="bg-forest p-8 lg:p-10">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex gap-1 star">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+          </div>
+          <div class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-warmyellow">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            VERIFIED
+          </div>
+        </div>
+        <h4 class="font-serif text-cream text-xl leading-snug">"The Duo is what I should have started with."</h4>
+        <p class="text-cream-muted text-[14px] leading-relaxed mt-4">Subscribed to the Daily Duo for our shepherd mix. Vet appointment last month — bloodwork normal, joint mobility scored higher than the prior visit. The CoA they publish per batch is the kind of detail I look for.</p>
+        <div class="mt-8 pt-6 border-t hairline">
+          <div class="text-cream text-[13px]">Priya R.</div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-cream-muted mt-1">Verified purchase: Daily Duo, 4 months</div>
+          <div class="font-mono text-[10px] text-cream-muted mt-1">Posted 03.27.26 · Dog: Shepherd Mix, 7 yr</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats ticker -->
+    <div class="mt-12 border-t hairline pt-8 overflow-hidden">
+      <div class="flex gap-12 ticker-track whitespace-nowrap font-mono text-[11px] uppercase tracking-widest text-cream-muted">
+        <span>· 4.87 / 5 average rating</span>
+        <span>· 2,841 verified reviews</span>
+        <span>· 78% repurchase rate</span>
+        <span>· 0 reported adverse events</span>
+        <span>· avg subscription duration: 8.3 months</span>
+        <span>· 92% of dogs finish the chew</span>
+        <span>· 4.87 / 5 average rating</span>
+        <span>· 2,841 verified reviews</span>
+        <span>· 78% repurchase rate</span>
+        <span>· 0 reported adverse events</span>
+        <span>· avg subscription duration: 8.3 months</span>
+        <span>· 92% of dogs finish the chew</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== JOURNAL / EDUCATIONAL ============================== -->
+<section id="journal" class="border-b hairline">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+
+    <div class="flex items-end justify-between mb-16 border-b hairline pb-10">
+      <div>
+        <span class="data-label">SECTION 05 / JOURNAL</span>
+        <h2 class="font-serif text-cream font-semibold leading-[0.95] tracking-tight text-5xl lg:text-6xl mt-4">
+          From the lab.
+        </h2>
+      </div>
+      <a href="#" class="hidden md:inline-block underline-link text-cream text-[13px] font-mono uppercase tracking-widest">View all →</a>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-12">
+      <article class="border-t hairline-strong pt-6">
+        <div class="flex items-center justify-between mb-6">
+          <span class="data-label">METHOD · 8 MIN READ</span>
+          <span class="data-label">04.30.26</span>
+        </div>
+        <h3 class="font-serif text-cream text-2xl lg:text-3xl leading-tight tracking-tight">
+          Why CFU at manufacture is meaningless without CFU at expiry.
+        </h3>
+        <p class="text-cream-muted text-[14px] leading-relaxed mt-4">
+          A breakdown of the difference between manufacture-date claims, label claims, and shelf-life-end CFU — and why we publish all three.
+        </p>
+        <a href="#" class="inline-flex items-center gap-2 text-cream text-[13px] font-mono uppercase tracking-widest mt-6 underline-link">
+          Read the full method
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <article class="border-t hairline-strong pt-6">
+        <div class="flex items-center justify-between mb-6">
+          <span class="data-label">RESEARCH · 12 MIN READ</span>
+          <span class="data-label">04.14.26</span>
+        </div>
+        <h3 class="font-serif text-cream text-2xl lg:text-3xl leading-tight tracking-tight">
+          Glucosamine HCl vs. sulfate: which form actually reaches synovial fluid in canines.
+        </h3>
+        <p class="text-cream-muted text-[14px] leading-relaxed mt-4">
+          A literature review of the two dominant glucosamine forms, their bioavailability differences, and why we landed on HCl at 500mg per chew.
+        </p>
+        <a href="#" class="inline-flex items-center gap-2 text-cream text-[13px] font-mono uppercase tracking-widest mt-6 underline-link">
+          Read the full review
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <article class="border-t hairline-strong pt-6">
+        <div class="flex items-center justify-between mb-6">
+          <span class="data-label">QC · 6 MIN READ</span>
+          <span class="data-label">03.22.26</span>
+        </div>
+        <h3 class="font-serif text-cream text-2xl lg:text-3xl leading-tight tracking-tight">
+          What "third-party tested" actually means — and what most brands hide.
+        </h3>
+        <p class="text-cream-muted text-[14px] leading-relaxed mt-4">
+          A walkthrough of our batch-by-batch QC: heavy metals panel, microbial assay, identity testing, and the contaminants almost no one tests for.
+        </p>
+        <a href="#" class="inline-flex items-center gap-2 text-cream text-[13px] font-mono uppercase tracking-widest mt-6 underline-link">
+          Read the QC protocol
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA STRIP ============================== -->
+<section class="border-b hairline bg-forest-deep">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 items-end">
+      <div class="lg:col-span-8">
+        <span class="data-label">START THE PROTOCOL</span>
+        <h2 class="font-serif text-cream font-semibold leading-[0.95] tracking-tight text-5xl lg:text-7xl mt-4">
+          One chew. <span class="text-terracotta">Ninety days</span> to know.
+        </h2>
+        <p class="text-cream-muted text-base mt-6 max-w-xl">
+          Try the Daily Duo for 90 days. If your dog doesn't show measurable improvement, return it for a full refund — no questions, no return shipping.
+        </p>
+      </div>
+      <div class="lg:col-span-4 flex flex-col gap-3">
+        <a href="#products" class="bg-terracotta text-cream px-6 py-4 text-[14px] tracking-wide rounded-sm hover:opacity-90 inline-flex items-center justify-between">
+          Start the Daily Duo — $47.60/mo
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#strains" class="border hairline-strong text-cream px-6 py-4 text-[14px] tracking-wide rounded-sm hover:bg-forest-mid inline-flex items-center justify-between">
+          Review the formulation
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="bg-forest-deep">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 pt-16 lg:pt-20 pb-10">
+
+    <!-- top row -->
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-10 lg:gap-8 border-b hairline pb-12">
+      <div class="col-span-2">
+        <a href="#" class="flex items-center gap-2">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-cream">
+            <path d="M12 3l2.5 5 5.5 1-4 4 1 5.5L12 16l-5 2.5 1-5.5-4-4 5.5-1L12 3z"/>
+          </svg>
+          <span class="font-serif text-xl text-cream">PawBite</span>
+        </a>
+        <p class="text-cream-muted text-[13px] mt-5 max-w-sm leading-relaxed">
+          Vet-formulated dog supplements. Third-party tested. Made in Wisconsin in a cGMP-certified facility. No proprietary blends.
+        </p>
+        <div class="mt-6 flex items-center gap-3">
+          <span class="pulse-dot"></span>
+          <span class="font-mono text-[10px] uppercase tracking-widest text-cream-muted">Lot 26-AC-118 currently shipping</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="data-label mb-5">PRODUCTS</div>
+        <ul class="space-y-3 text-[13px] text-cream-muted">
+          <li><a href="#" class="hover:text-cream">Daily Probiotic</a></li>
+          <li><a href="#" class="hover:text-cream">Hip + Joint</a></li>
+          <li><a href="#" class="hover:text-cream">Daily Duo</a></li>
+          <li><a href="#" class="hover:text-cream">Subscriptions</a></li>
+          <li><a href="#" class="hover:text-cream">Gift cards</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="data-label mb-5">SCIENCE</div>
+        <ul class="space-y-3 text-[13px] text-cream-muted">
+          <li><a href="#" class="hover:text-cream">Strain library</a></li>
+          <li><a href="#" class="hover:text-cream">Formulation notes</a></li>
+          <li><a href="#" class="hover:text-cream">Batch CoAs</a></li>
+          <li><a href="#" class="hover:text-cream">QC protocol</a></li>
+          <li><a href="#" class="hover:text-cream">Journal</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="data-label mb-5">SUPPORT</div>
+        <ul class="space-y-3 text-[13px] text-cream-muted">
+          <li><a href="#" class="hover:text-cream">Contact</a></li>
+          <li><a href="#" class="hover:text-cream">Shipping</a></li>
+          <li><a href="#" class="hover:text-cream">Returns</a></li>
+          <li><a href="#" class="hover:text-cream">90-day guarantee</a></li>
+          <li><a href="#" class="hover:text-cream">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="data-label mb-5">COMPANY</div>
+        <ul class="space-y-3 text-[13px] text-cream-muted">
+          <li><a href="#" class="hover:text-cream">About</a></li>
+          <li><a href="#" class="hover:text-cream">Vet team</a></li>
+          <li><a href="#" class="hover:text-cream">Press</a></li>
+          <li><a href="#" class="hover:text-cream">Wholesale</a></li>
+          <li><a href="#" class="hover:text-cream">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- bottom -->
+    <div class="pt-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-widest text-cream-muted">
+        <span>© 2026 PawBite Co.</span>
+        <a href="#" class="hover:text-cream">Privacy</a>
+        <a href="#" class="hover:text-cream">Terms</a>
+        <a href="#" class="hover:text-cream">Cookie settings</a>
+        <a href="#" class="hover:text-cream">Accessibility</a>
+        <a href="#" class="hover:text-cream">Do not sell my info</a>
+      </div>
+      <div class="flex items-center gap-6 font-mono text-[11px] uppercase tracking-widest text-cream-muted">
+        <span>v 2.4 — 05.15.26</span>
+        <span class="hidden sm:inline">Made in Madison, WI</span>
+        <div class="flex items-center gap-3">
+          <a href="#" aria-label="Instagram" class="hover:text-cream"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Twitter" class="hover:text-cream"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 5.8a8.5 8.5 0 01-2.4.7 4.2 4.2 0 001.8-2.3 8.4 8.4 0 01-2.7 1A4.2 4.2 0 0011.4 9c0 .3 0 .6.1.9A12 12 0 013 4.6a4.2 4.2 0 001.3 5.6 4.2 4.2 0 01-1.9-.5v.1a4.2 4.2 0 003.4 4.1 4.2 4.2 0 01-1.9.1 4.2 4.2 0 003.9 2.9A8.4 8.4 0 012 18.6 12 12 0 008.3 20c7.7 0 12-6.4 12-12v-.5A8.6 8.6 0 0022 5.8z"/></svg></a>
+          <a href="#" aria-label="YouTube" class="hover:text-cream"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- micro disclaimer -->
+    <div class="mt-10 pt-6 border-t hairline">
+      <p class="text-[10px] font-mono uppercase tracking-widest text-cream-muted leading-relaxed max-w-3xl">
+        Statements have not been evaluated by the FDA. PawBite supplements are not intended to diagnose, treat, cure, or prevent any disease. Consult your veterinarian before starting any new supplement.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

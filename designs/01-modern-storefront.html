@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PawBite — The good stuff your dog needs. Nothing weird.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#F5EFE6',
+          forest: '#1F3A2E',
+          terracotta: '#C8765B',
+          warmyellow: '#E8B547',
+          offwhite: '#FAFAFA',
+          charcoal: '#2A2A2A',
+        },
+        fontFamily: {
+          serif: ['Fraunces', 'serif'],
+          sans: ['Inter', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: #F5EFE6; color: #2A2A2A; }
+  .font-serif { font-family: 'Fraunces', serif; }
+
+  /* Canister mockup */
+  .canister {
+    position: relative;
+    width: 200px;
+    height: 280px;
+    background: linear-gradient(180deg, #ffffff 0%, #FAFAFA 50%, #f3eee5 100%);
+    border-radius: 18px 18px 22px 22px / 36px 36px 22px 22px;
+    box-shadow:
+      0 30px 50px -20px rgba(31, 58, 46, 0.25),
+      0 12px 20px -8px rgba(31, 58, 46, 0.18),
+      inset -8px 0 18px -8px rgba(0,0,0,0.06),
+      inset 8px 0 18px -8px rgba(255,255,255,0.9);
+    overflow: hidden;
+  }
+  .canister::before {
+    /* Lid highlight */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 22px;
+    background: linear-gradient(180deg, #f0e9dc 0%, #faf6ee 100%);
+    border-bottom: 1px solid rgba(31,58,46,0.07);
+    border-radius: 18px 18px 0 0;
+  }
+  .canister::after {
+    /* Side highlight gloss */
+    content: '';
+    position: absolute;
+    top: 22px; left: 12px;
+    width: 18px; bottom: 8px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0));
+    border-radius: 18px;
+    pointer-events: none;
+  }
+  .canister-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 32px 18px 16px;
+  }
+  .band {
+    position: absolute;
+    left: 0; right: 0;
+    top: 38%;
+    height: 38%;
+    z-index: 1;
+  }
+  .band::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.08) 100%);
+  }
+
+  /* Hero photo overlay */
+  .hero-image-wrap {
+    background-image: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .lifestyle-image {
+    background-image: url('https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Star rating */
+  .stars { color: #E8B547; letter-spacing: 1px; }
+
+  /* Subtle hover on cards */
+  .product-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .product-card:hover { transform: translateY(-4px); box-shadow: 0 30px 60px -30px rgba(31,58,46,0.3); }
+
+  /* Marquee-style trust strip */
+  .trust-divider { width: 1px; height: 18px; background: rgba(31,58,46,0.18); }
+
+  /* Soft section divider */
+  .wave-top {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(31,58,46,0.04) 0%, transparent 60%);
+  }
+</style>
+</head>
+<body class="bg-cream text-charcoal antialiased">
+
+<!-- =================== STICKY NAV =================== -->
+<header class="sticky top-0 z-50 bg-cream/85 backdrop-blur border-b border-forest/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2">
+      <span class="font-serif font-bold text-2xl text-forest tracking-tight">PawBite</span>
+    </a>
+
+    <!-- Nav links -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-forest">
+      <a href="#shop" class="hover:text-terracotta transition">Shop</a>
+      <a href="#quiz" class="hover:text-terracotta transition">Quiz</a>
+      <a href="#learn" class="hover:text-terracotta transition">Learn</a>
+      <a href="#about" class="hover:text-terracotta transition">About</a>
+    </nav>
+
+    <div class="flex items-center gap-3 sm:gap-4">
+      <!-- Cart icon -->
+      <button aria-label="Cart" class="relative p-2 text-forest hover:text-terracotta transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="absolute -top-0.5 -right-0.5 bg-terracotta text-white text-[10px] font-semibold rounded-full w-4 h-4 flex items-center justify-center">2</span>
+      </button>
+
+      <!-- CTA -->
+      <a href="#quiz" class="hidden sm:inline-flex items-center gap-2 bg-terracotta text-white text-sm font-semibold px-4 py-2.5 rounded-full hover:bg-[#b9684e] transition shadow-sm">
+        Take the Quiz
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- =================== HERO =================== -->
+<section class="relative bg-cream overflow-hidden">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-0">
+    <!-- LEFT: copy block -->
+    <div class="lg:col-span-5 px-6 sm:px-10 lg:px-12 py-14 lg:py-24 flex items-center order-2 lg:order-1">
+      <div class="max-w-lg">
+        <p class="font-serif italic text-forest/80 text-base lg:text-lg mb-5">Vet-formulated daily essentials</p>
+        <h1 class="font-serif text-forest text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.02] tracking-tight">
+          The good stuff your dog needs. <span class="italic text-terracotta">Nothing weird.</span>
+        </h1>
+        <p class="mt-6 text-lg text-charcoal/80 leading-relaxed">
+          Two chews. Two big jobs. Everything else can wait.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <a href="#quiz" class="inline-flex items-center justify-center gap-2 bg-terracotta hover:bg-[#b9684e] text-white font-semibold px-6 py-3.5 rounded-full transition shadow-md shadow-terracotta/20">
+            Take the Quiz
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#shop" class="inline-flex items-center justify-center gap-2 border-2 border-forest text-forest font-semibold px-6 py-3.5 rounded-full hover:bg-forest hover:text-cream transition">
+            Shop the line
+          </a>
+        </div>
+
+        <p class="mt-6 text-xs sm:text-sm text-forest/70 font-medium tracking-wide">
+          Vet-formulated <span class="mx-2 text-forest/30">•</span> 90-day guarantee <span class="mx-2 text-forest/30">•</span> Free ship over $40
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT: lifestyle image -->
+    <div class="lg:col-span-7 relative min-h-[360px] lg:min-h-[640px] order-1 lg:order-2">
+      <div class="hero-image-wrap absolute inset-0 lg:rounded-bl-[80px]"></div>
+      <!-- Floating product chip -->
+      <div class="hidden md:flex absolute bottom-8 left-8 items-center gap-3 bg-white/95 backdrop-blur px-4 py-3 rounded-2xl shadow-xl">
+        <div class="w-10 h-10 rounded-full bg-warmyellow flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F3A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-wider text-forest/60 font-semibold">Best seller</p>
+          <p class="font-serif text-forest font-semibold">Daily Probiotic</p>
+        </div>
+      </div>
+      <!-- Floating reviews chip -->
+      <div class="hidden md:flex absolute top-8 right-8 items-center gap-3 bg-white/95 backdrop-blur px-4 py-3 rounded-2xl shadow-xl">
+        <div class="stars text-base">★★★★★</div>
+        <div>
+          <p class="text-xs text-forest/60">10,000+ reviews</p>
+          <p class="text-sm font-semibold text-forest">4.9 average</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== TRUST STRIP =================== -->
+<section class="bg-forest text-cream/90">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
+    <div class="flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A5.2 5.2 0 0 1 12 5a5.2 5.2 0 0 1 8 5.2C20 17.5 12 22 12 22Z"/></svg>
+      <span class="font-medium">Vet-formulated</span>
+    </div>
+    <div class="trust-divider hidden sm:block"></div>
+    <div class="flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9.4 8 10 4.5-.6 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+      <span class="font-medium">90-day money-back guarantee</span>
+    </div>
+    <div class="trust-divider hidden sm:block"></div>
+    <div class="flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      <span class="font-medium">Free shipping over $40</span>
+    </div>
+    <div class="trust-divider hidden sm:block"></div>
+    <div class="flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span class="font-medium">Third-party tested</span>
+    </div>
+    <div class="trust-divider hidden sm:block"></div>
+    <div class="flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 12 2l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>
+      <span class="font-medium">Made in the USA, cGMP-certified</span>
+    </div>
+  </div>
+</section>
+
+<!-- =================== WHY PAWBITE =================== -->
+<section id="about" class="py-20 lg:py-28 wave-top">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <p class="font-serif italic text-terracotta mb-3">Why PawBite</p>
+      <h2 class="font-serif text-forest text-4xl lg:text-5xl font-bold leading-tight">
+        Less marketing fluff. More of what actually works.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+      <!-- Col 1 -->
+      <div class="text-center md:text-left">
+        <div class="w-14 h-14 rounded-2xl bg-warmyellow/20 flex items-center justify-center mb-5 mx-auto md:mx-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1F3A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-forest mb-2">Real ingredients, no fluff</h3>
+        <p class="text-charcoal/75 leading-relaxed">
+          We start with what's been studied, then formulate at doses that actually do something. No mystery blends, no kitchen-sink labels.
+        </p>
+      </div>
+
+      <!-- Col 2 -->
+      <div class="text-center md:text-left">
+        <div class="w-14 h-14 rounded-2xl bg-terracotta/15 flex items-center justify-center mb-5 mx-auto md:mx-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8765B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v6.5a3.5 3.5 0 0 1-7 0V2"/><path d="M11 8.5a4 4 0 0 0 4 4 4 4 0 0 0 4-4"/><path d="M19 8.5V14a4 4 0 0 1-4 4h0a4 4 0 0 1-4-4v-1.5"/><circle cx="19" cy="6.5" r="2"/></svg>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-forest mb-2">Vet-formulated</h3>
+        <p class="text-charcoal/75 leading-relaxed">
+          Every formula is built with veterinary nutritionists, not just signed off on. We name our advisors and publish the doses on the label.
+        </p>
+      </div>
+
+      <!-- Col 3 -->
+      <div class="text-center md:text-left">
+        <div class="w-14 h-14 rounded-2xl bg-forest/10 flex items-center justify-center mb-5 mx-auto md:mx-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1F3A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A5.2 5.2 0 0 1 12 5a5.2 5.2 0 0 1 8 5.2C20 17.5 12 22 12 22Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-forest mb-2">90-day guarantee</h3>
+        <p class="text-charcoal/75 leading-relaxed">
+          Try it for three months. If your dog isn't into it, or you don't see a difference, we'll refund every cent. Keep the bag.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PRODUCT SHOWCASE =================== -->
+<section id="shop" class="py-20 lg:py-28 bg-offwhite">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-6">
+      <div class="max-w-xl">
+        <p class="font-serif italic text-terracotta mb-3">Shop the line</p>
+        <h2 class="font-serif text-forest text-4xl lg:text-5xl font-bold leading-tight">Two chews. One simple stack.</h2>
+      </div>
+      <p class="text-charcoal/70 max-w-md">
+        Start with the gut. Add hip + joint when your dog turns four (or starts moving like they did). Save 32% with the Daily Duo.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+
+      <!-- ========= DAILY PROBIOTIC ========= -->
+      <article class="product-card bg-cream rounded-3xl p-6 sm:p-8 flex flex-col">
+        <div class="rounded-2xl bg-gradient-to-b from-warmyellow/30 to-warmyellow/5 p-6 mb-6 flex items-center justify-center min-h-[320px]">
+          <!-- Canister -->
+          <div class="canister">
+            <div class="band" style="background:#E8B547;"></div>
+            <div class="canister-inner">
+              <div class="text-center">
+                <p class="font-serif text-forest text-[11px] tracking-[0.2em] font-bold uppercase">PawBite</p>
+              </div>
+              <div class="relative z-10 text-center">
+                <p class="font-serif font-bold text-forest text-2xl leading-tight">Daily<br/>Probiotic</p>
+                <p class="font-serif italic text-forest/80 text-xs mt-1">chicken flavor</p>
+              </div>
+              <div class="text-center">
+                <p class="text-forest/80 text-[9px] tracking-[0.18em] font-bold uppercase">30 Soft Chews</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-[10px] uppercase tracking-wider font-semibold bg-warmyellow/30 text-forest px-2 py-1 rounded-full">Best seller</span>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-forest mb-1">Daily Probiotic</h3>
+        <p class="text-sm text-charcoal/70 mb-4">5 strains, 5 billion CFU + chicory inulin and pumpkin. Start with the gut.</p>
+
+        <div class="flex items-baseline gap-2 mb-1">
+          <span class="font-serif text-2xl font-bold text-forest">$26</span>
+          <span class="text-sm text-charcoal/50 line-through">$32</span>
+          <span class="text-xs font-semibold text-terracotta">Save 20%</span>
+        </div>
+        <p class="text-xs text-charcoal/60 mb-5">with Subscribe & Save</p>
+
+        <div class="flex gap-2 mt-auto">
+          <button class="flex-1 bg-terracotta hover:bg-[#b9684e] text-white font-semibold py-3 rounded-full text-sm transition">Add to cart</button>
+          <button class="border-2 border-forest text-forest font-semibold py-3 px-4 rounded-full text-sm hover:bg-forest hover:text-cream transition">Subscribe</button>
+        </div>
+      </article>
+
+      <!-- ========= HIP + JOINT ========= -->
+      <article class="product-card bg-cream rounded-3xl p-6 sm:p-8 flex flex-col">
+        <div class="rounded-2xl bg-gradient-to-b from-terracotta/25 to-terracotta/5 p-6 mb-6 flex items-center justify-center min-h-[320px]">
+          <div class="canister">
+            <div class="band" style="background:#C8765B;"></div>
+            <div class="canister-inner">
+              <div class="text-center">
+                <p class="font-serif text-forest text-[11px] tracking-[0.2em] font-bold uppercase">PawBite</p>
+              </div>
+              <div class="relative z-10 text-center">
+                <p class="font-serif font-bold text-white text-2xl leading-tight">Hip <span class="font-light">+</span><br/>Joint</p>
+                <p class="font-serif italic text-white/90 text-xs mt-1">duck flavor</p>
+              </div>
+              <div class="text-center">
+                <p class="text-forest/80 text-[9px] tracking-[0.18em] font-bold uppercase">60 Soft Chews</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-[10px] uppercase tracking-wider font-semibold bg-terracotta/15 text-terracotta px-2 py-1 rounded-full">For active dogs</span>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-forest mb-1">Hip + Joint</h3>
+        <p class="text-sm text-charcoal/70 mb-4">Glucosamine, chondroitin, MSM, green-lipped mussel + omega-3. Built to keep moving.</p>
+
+        <div class="flex items-baseline gap-2 mb-1">
+          <span class="font-serif text-2xl font-bold text-forest">$30</span>
+          <span class="text-sm text-charcoal/50 line-through">$38</span>
+          <span class="text-xs font-semibold text-terracotta">Save 21%</span>
+        </div>
+        <p class="text-xs text-charcoal/60 mb-5">with Subscribe & Save</p>
+
+        <div class="flex gap-2 mt-auto">
+          <button class="flex-1 bg-terracotta hover:bg-[#b9684e] text-white font-semibold py-3 rounded-full text-sm transition">Add to cart</button>
+          <button class="border-2 border-forest text-forest font-semibold py-3 px-4 rounded-full text-sm hover:bg-forest hover:text-cream transition">Subscribe</button>
+        </div>
+      </article>
+
+      <!-- ========= DAILY DUO BUNDLE ========= -->
+      <article class="product-card relative bg-forest text-cream rounded-3xl p-6 sm:p-8 flex flex-col shadow-2xl shadow-forest/20">
+        <span class="absolute -top-3 right-6 bg-warmyellow text-forest font-bold text-xs px-3 py-1.5 rounded-full shadow-lg">Save 32%</span>
+
+        <div class="rounded-2xl bg-cream/10 p-6 mb-6 flex items-center justify-center min-h-[320px] relative">
+          <!-- Two stacked canisters -->
+          <div class="relative flex items-end gap-3">
+            <div class="canister" style="transform: rotate(-6deg) translateY(8px); width: 150px; height: 220px;">
+              <div class="band" style="background:#E8B547;"></div>
+              <div class="canister-inner" style="padding: 24px 12px 12px;">
+                <div class="text-center"><p class="font-serif text-forest text-[9px] tracking-[0.2em] font-bold uppercase">PawBite</p></div>
+                <div class="relative z-10 text-center">
+                  <p class="font-serif font-bold text-forest text-base leading-tight">Daily<br/>Probiotic</p>
+                </div>
+                <div class="text-center"><p class="text-forest/80 text-[8px] tracking-[0.15em] font-bold uppercase">30 Chews</p></div>
+              </div>
+            </div>
+            <div class="canister" style="transform: rotate(6deg); width: 150px; height: 220px;">
+              <div class="band" style="background:#C8765B;"></div>
+              <div class="canister-inner" style="padding: 24px 12px 12px;">
+                <div class="text-center"><p class="font-serif text-forest text-[9px] tracking-[0.2em] font-bold uppercase">PawBite</p></div>
+                <div class="relative z-10 text-center">
+                  <p class="font-serif font-bold text-white text-base leading-tight">Hip <span class="font-light">+</span><br/>Joint</p>
+                </div>
+                <div class="text-center"><p class="text-forest/80 text-[8px] tracking-[0.15em] font-bold uppercase">60 Chews</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-[10px] uppercase tracking-wider font-semibold bg-warmyellow/25 text-warmyellow px-2 py-1 rounded-full">Best value</span>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-cream mb-1">The Daily Duo</h3>
+        <p class="text-sm text-cream/80 mb-4">Both chews, one shipment, one easy routine. The full stack at a friendlier price.</p>
+
+        <div class="flex items-baseline gap-2 mb-1">
+          <span class="font-serif text-2xl font-bold text-warmyellow">$47.60</span>
+          <span class="text-sm text-cream/50 line-through">$70</span>
+        </div>
+        <p class="text-xs text-cream/70 mb-5">bundle + Subscribe & Save</p>
+
+        <div class="flex gap-2 mt-auto">
+          <button class="flex-1 bg-warmyellow hover:bg-[#d6a338] text-forest font-semibold py-3 rounded-full text-sm transition">Add to cart</button>
+          <button class="border-2 border-cream text-cream font-semibold py-3 px-4 rounded-full text-sm hover:bg-cream hover:text-forest transition">Subscribe</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== REVIEWS =================== -->
+<section class="py-20 lg:py-28 bg-cream">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="stars text-2xl mb-3">★★★★★</div>
+      <p class="font-serif italic text-terracotta mb-3">10,000+ five-star reviews</p>
+      <h2 class="font-serif text-forest text-4xl lg:text-5xl font-bold leading-tight">
+        Loved by dogs. Trusted by humans.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+      <!-- Review 1 -->
+      <div class="bg-white rounded-3xl p-7 lg:p-8 shadow-sm border border-forest/5">
+        <div class="stars text-lg mb-4">★★★★★</div>
+        <p class="font-serif text-xl text-forest leading-snug mb-6">
+          "Three weeks in and the gas situation is, frankly, life-changing for everyone in this house."
+        </p>
+        <div class="flex items-center gap-3 pt-4 border-t border-forest/10">
+          <div class="w-10 h-10 rounded-full bg-warmyellow/30 flex items-center justify-center font-serif font-bold text-forest">M</div>
+          <div>
+            <p class="font-semibold text-forest text-sm">Maya R.</p>
+            <p class="text-xs text-charcoal/60">Bowie, 4 — Border Collie mix</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="bg-white rounded-3xl p-7 lg:p-8 shadow-sm border border-forest/5">
+        <div class="stars text-lg mb-4">★★★★★</div>
+        <p class="font-serif text-xl text-forest leading-snug mb-6">
+          "He used to hesitate before the stairs. Now he beats me to the top. About six weeks on Hip + Joint."
+        </p>
+        <div class="flex items-center gap-3 pt-4 border-t border-forest/10">
+          <div class="w-10 h-10 rounded-full bg-terracotta/20 flex items-center justify-center font-serif font-bold text-forest">D</div>
+          <div>
+            <p class="font-semibold text-forest text-sm">Devon T.</p>
+            <p class="text-xs text-charcoal/60">Otis, 9 — Golden Retriever</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="bg-white rounded-3xl p-7 lg:p-8 shadow-sm border border-forest/5">
+        <div class="stars text-lg mb-4">★★★★★</div>
+        <p class="font-serif text-xl text-forest leading-snug mb-6">
+          "She thinks they're treats. I think they're a small miracle. The Duo is the only subscription I haven't canceled."
+        </p>
+        <div class="flex items-center gap-3 pt-4 border-t border-forest/10">
+          <div class="w-10 h-10 rounded-full bg-forest/15 flex items-center justify-center font-serif font-bold text-forest">A</div>
+          <div>
+            <p class="font-semibold text-forest text-sm">Anika P.</p>
+            <p class="text-xs text-charcoal/60">Pickle, 6 — French Bulldog</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== EDUCATIONAL TEASER =================== -->
+<section id="learn" class="py-20 lg:py-28 bg-offwhite">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-6">
+      <div>
+        <p class="font-serif italic text-terracotta mb-3">From the Learn library</p>
+        <h2 class="font-serif text-forest text-4xl lg:text-5xl font-bold leading-tight">Plain-English answers from real vets.</h2>
+      </div>
+      <a href="#" class="inline-flex items-center gap-2 text-forest font-semibold hover:text-terracotta transition">
+        Browse all articles
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+
+      <!-- Article 1 -->
+      <a href="/learn" class="group block bg-cream rounded-3xl overflow-hidden hover:shadow-xl transition">
+        <div class="aspect-[4/3] bg-warmyellow/30 relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#1F3A2E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+          </div>
+        </div>
+        <div class="p-6 lg:p-7">
+          <p class="text-xs uppercase tracking-wider text-terracotta font-semibold mb-2">Gut health</p>
+          <h3 class="font-serif text-xl lg:text-2xl font-bold text-forest leading-snug mb-3 group-hover:text-terracotta transition">
+            Signs your dog needs a probiotic
+          </h3>
+          <p class="text-sm text-charcoal/70">A short checklist for the things you've been writing off as normal.</p>
+          <p class="mt-4 text-sm font-semibold text-forest inline-flex items-center gap-1">Read more <span class="group-hover:translate-x-1 transition">→</span></p>
+        </div>
+      </a>
+
+      <!-- Article 2 -->
+      <a href="/learn" class="group block bg-cream rounded-3xl overflow-hidden hover:shadow-xl transition">
+        <div class="aspect-[4/3] bg-terracotta/20 relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#C8765B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="opacity-80"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+        </div>
+        <div class="p-6 lg:p-7">
+          <p class="text-xs uppercase tracking-wider text-terracotta font-semibold mb-2">Joint health</p>
+          <h3 class="font-serif text-xl lg:text-2xl font-bold text-forest leading-snug mb-3 group-hover:text-terracotta transition">
+            How long until joint chews start working?
+          </h3>
+          <p class="text-sm text-charcoal/70">A realistic timeline, by ingredient, with what to look for week by week.</p>
+          <p class="mt-4 text-sm font-semibold text-forest inline-flex items-center gap-1">Read more <span class="group-hover:translate-x-1 transition">→</span></p>
+        </div>
+      </a>
+
+      <!-- Article 3 -->
+      <a href="/learn" class="group block bg-cream rounded-3xl overflow-hidden hover:shadow-xl transition">
+        <div class="aspect-[4/3] bg-forest/10 relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#1F3A2E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M8 15s1.5 2 4 2 4-2 4-2"/></svg>
+          </div>
+        </div>
+        <div class="p-6 lg:p-7">
+          <p class="text-xs uppercase tracking-wider text-terracotta font-semibold mb-2">FAQ</p>
+          <h3 class="font-serif text-xl lg:text-2xl font-bold text-forest leading-snug mb-3 group-hover:text-terracotta transition">
+            Is my dog's poop normal? A color guide
+          </h3>
+          <p class="text-sm text-charcoal/70">An honest, slightly squeamish guide to what each color is trying to tell you.</p>
+          <p class="mt-4 text-sm font-semibold text-forest inline-flex items-center gap-1">Read more <span class="group-hover:translate-x-1 transition">→</span></p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== QUIZ / NEWSLETTER =================== -->
+<section id="quiz" class="py-20 lg:py-28 bg-cream">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-2 rounded-[2rem] overflow-hidden shadow-xl shadow-forest/15 bg-forest text-cream">
+
+      <!-- Left: Quiz -->
+      <div class="p-8 sm:p-10 lg:p-14 relative">
+        <p class="font-serif italic text-warmyellow mb-3">2-minute quiz</p>
+        <h2 class="font-serif text-cream text-3xl lg:text-5xl font-bold leading-[1.05] mb-4">
+          Not sure where to start?
+        </h2>
+        <p class="text-cream/80 mb-7 max-w-md leading-relaxed">
+          Tell us about your dog. We'll point you to the chew (or chews) that match. No email required to see the result.
+        </p>
+        <a href="#" class="inline-flex items-center gap-2 bg-terracotta hover:bg-[#b9684e] text-white font-semibold px-6 py-3.5 rounded-full transition">
+          Take the Quiz
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+
+        <div class="mt-10 pt-8 border-t border-cream/15 max-w-md">
+          <p class="font-serif text-xl text-cream mb-2">Or just keep in touch.</p>
+          <p class="text-cream/70 text-sm mb-4">Get the Learn library straight to your inbox. One email a week, never more.</p>
+          <form class="flex flex-col sm:flex-row gap-2">
+            <input type="email" placeholder="your@email.com" class="flex-1 px-4 py-3 rounded-full bg-cream/10 text-cream placeholder-cream/50 border border-cream/20 focus:outline-none focus:border-warmyellow focus:bg-cream/15 transition" />
+            <button type="submit" class="bg-warmyellow hover:bg-[#d6a338] text-forest font-semibold px-5 py-3 rounded-full transition">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right: Image -->
+      <div class="lifestyle-image min-h-[320px] lg:min-h-0 relative">
+        <div class="absolute bottom-6 right-6 bg-cream/95 text-forest px-4 py-3 rounded-2xl shadow-lg max-w-[200px]">
+          <p class="font-serif italic text-sm">Most dogs match in</p>
+          <p class="font-serif text-2xl font-bold">2 minutes</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="bg-forest text-cream/85">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-20">
+
+    <!-- Subscribe-and-save callout -->
+    <div class="bg-cream/8 border border-cream/15 rounded-3xl p-6 sm:p-8 mb-14 flex flex-col md:flex-row items-center justify-between gap-5">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-warmyellow flex items-center justify-center shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F3A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.49 0 4.74 1 6.36 2.64L21 8"/><path d="M21 3v5h-5"/></svg>
+        </div>
+        <div>
+          <p class="font-serif text-cream text-xl font-bold leading-snug">Subscribe & Save up to 32%</p>
+          <p class="text-cream/70 text-sm">Skip, swap, or cancel anytime. Always free shipping.</p>
+        </div>
+      </div>
+      <a href="#shop" class="bg-terracotta hover:bg-[#b9684e] text-white font-semibold px-5 py-3 rounded-full transition">Start a subscription</a>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-10">
+      <!-- Brand col -->
+      <div class="col-span-2">
+        <p class="font-serif text-cream font-bold text-3xl mb-4">PawBite</p>
+        <p class="text-cream/70 text-sm max-w-xs leading-relaxed mb-6">
+          Vet-formulated daily essentials. Made in the USA, third-party tested, dog-approved.
+        </p>
+        <!-- Social icons -->
+        <div class="flex items-center gap-3">
+          <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-cream/25 flex items-center justify-center hover:bg-cream/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok" class="w-9 h-9 rounded-full border border-cream/25 flex items-center justify-center hover:bg-cream/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-cream/25 flex items-center justify-center hover:bg-cream/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full border border-cream/25 flex items-center justify-center hover:bg-cream/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Shop -->
+      <div>
+        <p class="font-serif text-cream font-bold text-sm uppercase tracking-wider mb-4">Shop</p>
+        <ul class="space-y-2.5 text-sm text-cream/75">
+          <li><a href="#" class="hover:text-warmyellow transition">Daily Probiotic</a></li>
+          <li><a href="#" class="hover:text-warmyellow transition">Hip + Joint</a></li>
+          <li><a href="#" class="hover:text-warmyellow transition">The Daily Duo</a></li>
+          <li><a href="#" class="hover:text-warmyellow transition">Subscribe & Save</a></li>
+          <li><a href="#" class="hover:text-warmyellow transition">Gift cards</a></li>
+        </ul>
+      </div>
+
+      <!-- Learn -->
+      <div>
+        <p class="font-serif text-cream font-bold text-sm uppercase tracking-wider mb-4">Learn</p>
+        <ul class="space-y-2.5 text-sm text-cream/75">
+          <li><a href="#" class="hover:text-warmyellow transition">Gut health 101</a></li>
+          <li><a href="#" class="hover:text-warmyellow transition">Joint health 101</a></li>
+          <li><a href="#" class="hover:text-warmyellow transition">Ingredient library</a></li>
+          <li><a href="#" class="hover:text-warmyellow transition">Vet advisors</a></li>
+          <li><a href="#" class="hover:text-warmyellow transition">All articles</a></li>
+        </ul>
+      </div>
+
+      <!-- Help -->
+      <div>
+        <p class="font-serif text-cream font-bold text-sm uppercase tracking-wider mb-4">Help</p>
+        <ul class="space-y-2.5 text-sm text-cream/75">
+          <li><a href="#" class="hover:text-warmyellow transition">Contact us</a></li>
+          <li><a href="#" class="hover:text-warmyellow transition">Manage subscription</a></li>
+          <li><a href="#" class="hover:text-warmyellow transition">Shipping & returns</a></li>
+          <li><a href="#" class="hover:text-warmyellow transition">90-day guarantee</a></li>
+          <li><a href="#" class="hover:text-warmyellow transition">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-cream/15 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-cream/60">
+      <p>© 2026 PawBite, Inc. Made for dogs in Brooklyn, NY.</p>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 justify-center">
+        <a href="#" class="hover:text-cream transition">Privacy</a>
+        <a href="#" class="hover:text-cream transition">Terms</a>
+        <a href="#" class="hover:text-cream transition">Accessibility</a>
+        <a href="#" class="hover:text-cream transition">Do not sell my info</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
