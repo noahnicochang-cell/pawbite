@@ -1,25 +1,97 @@
-import { HeroSection } from '@/components/sections/hero';
-import { TrustStrip } from '@/components/sections/trust-strip';
-import { PromisesSection } from '@/components/sections/promises';
-import { LoveSection } from '@/components/sections/love-section';
-import { StatBand } from '@/components/sections/stat-band';
-import { ProductShowcase } from '@/components/sections/product-showcase';
-import { TestimonialsSection } from '@/components/sections/testimonials';
-import { JournalTeaser } from '@/components/sections/journal-teaser';
-import { NewsletterSection } from '@/components/sections/newsletter';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Canister } from '@/components/brand/canister';
+import { Container } from '@/components/layout/container';
+import { Section } from '@/components/layout/section';
 
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
-      <TrustStrip />
-      <PromisesSection />
-      <LoveSection />
-      <StatBand />
-      <ProductShowcase />
-      <TestimonialsSection />
-      <JournalTeaser />
-      <NewsletterSection />
+      <style>{`@keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }`}</style>
+
+      <Section className="bg-cream">
+        <div className="bg-forest text-cream">
+          <Container className="flex items-center justify-center py-3 text-center">
+            <p className="font-sans text-xs uppercase tracking-[0.3em] font-semibold">
+              GET THE STARTER PACK + 30% OFF YOUR FIRST ORDER
+            </p>
+          </Container>
+        </div>
+
+        <Container className="grid gap-12 py-16 lg:grid-cols-[1.3fr_0.9fr] lg:items-center">
+          <div className="space-y-8">
+            <Badge variant="forest" className="text-[11px] tracking-[0.28em] font-semibold">
+              NEW RELEASE · PB-01
+            </Badge>
+
+            <div className="space-y-5">
+              <h1 className="font-sans text-5xl font-bold uppercase leading-tight tracking-tight text-charcoal sm:text-6xl lg:text-7xl">
+                <span className="block">PROBIOTIC</span>
+                <span className="block font-serif fraunces-soft italic text-5xl sm:text-6xl lg:text-7xl">chews</span>
+                <span className="block">FOR DOGS.</span>
+              </h1>
+              <p className="font-sans text-base uppercase tracking-[0.24em] text-forest sm:text-lg">
+                One bite. Real gut support.
+              </p>
+            </div>
+
+            <p className="max-w-2xl text-base leading-7 text-charcoal font-sans">
+              7-strain targeted probiotic protocol, clinically formulated to support your dog&apos;s gut health.
+            </p>
+
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <Button variant="primary" size="lg" className="rounded-full px-8 py-4">
+                SHOP NOW — $30
+              </Button>
+              <span className="font-sans text-sm uppercase tracking-[0.22em] text-forest">
+                30-day supply · Free US shipping
+              </span>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 text-forest">
+              <span className="text-2xl font-mono tracking-[0.15em]">★★★★★</span>
+              <span className="font-mono text-sm uppercase tracking-[0.24em] text-forest">
+                4.9 · 8,420 happy tails
+              </span>
+            </div>
+          </div>
+
+          <div className="relative mx-auto flex w-full max-w-md flex-col items-center justify-center gap-6">
+            <div className="relative w-full rounded-[32px] border border-forest/10 bg-cream p-6 shadow-soft">
+              <div className="absolute left-0 top-0 ml-3 -translate-y-1">
+                <Badge variant="forest" className="text-[11px] tracking-[0.24em] font-semibold">
+                  ★ BESTSELLER
+                </Badge>
+              </div>
+              <div className="absolute right-0 top-0 mr-3 -translate-y-1">
+                <Badge variant="warmyellow" className="text-[11px] tracking-[0.24em] font-semibold text-forest">
+                  $30 / MONTH
+                </Badge>
+              </div>
+              <div className="flex justify-center pt-8">
+                <Canister name="Gut Blend" tagline="Daily probiotic" bandColor="forest" size="lg" />
+              </div>
+            </div>
+            <Button variant="outline" size="sm" className="rounded-full px-10 py-3">
+              GUT
+            </Button>
+          </div>
+        </Container>
+
+        <div className="overflow-hidden border-t border-forest/10 py-5">
+          <div
+            className="flex min-w-full animate-[marquee_18s_linear_infinite] whitespace-nowrap text-sm uppercase tracking-[0.22em] text-forest"
+            style={{ gap: '1.75rem' }}
+          >
+            <span className="inline-block pr-8">
+              GMP CERTIFIED · FDA REGISTERED · NSF AUDITED · ISO 9001 · GRAIN FREE · THIRD-PARTY VERIFIED · 30-DAY GUARANTEE
+            </span>
+            <span className="inline-block pr-8">
+              GMP CERTIFIED · FDA REGISTERED · NSF AUDITED · ISO 9001 · GRAIN FREE · THIRD-PARTY VERIFIED · 30-DAY GUARANTEE
+            </span>
+          </div>
+        </div>
+      </Section>
     </>
   );
 }
