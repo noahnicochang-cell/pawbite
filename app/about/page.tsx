@@ -11,7 +11,7 @@ import { Heart } from '@/components/brand/illustrations/icons/heart';
 import { Sparkle } from '@/components/brand/illustrations/icons/sparkle';
 import { Shield } from '@/components/brand/illustrations/icons/shield';
 import { Stethoscope } from '@/components/brand/illustrations/icons/stethoscope';
-import { TapeAccent } from '@/components/brand/illustrations/decor/tape-accent';
+
 import { Blob } from '@/components/brand/illustrations/decor/blob';
 import { CalloutPill } from '@/components/brand/illustrations/callout-pill';
 import { SITE_URL } from '@/lib/seo';
@@ -77,63 +77,44 @@ export default function AboutPage() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             {/* Founder polaroid */}
-            <div className="relative mx-auto w-full max-w-sm">
-              <div
-                className="relative rounded-sm bg-white p-3 pb-12 shadow-soft"
-                style={{ transform: 'rotate(-3deg)' }}
-              >
-                <div className="absolute -top-4 left-6 z-10">
-                  <TapeAccent width={80} color="warmyellow" rotation={-8} />
-                </div>
-                <div className="absolute -top-2 right-4 z-10">
-                  <Squiggle width={80} className="text-terracotta" />
-                </div>
-                <Image
-                  src="/founder-Noah.jpg"
-                  alt="Noah Chang with his rescue dog Theo"
-                  width={600}
-                  height={750}
-                  className="h-auto w-full"
-                  priority
-                />
-                <p className="mt-3 text-center font-sans text-sm italic text-charcoal/70">
-                  Noah and Theo, 2023.
-                </p>
-              </div>
+            <div className="mx-auto w-full max-w-sm">
+              <Image
+                src="/founder-Noah.jpg"
+                alt="Noah Chang with his rescue dog Theo"
+                width={600}
+                height={750}
+                className="h-auto w-full rounded-2xl shadow-soft"
+                priority
+              />
+              <p className="mt-3 text-center font-sans text-sm italic text-charcoal/70">
+                Noah and Lola — where it started.
+              </p>
             </div>
 
             {/* Founder long-form */}
             <div className="flex flex-col gap-6">
               <p className="font-hand text-2xl text-terracotta">— About us</p>
               <h1 className="fraunces-soft text-balance text-4xl font-bold leading-tight text-forest md:text-5xl lg:text-6xl">
-                Made by humans who actually own dogs.
+                Made and trusted by owners.
               </h1>
               <div className="space-y-4 text-lg leading-relaxed text-charcoal">
                 <p>
-                  PawBite started in a kitchen in the Hudson Valley in 2024, mostly out of
-                  frustration. I&apos;d adopted Theo a year earlier — a five-year-old shepherd mix
-                  with a gut that had been through it. Three kibbles, four probiotics, two
-                  prescription diets, one emergency vet visit, and a small mountain of paper towels
-                  later, I was still nowhere.
+                  Noah Chang grew up with dogs. First, a scrappy mutt named Paw. Then, when he was 12, came Cam Sonic — a white boxer who taught him what it meant to actually pay attention to a dog's health, day in and day out.
                 </p>
                 <p>
-                  The supplements I&apos;d been buying split into two camps. One was bright, loud,
-                  and full of ingredients I could not pronounce — chews engineered to look like dog
-                  candy with a probiotic strain that had never been studied in dogs attached as an
-                  afterthought. The other was clinical: white tubs, science-fair fonts,
-                  twelve-syllable strain names, and a brand voice that read like it had never met an
-                  actual dog. Neither felt right.
+                  Years later, in a small Manhattan apartment on 30th and 1st, Noah was one of the top-rated dog walkers on Rover and Wag — sitting for friends' dogs, family dogs, and during COVID lockdown, his boss's dog, Lola.
                 </p>
                 <p>
-                  So I started PawBite. Two products — a daily probiotic and a hip + joint chew.
-                  Each one cites the studies it&apos;s built on. Each one is reviewed by Dr. M.
-                  Hayes, our veterinary nutritionist. Each one is the version I wish I could have
-                  handed past-me at 2am on a Tuesday, standing in the kitchen, Googling whether the
-                  new chew Theo had thrown up was something to call the vet about.
+                  Six months alone with Lola changed everything. With nothing else to do, Noah started cooking. Human-grade meat. Human-grade vegetables. Human-grade probiotics, mixed into her meals.
                 </p>
                 <p>
-                  That&apos;s the whole brand. Two products, made carefully, sold honestly, by
-                  people who feed them to their own dogs every morning.
+                  Within weeks, Lola's energy came back. Her stool went from inconsistent and unpredictable to clockwork. The change was so obvious it stopped being subtle.
+                </p>
+                <p>
+                  That was the moment PawBite started. Not in a lab. Not in a pitch deck. In a kitchen on 30th and 1st, with a borrowed dog, during a pandemic.
+                </p>
+                <p>
+                  PawBite is the probiotic Noah wishes he'd had for Lola from day one. Real research. Real strains. Daily support for dogs that deserve human-grade care.
                 </p>
               </div>
               <p className="font-hand text-2xl text-terracotta">— Noah Chang, founder</p>
