@@ -99,22 +99,31 @@ export default function AboutPage() {
               </h1>
               <div className="space-y-4 text-lg leading-relaxed text-charcoal">
                 <p>
-                  Noah Chang grew up with dogs. First, a scrappy mutt named Paw. Then, when he was 12, came Cam Sonic — a white boxer who taught him what it meant to actually pay attention to a dog's health, day in and day out.
+                  Noah Chang grew up with dogs. First, a scrappy mutt named Paw. Then, when he was
+                  12, came Cam Sonic — a white boxer who taught him what it meant to actually pay
+                  attention to a dog&apos;s health, day in and day out.
                 </p>
                 <p>
-                  Years later, in a small Manhattan apartment on 30th and 1st, Noah was one of the top-rated dog walkers on Rover and Wag — sitting for friends' dogs, family dogs, and during COVID lockdown, his boss's dog, Lola.
+                  Years later, in a small Manhattan apartment on 30th and 1st, Noah was one of the
+                  top-rated dog walkers on Rover and Wag — sitting for friends&apos; dogs, family
+                  dogs, and during COVID lockdown, his boss&apos;s dog, Lola.
                 </p>
                 <p>
-                  Six months alone with Lola changed everything. With nothing else to do, Noah started cooking. Human-grade meat. Human-grade vegetables. Human-grade probiotics, mixed into her meals.
+                  Six months alone with Lola changed everything. With nothing else to do, Noah
+                  started cooking. Human-grade meat. Human-grade vegetables. Human-grade
+                  probiotics, mixed into her meals.
                 </p>
                 <p>
-                  Within weeks, Lola's energy came back. Her stool went from inconsistent and unpredictable to clockwork. The change was so obvious it stopped being subtle.
+                  Within weeks, Lola&apos;s energy came back. Her stool went from inconsistent and
+                  unpredictable to clockwork. The change was so obvious it stopped being subtle.
                 </p>
                 <p>
-                  That was the moment PawBite started. Not in a lab. Not in a pitch deck. In a kitchen on 30th and 1st, with a borrowed dog, during a pandemic.
+                  That was the moment PawBite started. Not in a lab. Not in a pitch deck. In a
+                  kitchen on 30th and 1st, with a borrowed dog, during a pandemic.
                 </p>
                 <p>
-                  PawBite is the probiotic Noah wishes he'd had for Lola from day one. Real research. Real strains. Daily support for dogs that deserve human-grade care.
+                  PawBite is the probiotic Noah wishes he&apos;d had for Lola from day one. Real
+                  research. Real strains. Daily support for dogs that deserve human-grade care.
                 </p>
               </div>
               <p className="font-hand text-2xl text-terracotta">— Noah Chang, founder</p>
