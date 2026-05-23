@@ -84,6 +84,27 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
+
+      {/* Brand statement — Maev-style giant italic wordmark */}
+      <section className="relative overflow-hidden bg-forest">
+        <div className="flex min-h-[70vh] items-center justify-center px-4 py-24 sm:py-32">
+          <h2
+            className="fraunces-soft text-cream italic leading-[0.85] tracking-tight text-center"
+            style={{
+              fontFamily: 'var(--font-serif), serif',
+              fontSize: 'clamp(6rem, 28vw, 26rem)',
+              fontWeight: 500,
+            }}
+          >
+            pawbite
+          </h2>
+        </div>
+        <div className="border-t border-cream/15 px-4 py-6 text-center">
+          <p className="font-sans text-xs uppercase tracking-[0.32em] text-cream/80">
+            real food. real strains. real dogs.
+          </p>
+        </div>
+      </section>
     </>
   );
 }
