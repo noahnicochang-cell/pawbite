@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Canister } from '@/components/brand/canister';
+import { PawBiteWordmark } from '@/components/brand/pawbite-wordmark';
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { trustBadges } from '@/data/trust-badges';
@@ -53,25 +54,69 @@ export default function HomePage() {
             </div>
           </div>
 
+          {/* Product mockup — CSS-rendered PawBite pouch, stand-in until real photoshoot */}
           <div className="relative mx-auto flex w-full max-w-md flex-col items-center justify-center gap-6">
-            <div className="relative w-full rounded-[32px] border border-forest/15 bg-cream-2 p-6 shadow-soft">
-              <div className="absolute left-0 top-0 ml-3 -translate-y-1">
+            <div className="relative">
+              {/* Floating badges */}
+              <div className="absolute -left-2 top-6 z-10">
                 <Badge variant="forest" className="text-[11px] tracking-[0.24em] font-semibold">
                   ★ BESTSELLER
                 </Badge>
               </div>
-              <div className="absolute right-0 top-0 mr-3 -translate-y-1">
-                <Badge variant="warmyellow" className="text-[11px] tracking-[0.24em] font-semibold text-forest">
-                  $30 / MONTH
+              <div className="absolute -right-2 top-6 z-10">
+                <Badge variant="warmyellow" className="text-[11px] tracking-[0.24em] font-semibold text-navy">
+                  $30
                 </Badge>
               </div>
-              <div className="flex justify-center pt-8">
-                <Canister name="Gut Blend" tagline="Daily probiotic" bandColor="forest" size="lg" />
+
+              {/* The "canister" — tall rounded label that reads as a real product */}
+              <div className="relative h-[440px] w-[300px] overflow-hidden rounded-[36px] bg-gradient-to-b from-white to-mist-soft shadow-2xl ring-1 ring-navy/10">
+                {/* Top seal */}
+                <div className="border-b border-navy/10 bg-mist/40 px-6 py-3 text-center">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-navy/60">
+                    Daily Probiotic · 30 chews
+                  </p>
+                </div>
+
+                {/* Label body */}
+                <div className="flex flex-col items-center px-7 pt-9">
+                  {/* Wordmark */}
+                  <PawBiteWordmark
+                    className="text-[44px] leading-none text-navy"
+                    pawColor="#E97757"
+                  />
+
+                  {/* Tagline */}
+                  <p className="mt-3 font-editorial text-[11px] uppercase tracking-[0.28em] text-navy/70">
+                    Soft-baked chews · Duck
+                  </p>
+
+                  {/* Accent disc */}
+                  <div className="my-7 flex h-24 w-24 items-center justify-center rounded-full bg-terracotta/15 ring-1 ring-terracotta/30">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-terracotta text-white shadow-soft">
+                      <span className="font-display text-3xl leading-none">PB</span>
+                    </div>
+                  </div>
+
+                  {/* Big spec */}
+                  <p className="font-display text-[2.5rem] leading-none text-navy">5 STRAINS</p>
+                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.3em] text-navy/60">
+                    5 Billion CFU · per chew
+                  </p>
+                </div>
+
+                {/* Footer band */}
+                <div className="absolute bottom-0 left-0 right-0 border-t border-navy/10 bg-mist/40 px-6 py-3 text-center">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-navy/60">
+                    Vet-formulated · Made in NYC
+                  </p>
+                </div>
               </div>
             </div>
-            <Button variant="outline" size="sm" className="rounded-full border-forest px-10 py-3 text-forest hover:bg-forest/10">
-              GUT
-            </Button>
+
+            <p className="text-center font-mono text-[10px] uppercase tracking-[0.22em] text-navy/50">
+              Product render — real photography coming
+            </p>
           </div>
         </Container>
 
