@@ -359,7 +359,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-mist">
         <div className="flex min-h-[70vh] items-center justify-center px-4 py-24 sm:py-32">
           <h2
-            className="font-display leading-[0.85] tracking-tight text-center text-slate-soft"
+            className="font-display leading-[0.85] tracking-tight text-center text-slate-deep"
             style={{
               fontFamily: 'var(--font-display), sans-serif',
               fontSize: 'clamp(5rem, 24vw, 22rem)',

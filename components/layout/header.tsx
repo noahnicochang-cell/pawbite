@@ -22,7 +22,7 @@ export function Header() {
       <Container>
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center">
-            <PawBiteWordmark className="text-4xl leading-none text-slate-soft" pawColor="#9CA8B5" />
+            <PawBiteWordmark className="text-5xl leading-none text-slate-ink" pawColor="#4B5563" />
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">

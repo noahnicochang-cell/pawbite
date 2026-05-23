@@ -18,6 +18,8 @@ const config: Config = {
         'navy-deep': '#091833',
         'slate-soft': '#C5CFD9',
         'slate-mid': '#9CA8B5',
+        'slate-deep': '#6B7785',
+        'slate-ink': '#4B5563',
         // Legacy tokens — kept so existing pages keep rendering during pivot
         cream: '#E2EAF1',
         'cream-2': '#EEF3F8',
