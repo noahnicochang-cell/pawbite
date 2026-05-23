@@ -18,7 +18,7 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-navy/10 bg-mist/95 text-navy backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-navy/10 bg-white/95 text-navy backdrop-blur-sm">
       <Container>
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center">
