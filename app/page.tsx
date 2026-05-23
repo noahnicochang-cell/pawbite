@@ -9,16 +9,8 @@ export default function HomePage() {
     <>
       <style>{`@keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }`}</style>
 
-      <Section className="bg-cream">
-        <div className="bg-forest text-cream">
-          <Container className="flex items-center justify-center py-3 text-center">
-            <p className="font-sans text-xs uppercase tracking-[0.3em] font-semibold">
-              GET THE STARTER PACK + 30% OFF YOUR FIRST ORDER
-            </p>
-          </Container>
-        </div>
-
-        <Container className="grid gap-12 py-16 lg:grid-cols-[1.3fr_0.9fr] lg:items-center">
+      <Section className="bg-cream py-0">
+        <Container className="grid gap-12 py-12 lg:grid-cols-[1.3fr_0.9fr] lg:items-center lg:py-16">
           <div className="space-y-8">
             <Badge variant="forest" className="text-[11px] tracking-[0.28em] font-semibold">
               NEW RELEASE · PB-01
