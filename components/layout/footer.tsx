@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { Container } from '@/components/layout/container';
-import { Mascot } from '@/components/brand/illustrations/characters/mascot';
 import { Button } from '@/components/ui/button';
+import { PawBiteWordmark } from '@/components/brand/pawbite-wordmark';
 
 const linkColumns = [
   {
@@ -46,14 +46,12 @@ const linkColumns = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-forest pb-10 pt-32 text-cream">
-      <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-        <Mascot variant="peeking" size={120} bodyColor="#E8B547" />
-      </div>
-
+    <footer className="relative overflow-hidden bg-forest pb-10 pt-20 text-cream">
       <Container>
         <div className="mb-16 text-center">
-          <p className="mb-2 font-hand text-3xl text-warmyellow">Subscribe & save 20%.</p>
+          <h2 className="fraunces-soft mb-3 text-4xl font-bold text-cream md:text-5xl">
+            Subscribe &amp; save <span className="italic text-warmyellow">20%</span>.
+          </h2>
           <p className="mx-auto max-w-md text-sm text-cream/80">
             Plus free shipping on every order. Skip, swap, or cancel in one click — no calls, no
             fees.
@@ -85,9 +83,9 @@ export function Footer() {
 
         <div className="flex flex-col items-start justify-between gap-4 border-t border-cream/15 pt-8 md:flex-row md:items-center">
           <div>
-            <div className="mb-1 font-display text-2xl text-cream">PawBite</div>
-            <p className="font-hand text-lg leading-tight text-warmyellow">
-              Made by humans in Hudson Valley, NY.
+            <PawBiteWordmark className="mb-1 text-2xl text-cream" pawColor="#E8B547" />
+            <p className="font-sans text-sm tracking-[0.18em] uppercase text-warmyellow">
+              Made in New York, NY
             </p>
           </div>
           <div className="flex flex-col gap-2 text-xs text-cream/60 md:items-end">

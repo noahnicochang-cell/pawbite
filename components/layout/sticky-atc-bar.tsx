@@ -30,23 +30,23 @@ export function StickyATCBar({ show = true }: StickyATCBarProps) {
         visible ? 'translate-y-0' : 'translate-y-full',
       )}
     >
-      <div className="border-t-2 border-forest bg-cream shadow-[0_-8px_24px_-12px_rgba(31,58,46,0.18)]">
+      <div className="border-t border-cream/15 bg-forest text-cream shadow-[0_-8px_24px_-12px_rgba(0,0,0,0.4)]">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
           <div className="flex min-w-0 items-center gap-3">
-            <Badge variant="warmyellow" className="hidden sm:inline-flex">
-              Save 32%
+            <Badge variant="warmyellow" className="hidden text-forest sm:inline-flex">
+              Pre-launch
             </Badge>
             <div className="min-w-0">
-              <div className="truncate text-xs font-semibold text-forest">The Daily Duo</div>
-              <div className="text-xs text-forest/70">
-                <span className="font-bold text-terracotta">$47.60</span>
-                <span className="ml-1 text-forest/40 line-through">$70</span>
-                <span className="ml-1 hidden sm:inline">/ month</span>
+              <div className="truncate text-xs font-semibold text-cream">
+                Reserve your spot — 30% off forever
+              </div>
+              <div className="text-xs text-cream/70">
+                Daily probiotic chews · $30/month · ships at launch
               </div>
             </div>
           </div>
-          <Button variant="primary" size="md" asChild>
-            <Link href="/products/daily-duo">Add the Duo</Link>
+          <Button variant="primary" size="md" asChild className="bg-warmyellow text-forest hover:bg-warmyellow/90">
+            <Link href="/quiz">Join the waitlist</Link>
           </Button>
         </div>
       </div>

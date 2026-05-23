@@ -210,6 +210,59 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* Quiz CTA — pre-purchase qualification + email capture funnel */}
+      <Section background="warmyellow" spacing="default">
+        <Container size="narrow">
+          <div className="text-center">
+            <p className="mb-3 font-sans text-xs uppercase tracking-[0.28em] font-semibold text-forest/70">
+              Not sure if it&apos;s right for your dog?
+            </p>
+            <h2 className="fraunces-soft text-balance text-4xl font-bold text-forest md:text-5xl">
+              Take the 60-second quiz.
+            </h2>
+            <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-forest/80">
+              Five quick questions about your dog. We&apos;ll tell you whether PawBite is the right
+              fit — and exactly why.
+            </p>
+            <Button variant="primary" size="lg" asChild className="mt-8 rounded-full px-10 py-4 bg-forest text-cream hover:bg-forest/90">
+              <Link href="/quiz">Start the quiz →</Link>
+            </Button>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Email capture / waitlist */}
+      <Section background="cream" spacing="default">
+        <Container size="narrow">
+          <div className="rounded-3xl border border-forest/15 bg-cream-2 p-10 text-center md:p-14">
+            <p className="mb-3 font-sans text-xs uppercase tracking-[0.28em] font-semibold text-terracotta">
+              Letters from PawBite
+            </p>
+            <h2 className="fraunces-soft text-balance text-4xl font-bold text-forest md:text-5xl">
+              Join the waitlist.
+            </h2>
+            <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-charcoal">
+              We&apos;ll send you one short letter when we launch. Plus 30% off your first order —
+              locked in forever.
+            </p>
+            <form className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row">
+              <input
+                type="email"
+                placeholder="your@email.com"
+                aria-label="Email address"
+                className="min-w-0 flex-1 rounded-full border border-forest/20 bg-cream px-5 py-3 text-base text-forest placeholder:text-forest/40 focus:border-forest focus:outline-none"
+              />
+              <Button variant="primary" size="md" className="rounded-full px-6 whitespace-nowrap">
+                Reserve my spot
+              </Button>
+            </form>
+            <p className="mt-4 text-xs text-forest/60">
+              1,247 dog parents on the waitlist · One email per month max · Unsubscribe anytime
+            </p>
+          </div>
+        </Container>
+      </Section>
+
       {/* Brand statement — Maev-style giant italic wordmark */}
       <section className="relative overflow-hidden bg-forest">
         <div className="flex min-h-[70vh] items-center justify-center px-4 py-24 sm:py-32">

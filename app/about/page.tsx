@@ -5,7 +5,6 @@ import { Section } from '@/components/layout/section';
 import { Container } from '@/components/layout/container';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Mascot } from '@/components/brand/illustrations/characters/mascot';
 import { Squiggle } from '@/components/brand/illustrations/icons/squiggle';
 import { Heart } from '@/components/brand/illustrations/icons/heart';
 import { Sparkle } from '@/components/brand/illustrations/icons/sparkle';
@@ -19,7 +18,7 @@ import { SITE_URL } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'About PawBite',
   description:
-    'PawBite is a small dog supplement brand from the Hudson Valley. Two products, vet-formulated, made by humans who actually own dogs. Read the founder story.',
+    'PawBite is a small dog probiotic brand born in New York City. Vet-formulated daily chews for real gut health. Read the founder story — Lola, the kitchen on 30th and 1st, and the science of doing it right.',
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     title: 'About PawBite',
@@ -56,7 +55,7 @@ const team = [
   {
     name: 'Noah Chang',
     role: 'Founder',
-    bio: "Noah started PawBite in 2024 after spending two years and an embarrassing amount of money trying to fix his rescue dog Theo's gut. Background in consumer product design. Lives in the Hudson Valley with Theo and a confused cat named Wallace.",
+    bio: "Noah started PawBite in his Manhattan apartment in 2020 after six months alone with Lola during COVID lockdown. Former top-rated dog walker (Rover and Wag). Still in NYC, still cooking.",
     initials: 'NC',
     color: 'bg-warmyellow',
   },
@@ -223,7 +222,7 @@ export default function AboutPage() {
               Small team. Real names.
             </h2>
             <p className="mx-auto max-w-xl text-base text-charcoal">
-              There are two of us behind the brand right now, plus Theo, who is technically head of
+              There are two of us behind the brand right now, plus Lola — technically head of
               product testing.
             </p>
           </div>
@@ -259,18 +258,17 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      {/* Made in Hudson Valley callout */}
+      {/* Made in NYC callout */}
       <Section background="warmyellow" spacing="tight">
         <Container size="narrow">
           <div className="flex flex-col items-center gap-6 text-center">
-            <Mascot variant="happy" size={140} />
             <CalloutPill variant="caveat" color="terracotta" rotation={-3}>
-              Made in Hudson Valley, NY
+              Born on 30th &amp; 1st · NYC
             </CalloutPill>
             <p className="max-w-xl text-base leading-relaxed text-forest">
-              PawBite is independently owned, US-formulated, and packaged in upstate New York. No
-              private equity, no celebrity stakeholders, no investor slide deck. Just two products
-              and a small team.
+              PawBite is independently owned and US-formulated. Started in a Manhattan apartment
+              during COVID, still made by humans who actually own dogs. No private equity, no
+              celebrity stakeholders, no investor slide deck.
             </p>
             <div className="flex flex-col gap-3 pt-2 sm:flex-row">
               <Button variant="primary" size="md" asChild>

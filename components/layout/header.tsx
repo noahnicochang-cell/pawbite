@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
+import { PawBiteWordmark } from '@/components/brand/pawbite-wordmark';
 
 const navLinks = [
   { href: '/products', label: 'Shop' },
@@ -17,13 +18,11 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-forest/10 bg-cream/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-cream/10 bg-forest/95 text-cream backdrop-blur-sm">
       <Container>
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center">
-            <span className="font-display text-4xl leading-none text-forest tracking-tight">
-              PawBite
-            </span>
+            <PawBiteWordmark className="text-4xl leading-none text-cream" pawColor="#E8B547" />
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
@@ -31,7 +30,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-forest transition-colors hover:text-terracotta"
+                className="text-sm font-medium text-cream transition-colors hover:text-warmyellow"
               >
                 {link.label}
               </Link>
@@ -43,7 +42,7 @@ export function Header() {
               <Link href="/quiz">Take the quiz</Link>
             </Button>
             <button
-              className="p-2 text-forest md:hidden"
+              className="p-2 text-cream md:hidden"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
@@ -54,12 +53,12 @@ export function Header() {
         </div>
 
         {mobileOpen && (
-          <nav className="flex flex-col gap-2 border-t border-forest/10 pb-4 pt-3 md:hidden">
+          <nav className="flex flex-col gap-2 border-t border-cream/15 pb-4 pt-3 md:hidden">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="py-2 text-sm font-medium text-forest"
+                className="py-2 text-sm font-medium text-cream"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}

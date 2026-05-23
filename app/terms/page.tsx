@@ -17,7 +17,7 @@ export default function TermsPage() {
       sections={[
         {
           heading: 'Who we are.',
-          body: 'PawBite is operated by PawBite Inc., a US company based in Hudson Valley, NY. Our products are intended for adult dogs and are nutritional supplements — not medications, not treatments for diagnosed disease, not a substitute for veterinary care.',
+          body: 'PawBite is operated by PawBite Inc., a US company based in New York, NY. Our products are intended for adult dogs and are nutritional supplements — not medications, not treatments for diagnosed disease, not a substitute for veterinary care.',
         },
         {
           heading: 'Orders and pricing.',

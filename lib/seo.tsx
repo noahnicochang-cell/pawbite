@@ -3,7 +3,7 @@ export const SITE_DESCRIPTION =
   'The good stuff your dog needs. Nothing weird. Vet-formulated daily chews built for the essentials — gut and joints, done right.';
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://pawbite.vercel.app';
 export const ORG_LEGAL_NAME = 'PawBite Inc.';
-export const ORG_LOCATION = 'Hudson Valley, NY';
+export const ORG_LOCATION = 'New York, NY';
 
 /** JSON-LD: Organization */
 export function organizationSchema() {
@@ -17,7 +17,7 @@ export function organizationSchema() {
     description: SITE_DESCRIPTION,
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Hudson Valley',
+      addressLocality: 'New York',
       addressRegion: 'NY',
       addressCountry: 'US',
     },
