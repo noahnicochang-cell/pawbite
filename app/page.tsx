@@ -355,11 +355,11 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Brand statement — giant Bagel Fat One wordmark, light grey on mist */}
-      <section className="relative overflow-hidden bg-mist">
+      {/* Brand statement — giant Bagel Fat One wordmark, darker grey on a deeper mist plate */}
+      <section className="relative overflow-hidden bg-mist-deep">
         <div className="flex min-h-[70vh] items-center justify-center px-4 py-24 sm:py-32">
           <h2
-            className="font-display leading-[0.85] tracking-tight text-center text-slate-deep"
+            className="font-display leading-[0.85] tracking-tight text-center text-slate-ink"
             style={{
               fontFamily: 'var(--font-display), sans-serif',
               fontSize: 'clamp(5rem, 24vw, 22rem)',
@@ -368,7 +368,7 @@ export default function HomePage() {
             pawbite
           </h2>
         </div>
-        <div className="border-t border-navy/10 px-4 py-6 text-center">
+        <div className="border-t border-navy/15 px-4 py-6 text-center">
           <p className="font-editorial text-xs uppercase tracking-[0.32em] text-navy/70">
             real food. real strains. real dogs.
           </p>
