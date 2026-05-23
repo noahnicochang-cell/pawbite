@@ -26,8 +26,10 @@ const config: Config = {
         forest: '#0F2540',
         'forest-deep': '#091833',
         'forest-mid': '#1A3357',
-        terracotta: '#C8765B',
-        'terracotta-dark': '#B05D43',
+        // Brighter Claude-style orange — coral-warm, more saturation than the old muted terracotta
+        terracotta: '#E97757',
+        'terracotta-dark': '#D2624A',
+        'terracotta-bright': '#F97316',
         // Muted accents — toned down from saturated yellow/mint to harmonize with mist/navy
         warmyellow: '#EFE6D2',
         'warmyellow-deep': '#D9C99F',

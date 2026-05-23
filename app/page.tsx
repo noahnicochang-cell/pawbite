@@ -33,7 +33,7 @@ export default function HomePage() {
             </div>
 
             <p className="max-w-2xl text-base leading-7 text-charcoal font-sans">
-              7-strain targeted probiotic protocol, clinically formulated to support your dog&apos;s gut health.
+              5-strain targeted probiotic protocol, 5 billion CFU per chew, vet-formulated for daily gut support.
             </p>
 
             <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
@@ -272,8 +272,9 @@ export default function HomePage() {
             </h2>
             <p className="mx-auto mt-5 max-w-xl font-editorial text-base leading-relaxed text-navy/80 sm:text-lg">
               At PawBite, we&apos;re raising the standard of canine gut care. Every chew is built on a
-              7-strain probiotic protocol, paired with prebiotic fiber and clean whole-food
-              ingredients — nothing your dog doesn&apos;t need.
+              5-strain probiotic protocol — 5 billion CFU, guaranteed through end-of-shelf-life —
+              paired with prebiotic fiber and clean whole-food ingredients. Nothing your dog
+              doesn&apos;t need.
             </p>
             <Link
               href="/learn"
@@ -285,8 +286,8 @@ export default function HomePage() {
 
           <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
             {[
-              { label: 'Vet-formulated', desc: '7-strain protocol' },
-              { label: 'Research-backed', desc: '1B CFU per chew' },
+              { label: 'Vet-formulated', desc: '5-strain protocol' },
+              { label: 'Research-backed', desc: '5B CFU per chew' },
               { label: 'Third-party tested', desc: 'Potency-verified' },
               { label: 'Real food base', desc: 'Pumpkin · sweet potato' },
             ].map((badge) => (
