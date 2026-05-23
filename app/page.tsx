@@ -90,6 +90,32 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Brand pause — full-bleed lifestyle moment between hero and trust */}
+      <section className="relative overflow-hidden">
+        <div className="relative aspect-[16/9] w-full sm:aspect-[21/9]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?w=2400&q=85&fit=crop"
+            alt="A dog at home, calm and content"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-forest/20 to-transparent" />
+          <div className="absolute inset-0 flex items-end justify-center pb-12 sm:pb-20">
+            <div className="text-center px-6">
+              <h2
+                className="fraunces-soft text-cream italic leading-[0.95]"
+                style={{
+                  fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
+                  fontWeight: 500,
+                }}
+              >
+                For the dog you already love.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Trust strip — 5 credibility badges */}
       <Section background="cream" spacing="tight">
         <Container>
