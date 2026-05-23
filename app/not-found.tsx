@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { Section } from '@/components/layout/section';
 import { Container } from '@/components/layout/container';
 import { Button } from '@/components/ui/button';
-import { Mascot } from '@/components/brand/illustrations/characters/mascot';
 import { CalloutPill } from '@/components/brand/illustrations/callout-pill';
 
 export const metadata: Metadata = {
@@ -15,10 +14,6 @@ export default function NotFound() {
   return (
     <Section background="cream" spacing="loose">
       <Container size="narrow" className="text-center">
-        <div className="mb-8 flex justify-center">
-          <Mascot variant="sleepy" size={180} bodyColor="#F4B8A8" />
-        </div>
-
         <CalloutPill variant="caveat" color="warmyellow" rotation={-3} className="mb-4">
           404 —
         </CalloutPill>
@@ -28,7 +23,7 @@ export default function NotFound() {
         </h1>
 
         <p className="mx-auto mb-8 max-w-md text-lg leading-relaxed text-charcoal">
-          The page you were looking for doesn&apos;t exist. Maybe the link is old, or maybe Theo ate
+          The page you were looking for doesn&apos;t exist. Maybe the link is old, or maybe Lola ate
           it. Try one of these instead.
         </p>
 

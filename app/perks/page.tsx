@@ -10,7 +10,6 @@ import { Shield } from '@/components/brand/illustrations/icons/shield';
 import { Star } from '@/components/brand/illustrations/icons/star';
 import { Stethoscope } from '@/components/brand/illustrations/icons/stethoscope';
 import { Squiggle } from '@/components/brand/illustrations/icons/squiggle';
-import { Mascot } from '@/components/brand/illustrations/characters/mascot';
 import { Blob } from '@/components/brand/illustrations/decor/blob';
 import { CalloutPill } from '@/components/brand/illustrations/callout-pill';
 import { products } from '@/data/products';
@@ -182,7 +181,6 @@ export default function PerksPage() {
               <Blob variant={2} color="warmyellow" className="h-32 w-32" />
             </div>
             <div className="relative flex flex-col items-center gap-4">
-              <Mascot variant="happy" size={180} />
               <CalloutPill variant="caveat" color="warmyellow" rotation={-4}>
                 Save {duoSavingsPct}%
               </CalloutPill>

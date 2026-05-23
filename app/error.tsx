@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Section } from '@/components/layout/section';
 import { Container } from '@/components/layout/container';
 import { Button } from '@/components/ui/button';
-import { Mascot } from '@/components/brand/illustrations/characters/mascot';
 import { CalloutPill } from '@/components/brand/illustrations/callout-pill';
 
 interface ErrorProps {
@@ -24,10 +23,6 @@ export default function GlobalError({ error, reset }: ErrorProps) {
   return (
     <Section background="cream" spacing="loose">
       <Container size="narrow" className="text-center">
-        <div className="mb-8 flex justify-center">
-          <Mascot variant="sleepy" size={180} bodyColor="#B8D4C4" />
-        </div>
-
         <CalloutPill variant="caveat" color="terracotta" rotation={-3} className="mb-4">
           Hmm —
         </CalloutPill>

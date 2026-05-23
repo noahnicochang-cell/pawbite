@@ -7,7 +7,6 @@ import { Container } from '@/components/layout/container';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ProductCard } from '@/components/pdp/product-card';
-import { Mascot } from '@/components/brand/illustrations/characters/mascot';
 import { Sparkle } from '@/components/brand/illustrations/icons/sparkle';
 import { CalloutPill } from '@/components/brand/illustrations/callout-pill';
 import { recommendFromAnswers, generateDiscountCode, type QuizAnswers } from '@/lib/quiz';
@@ -35,10 +34,6 @@ export function QuizResultsClient({ answers }: { answers: QuizAnswers }) {
     <>
       <Section background="cream" spacing="default">
         <Container size="narrow" className="text-center">
-          <div className="mb-6 flex justify-center">
-            <Mascot variant="happy" size={140} bodyColor="#E8B547" />
-          </div>
-
           <CalloutPill variant="caveat" color="warmyellow" rotation={-3} className="mb-4">
             Here&apos;s the plan —
           </CalloutPill>
