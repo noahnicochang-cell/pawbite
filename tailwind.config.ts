@@ -10,20 +10,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // PawBite brand palette — locked in spec section 2
-        cream: '#F5EFE6',
-        'cream-2': '#EFE7D8',
-        forest: '#1F3A2E',
-        'forest-deep': '#142A20',
-        'forest-mid': '#2A4538',
+        // PawBite brand palette — Maev/Dog-is-Human soft blue refresh
+        mist: '#E2EAF1',
+        'mist-deep': '#D4DEE8',
+        'mist-soft': '#EEF3F8',
+        navy: '#0F2540',
+        'navy-deep': '#091833',
+        'slate-soft': '#C5CFD9',
+        'slate-mid': '#9CA8B5',
+        // Legacy tokens — kept so existing pages keep rendering during pivot
+        cream: '#E2EAF1',
+        'cream-2': '#EEF3F8',
+        forest: '#0F2540',
+        'forest-deep': '#091833',
+        'forest-mid': '#1A3357',
         terracotta: '#C8765B',
         'terracotta-dark': '#B05D43',
         warmyellow: '#E8B547',
         pinky: '#F4B8A8',
         mint: '#B8D4C4',
         offwhite: '#FAFAFA',
-        charcoal: '#2A2A2A',
-        'cream-muted': '#D4CFC4',
+        charcoal: '#0F2540',
+        'cream-muted': '#D4DEE8',
       },
       borderRadius: {
         pill: '9999px',
@@ -67,7 +75,9 @@ const config: Config = {
       fontFamily: {
         display: ['var(--font-display)', 'serif'],
         serif: ['var(--font-serif)', 'serif'],
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-editorial)', 'var(--font-sans)', 'system-ui', 'sans-serif'],
+        editorial: ['var(--font-editorial)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-sans)', 'system-ui', 'sans-serif'],
         hand: ['var(--font-hand)', 'cursive'],
         mono: ['var(--font-mono)', 'monospace'],
       },

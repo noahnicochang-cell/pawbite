@@ -18,11 +18,11 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-forest/10 bg-cream/95 text-forest backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-navy/10 bg-mist/95 text-navy backdrop-blur-sm">
       <Container>
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center">
-            <PawBiteWordmark className="text-4xl leading-none text-forest" pawColor="#C8765B" />
+            <PawBiteWordmark className="text-4xl leading-none text-slate-soft" pawColor="#9CA8B5" />
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
@@ -30,7 +30,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-forest transition-colors hover:text-terracotta"
+                className="text-sm font-medium text-navy transition-colors hover:text-terracotta"
               >
                 {link.label}
               </Link>
@@ -42,7 +42,7 @@ export function Header() {
               <Link href="/quiz">Take the quiz</Link>
             </Button>
             <button
-              className="p-2 text-cream md:hidden"
+              className="p-2 text-navy md:hidden"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
@@ -53,12 +53,12 @@ export function Header() {
         </div>
 
         {mobileOpen && (
-          <nav className="flex flex-col gap-2 border-t border-cream/15 pb-4 pt-3 md:hidden">
+          <nav className="flex flex-col gap-2 border-t border-navy/10 pb-4 pt-3 md:hidden">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="py-2 text-sm font-medium text-cream"
+                className="py-2 text-sm font-medium text-navy"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}

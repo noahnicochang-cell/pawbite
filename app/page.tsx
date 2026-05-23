@@ -289,11 +289,77 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* Brand statement — giant Bagel Fat One wordmark on forest */}
-      <section className="relative overflow-hidden bg-forest">
+      {/* Ingredients spotlight — Maev/Dog-is-Human style row of real PawBite probiotic ingredients */}
+      <section className="relative overflow-hidden bg-mist">
+        <Container className="py-20 sm:py-28">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="font-editorial text-3xl font-semibold tracking-tight text-navy sm:text-4xl md:text-5xl">
+              Elevating <span className="font-serif fraunces-soft italic font-normal">Real-Strain</span> Gut Health<sup className="text-base">™</sup>
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl font-editorial text-base leading-relaxed text-navy/80 sm:text-lg">
+              At PawBite, we&apos;re raising the standard of canine gut care. Every chew is built on a
+              7-strain probiotic protocol, paired with prebiotic fiber and clean whole-food
+              ingredients — nothing your dog doesn&apos;t need.
+            </p>
+            <Link
+              href="/learn"
+              className="mt-5 inline-flex items-center gap-1 font-editorial text-sm font-medium text-navy underline-offset-4 hover:underline"
+            >
+              Behind the science <span aria-hidden>→</span>
+            </Link>
+          </div>
+
+          <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
+            {[
+              { label: 'Vet-formulated', desc: '7-strain protocol' },
+              { label: 'Research-backed', desc: '1B CFU per chew' },
+              { label: 'Third-party tested', desc: 'Potency-verified' },
+              { label: 'Real food base', desc: 'Pumpkin · sweet potato' },
+            ].map((badge) => (
+              <div key={badge.label} className="flex flex-col items-center text-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/70 ring-1 ring-navy/10">
+                  <span className="h-5 w-5 rounded-full bg-terracotta/80" aria-hidden />
+                </div>
+                <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.22em] text-navy">
+                  {badge.label}
+                </p>
+                <p className="mt-1 text-xs text-navy/60">{badge.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Ingredient circles row — the 7 things in every PawBite chew */}
+          <div className="mt-16 grid grid-cols-3 gap-6 sm:grid-cols-4 md:grid-cols-7">
+            {[
+              { name: 'Bacillus coagulans', tag: 'Probiotic strain', tint: 'from-cream-2 to-white' },
+              { name: 'Bacillus subtilis', tag: 'Probiotic strain', tint: 'from-mint/40 to-white' },
+              { name: 'Inulin (chicory root)', tag: 'Prebiotic fiber', tint: 'from-warmyellow/30 to-white' },
+              { name: 'Pumpkin', tag: 'Soothing fiber', tint: 'from-terracotta/30 to-white' },
+              { name: 'Sweet potato', tag: 'Whole-food base', tint: 'from-pinky/40 to-white' },
+              { name: 'Duck liver', tag: 'Real protein', tint: 'from-terracotta-dark/30 to-white' },
+              { name: 'Apple', tag: 'Natural binding', tint: 'from-mist-deep to-white' },
+            ].map((ing) => (
+              <div key={ing.name} className="flex flex-col items-center text-center">
+                <div
+                  className={`relative aspect-square w-full max-w-[120px] overflow-hidden rounded-full bg-gradient-to-br ${ing.tint} shadow-soft ring-1 ring-navy/5`}
+                >
+                  <div className="absolute inset-3 rounded-full bg-white/40 blur-xl" aria-hidden />
+                </div>
+                <p className="mt-3 font-editorial text-sm font-medium text-navy">{ing.name}</p>
+                <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.18em] text-navy/55">
+                  {ing.tag}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Brand statement — giant Bagel Fat One wordmark, light grey on mist */}
+      <section className="relative overflow-hidden bg-mist">
         <div className="flex min-h-[70vh] items-center justify-center px-4 py-24 sm:py-32">
           <h2
-            className="font-display text-cream leading-[0.85] tracking-tight text-center"
+            className="font-display leading-[0.85] tracking-tight text-center text-slate-soft"
             style={{
               fontFamily: 'var(--font-display), sans-serif',
               fontSize: 'clamp(5rem, 24vw, 22rem)',
@@ -302,8 +368,8 @@ export default function HomePage() {
             pawbite
           </h2>
         </div>
-        <div className="border-t border-cream/15 px-4 py-6 text-center">
-          <p className="font-sans text-xs uppercase tracking-[0.32em] text-cream/80">
+        <div className="border-t border-navy/10 px-4 py-6 text-center">
+          <p className="font-editorial text-xs uppercase tracking-[0.32em] text-navy/70">
             real food. real strains. real dogs.
           </p>
         </div>

@@ -1,4 +1,4 @@
-import { Bagel_Fat_One, Fraunces, Inter, Caveat, JetBrains_Mono } from 'next/font/google';
+import { Bagel_Fat_One, Fraunces, Inter, Manrope, Caveat, JetBrains_Mono } from 'next/font/google';
 
 // Wordmark only — the PawBite logotype
 export const fontDisplay = Bagel_Fat_One({
@@ -23,6 +23,14 @@ export const fontSans = Inter({
   display: 'swap',
 });
 
+// Editorial / Founders-Grotesk-alt — headlines + body in the Maev style
+export const fontEditorial = Manrope({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-editorial',
+  display: 'swap',
+});
+
 // Handwriting accents — founder signature, callouts
 export const fontHand = Caveat({
   subsets: ['latin'],
@@ -43,6 +51,7 @@ export const fontVariables = [
   fontDisplay.variable,
   fontSerif.variable,
   fontSans.variable,
+  fontEditorial.variable,
   fontHand.variable,
   fontMono.variable,
 ].join(' ');
