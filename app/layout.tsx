@@ -69,7 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
       </head>
-      <body className="flex min-h-screen flex-col bg-cream text-forest">
+      <body className="flex min-h-screen flex-col bg-white text-navy">
         <WelcomeBanner />
         <Header />
         <main className="flex-1">{children}</main>

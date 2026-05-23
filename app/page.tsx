@@ -90,34 +90,8 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Brand pause — full-bleed lifestyle moment between hero and trust */}
-      <section className="relative overflow-hidden">
-        <div className="relative aspect-[16/9] w-full sm:aspect-[21/9]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?w=2400&q=85&fit=crop"
-            alt="A dog at home, calm and content"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-forest/20 to-transparent" />
-          <div className="absolute inset-0 flex items-end justify-center pb-12 sm:pb-20">
-            <div className="text-center px-6">
-              <h2
-                className="fraunces-soft text-cream italic leading-[0.95]"
-                style={{
-                  fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
-                  fontWeight: 500,
-                }}
-              >
-                For the dog you already love.
-              </h2>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Trust strip — 5 credibility badges */}
-      <Section background="cream" spacing="tight">
+      <Section spacing="tight">
         <Container>
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
             {trustBadges.map((badge) => (
@@ -135,7 +109,7 @@ export default function HomePage() {
       </Section>
 
       {/* 4-stat band */}
-      <Section background="warmyellow" spacing="tight">
+      <Section spacing="tight">
         <Container>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {heroStats.map((stat) => (
@@ -153,7 +127,7 @@ export default function HomePage() {
       </Section>
 
       {/* Real Dogs — beta tester testimonials (pre-launch placeholder photos) */}
-      <Section background="mint" spacing="default">
+      <Section spacing="default">
         <Container>
           <div className="mb-10 text-center">
             <p className="mb-2 font-hand text-2xl text-terracotta">— Real dogs, real owners</p>
@@ -212,7 +186,7 @@ export default function HomePage() {
       </Section>
 
       {/* What we won't do — founder promises */}
-      <Section background="cream" spacing="default">
+      <Section spacing="default">
         <Container size="narrow">
           <div className="mb-10 text-center">
             <p className="mb-2 font-hand text-2xl text-terracotta">— The promises</p>
@@ -237,7 +211,7 @@ export default function HomePage() {
       </Section>
 
       {/* Quiz CTA — pre-purchase qualification + email capture funnel */}
-      <Section background="warmyellow" spacing="default">
+      <Section spacing="default">
         <Container size="narrow">
           <div className="text-center">
             <p className="mb-3 font-sans text-xs uppercase tracking-[0.28em] font-semibold text-forest/70">
@@ -258,7 +232,7 @@ export default function HomePage() {
       </Section>
 
       {/* Email capture / waitlist */}
-      <Section background="cream" spacing="default">
+      <Section spacing="default">
         <Container size="narrow">
           <div className="rounded-3xl border border-forest/15 bg-cream-2 p-10 text-center md:p-14">
             <p className="mb-3 font-sans text-xs uppercase tracking-[0.28em] font-semibold text-terracotta">
@@ -289,8 +263,8 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* Ingredients spotlight — Maev/Dog-is-Human style row of real PawBite probiotic ingredients */}
-      <section className="relative overflow-hidden bg-mist">
+      {/* Ingredients spotlight — clean editorial treatment, no placeholder circles */}
+      <section className="relative overflow-hidden bg-white">
         <Container className="py-20 sm:py-28">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-editorial text-3xl font-semibold tracking-tight text-navy sm:text-4xl md:text-5xl">
@@ -309,7 +283,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
+          <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
             {[
               { label: 'Vet-formulated', desc: '7-strain protocol' },
               { label: 'Research-backed', desc: '1B CFU per chew' },
@@ -317,38 +291,10 @@ export default function HomePage() {
               { label: 'Real food base', desc: 'Pumpkin · sweet potato' },
             ].map((badge) => (
               <div key={badge.label} className="flex flex-col items-center text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/70 ring-1 ring-navy/10">
-                  <span className="h-5 w-5 rounded-full bg-terracotta/80" aria-hidden />
-                </div>
-                <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.22em] text-navy">
+                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-navy">
                   {badge.label}
                 </p>
                 <p className="mt-1 text-xs text-navy/60">{badge.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Ingredient circles row — the 7 things in every PawBite chew */}
-          <div className="mt-16 grid grid-cols-3 gap-6 sm:grid-cols-4 md:grid-cols-7">
-            {[
-              { name: 'Bacillus coagulans', tag: 'Probiotic strain', tint: 'from-cream-2 to-white' },
-              { name: 'Bacillus subtilis', tag: 'Probiotic strain', tint: 'from-mint/40 to-white' },
-              { name: 'Inulin (chicory root)', tag: 'Prebiotic fiber', tint: 'from-warmyellow/30 to-white' },
-              { name: 'Pumpkin', tag: 'Soothing fiber', tint: 'from-terracotta/30 to-white' },
-              { name: 'Sweet potato', tag: 'Whole-food base', tint: 'from-pinky/40 to-white' },
-              { name: 'Duck liver', tag: 'Real protein', tint: 'from-terracotta-dark/30 to-white' },
-              { name: 'Apple', tag: 'Natural binding', tint: 'from-mist-deep to-white' },
-            ].map((ing) => (
-              <div key={ing.name} className="flex flex-col items-center text-center">
-                <div
-                  className={`relative aspect-square w-full max-w-[120px] overflow-hidden rounded-full bg-gradient-to-br ${ing.tint} shadow-soft ring-1 ring-navy/5`}
-                >
-                  <div className="absolute inset-3 rounded-full bg-white/40 blur-xl" aria-hidden />
-                </div>
-                <p className="mt-3 font-editorial text-sm font-medium text-navy">{ing.name}</p>
-                <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.18em] text-navy/55">
-                  {ing.tag}
-                </p>
               </div>
             ))}
           </div>
