@@ -18,11 +18,11 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-cream/10 bg-forest/95 text-cream backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-forest/10 bg-cream/95 text-forest backdrop-blur-sm">
       <Container>
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center">
-            <PawBiteWordmark className="text-4xl leading-none text-cream" pawColor="#E8B547" />
+            <PawBiteWordmark className="text-4xl leading-none text-forest" pawColor="#C8765B" />
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
@@ -30,7 +30,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-cream transition-colors hover:text-warmyellow"
+                className="text-sm font-medium text-forest transition-colors hover:text-terracotta"
               >
                 {link.label}
               </Link>
