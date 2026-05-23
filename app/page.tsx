@@ -1,8 +1,13 @@
+import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Canister } from '@/components/brand/canister';
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
+import { trustBadges } from '@/data/trust-badges';
+import { heroStats } from '@/data/stats';
+import { promises } from '@/data/promises';
+import { testimonials } from '@/data/testimonials';
 
 export default function HomePage() {
   return (
@@ -83,6 +88,126 @@ export default function HomePage() {
             </span>
           </div>
         </div>
+      </Section>
+
+      {/* Trust strip — 5 credibility badges */}
+      <Section background="cream" spacing="tight">
+        <Container>
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+            {trustBadges.map((badge) => (
+              <div key={badge.label} className="flex flex-col items-center text-center">
+                <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-full border border-forest/15 bg-cream-2">
+                  <span className="font-display text-xl text-forest">★</span>
+                </div>
+                <p className="font-sans text-xs uppercase tracking-[0.18em] text-forest">
+                  {badge.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* 4-stat band */}
+      <Section background="warmyellow" spacing="tight">
+        <Container>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {heroStats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="fraunces-soft text-3xl font-bold text-forest sm:text-4xl">
+                  {stat.bigNumber}
+                </p>
+                <p className="mt-2 font-sans text-sm uppercase tracking-[0.2em] text-forest/80">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Real Dogs — beta tester testimonials (pre-launch placeholder photos) */}
+      <Section background="mint" spacing="default">
+        <Container>
+          <div className="mb-10 text-center">
+            <p className="mb-2 font-hand text-2xl text-terracotta">— Real dogs, real owners</p>
+            <h2 className="fraunces-soft text-balance text-4xl font-bold text-forest md:text-5xl">
+              Beta testers, two weeks in.
+            </h2>
+            <p className="mx-auto mt-3 max-w-lg text-sm text-forest/70">
+              Pre-launch program. Photos and quotes from real beta households — we&apos;ll keep
+              adding as more 14-day check-ins come back.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {testimonials.slice(0, 3).map((t, i) => {
+              // Pre-launch mockup placeholder photos from Unsplash (CC0)
+              // Replace with real beta tester photos in public/testimonials/<name>.jpg before public launch
+              const placeholderPhotos = [
+                'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&h=600&fit=crop&q=80',
+                'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&h=600&fit=crop&q=80',
+                'https://images.unsplash.com/photo-1517849845537-4d257902454a?w=600&h=600&fit=crop&q=80',
+              ];
+              return (
+                <article
+                  key={t.dogName}
+                  className="overflow-hidden rounded-3xl bg-cream"
+                >
+                  <div className="relative aspect-square overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={placeholderPhotos[i]}
+                      alt={`${t.dogName}, a ${t.dogBreed}`}
+                      className="h-full w-full object-cover"
+                    />
+                    <span className="absolute left-3 top-3 rounded-full bg-cream/95 px-2 py-1 font-sans text-[10px] uppercase tracking-[0.18em] text-forest">
+                      Beta · 14 day
+                    </span>
+                  </div>
+                  <div className="p-6">
+                    <p className="fraunces-soft text-xl font-bold text-forest">
+                      {t.dogName}
+                      <span className="ml-2 font-sans text-sm font-normal text-forest/70">
+                        {t.dogBreed}
+                      </span>
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-charcoal">&ldquo;{t.quote}&rdquo;</p>
+                    <p className="mt-4 font-sans text-xs uppercase tracking-[0.18em] text-forest/70">
+                      — {t.ownerName}
+                      {t.ownerLocation ? ` · ${t.ownerLocation}` : ''}
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </Container>
+      </Section>
+
+      {/* What we won't do — founder promises */}
+      <Section background="cream" spacing="default">
+        <Container size="narrow">
+          <div className="mb-10 text-center">
+            <p className="mb-2 font-hand text-2xl text-terracotta">— The promises</p>
+            <h2 className="fraunces-soft text-balance text-4xl font-bold text-forest md:text-5xl">
+              What we won&apos;t do.
+            </h2>
+          </div>
+          <ul className="grid gap-8 md:grid-cols-2">
+            {promises.map((p) => (
+              <li key={p.headline} className="rounded-2xl border border-forest/10 bg-cream-2 p-6">
+                <h3 className="fraunces-soft mb-2 text-xl font-bold text-forest">{p.headline}</h3>
+                <p className="text-sm leading-relaxed text-charcoal">{p.body}</p>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-10 text-center">
+            <Button variant="outline" size="md" asChild>
+              <Link href="/about">Read the full founder story</Link>
+            </Button>
+          </div>
+        </Container>
       </Section>
 
       {/* Brand statement — Maev-style giant italic wordmark */}
