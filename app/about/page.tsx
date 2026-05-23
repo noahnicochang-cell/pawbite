@@ -80,9 +80,9 @@ export default function AboutPage() {
             <div className="mx-auto w-full max-w-sm">
               <Image
                 src="/founder-Noah.jpg"
-                alt="Noah Chang with his rescue dog Theo"
-                width={600}
-                height={750}
+                alt="Noah Chang at home with Lola"
+                width={871}
+                height={846}
                 className="h-auto w-full rounded-2xl shadow-soft"
                 priority
               />

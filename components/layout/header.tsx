@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
-import { Mascot } from '@/components/brand/illustrations/characters/mascot';
 
 const navLinks = [
   { href: '/products', label: 'Shop' },
@@ -16,20 +15,15 @@ const navLinks = [
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  // Cart icon hidden until Phase 8 (Shopify wiring) ships functional cart
 
   return (
     <header className="sticky top-0 z-40 border-b border-forest/10 bg-cream/95 backdrop-blur-sm">
       <Container>
-        <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="group flex items-center gap-2">
-            <Mascot
-              variant="peeking"
-              size={36}
-              bodyColor="#E8B547"
-              className="group-hover:animate-wiggle"
-            />
-            <span className="font-display text-2xl leading-none text-forest">PawBite</span>
+        <div className="flex h-20 items-center justify-between">
+          <Link href="/" className="flex items-center">
+            <span className="font-display text-4xl leading-none text-forest tracking-tight">
+              PawBite
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
