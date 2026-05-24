@@ -21,17 +21,17 @@ const iconMap = {
 export function PdpBenefits({ benefits }: { benefits: ProductDetail['benefits'] }) {
   return (
     <Container>
-      <h2 className="fraunces-soft mb-8 text-balance text-3xl font-bold md:text-4xl">
+      <h2 className="font-editorial mb-8 text-balance text-3xl font-extrabold tracking-tight text-navy md:text-4xl lg:text-5xl">
         Why dogs do better.
       </h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {benefits.map((b) => {
           const Icon = iconMap[b.icon];
           return (
-            <div key={b.title} className="rounded-2xl border border-forest/15 bg-offwhite p-6">
+            <div key={b.title} className="rounded-2xl border border-navy/15 bg-mist-soft p-6">
               <Icon size={32} className="mb-3 text-terracotta" />
-              <h3 className="fraunces-soft mb-2 text-lg font-bold text-forest">{b.title}</h3>
-              <p className="text-sm leading-relaxed text-charcoal">{b.body}</p>
+              <h3 className="font-editorial mb-2 text-lg font-extrabold text-navy">{b.title}</h3>
+              <p className="font-editorial text-sm leading-relaxed text-navy/80">{b.body}</p>
             </div>
           );
         })}

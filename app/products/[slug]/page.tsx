@@ -58,28 +58,30 @@ export default function PdpPage({ params }: { params: { slug: string } }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
 
-      <Section background="cream" spacing="default">
+      {/* Hero on mist-soft (matches homepage hero) */}
+      <Section background="cream-2" spacing="tight">
         <Container>
           <PdpHero product={product} />
         </Container>
       </Section>
 
-      <Section background="offwhite" spacing="default">
+      {/* Everything else: clean white surfaces, no color spam */}
+      <Section spacing="tight">
         <PdpBenefits benefits={product.benefits} />
       </Section>
 
-      <Section background="cream" spacing="default">
+      <Section spacing="tight">
         <IngredientsTable
           ingredients={product.ingredients}
           prebioticsAndExtras={product.prebioticsAndExtras}
         />
       </Section>
 
-      <Section background="warmyellow" spacing="default">
+      <Section spacing="tight">
         <DosingTable dosing={product.dosing} note={product.dosingNote} />
       </Section>
 
-      <Section background="cream" spacing="default">
+      <Section background="cream-2" spacing="tight">
         <VetQuoteCard
           name={product.vetQuote.name}
           credentials={product.vetQuote.credentials}
@@ -87,19 +89,19 @@ export default function PdpPage({ params }: { params: { slug: string } }) {
         />
       </Section>
 
-      <Section background="offwhite" spacing="default">
+      <Section spacing="tight">
         <ComparisonTable comparison={product.comparison} />
       </Section>
 
-      <Section background="mint" spacing="default">
+      <Section spacing="tight">
         <PdpFaq faqs={product.faqs} />
       </Section>
 
-      <Section background="cream" spacing="default">
+      <Section background="cream-2" spacing="tight">
         <PdpGuarantee />
       </Section>
 
-      <Section background="cream-2" spacing="default">
+      <Section spacing="tight">
         <RelatedProducts currentSlug={product.slug} />
       </Section>
     </>

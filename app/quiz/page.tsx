@@ -42,20 +42,20 @@ export default function QuizPage() {
   }
 
   return (
-    <Section background="cream" spacing="default">
+    <Section background="cream" spacing="tight">
       <Container size="narrow">
-        <div className="mb-6 text-center">
-          <CalloutPill variant="caveat" color="warmyellow" rotation={-3}>
-            $5 off when you finish —
-          </CalloutPill>
+        <div className="mb-4 text-center">
+          <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-navy/60 sm:text-xs">
+            60-second quiz · $5 off when you finish
+          </p>
         </div>
 
         <QuizProgress current={step + 1} total={totalSteps} />
 
-        <div className="rounded-3xl border border-forest/15 bg-cream p-6 md:p-10">
+        <div className="rounded-3xl border border-navy/15 bg-mist-soft p-6 md:p-10">
           {!isEmailStep && currentQuestion && (
             <>
-              <h1 className="fraunces-soft mb-2 text-balance text-2xl font-bold md:text-3xl">
+              <h1 className="font-editorial mb-2 text-balance text-3xl font-extrabold leading-[0.95] tracking-tight text-navy md:text-4xl lg:text-5xl">
                 {currentQuestion.question}
               </h1>
               {currentQuestion.helper && (
@@ -96,7 +96,7 @@ export default function QuizPage() {
 
           {isEmailStep && (
             <form onSubmit={submit}>
-              <h1 className="fraunces-soft mb-2 text-balance text-2xl font-bold md:text-3xl">
+              <h1 className="font-editorial mb-2 text-balance text-3xl font-extrabold leading-[0.95] tracking-tight text-navy md:text-4xl lg:text-5xl">
                 One last thing — where should we send your $5 off?
               </h1>
               <p className="mb-6 text-sm text-charcoal/70">
