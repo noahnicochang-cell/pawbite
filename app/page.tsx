@@ -6,6 +6,7 @@ import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { heroStats } from '@/data/stats';
 import { promises } from '@/data/promises';
+import { wallDogs } from '@/data/dogs';
 
 export default function HomePage() {
   return (
@@ -174,57 +175,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* The PawBite Wall — Ghetto Gastro layout: full-bleed, edge-to-edge,
-          asymmetric grid, no rounded corners, tight pixel gap */}
-      <section className="w-full bg-navy">
-        <div className="grid grid-cols-2 gap-px md:grid-cols-4">
-          {/* Headline tile — spans 2x2 on desktop, full-width on mobile */}
-          <div className="col-span-2 flex aspect-[2/1] flex-col justify-between bg-mist-soft p-6 sm:p-8 md:col-span-2 md:row-span-2 md:aspect-square md:p-10 lg:p-14">
-            <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-navy/60 sm:text-xs">
-              The PawBite Wall · NYC · Vol. 01
-            </p>
-            <h2
-              className="font-editorial leading-[0.85] font-black tracking-tight text-navy"
-              style={{ fontSize: 'clamp(3rem, 8vw, 7rem)' }}
-            >
-              Real
-              <br />
-              dogs.
-              <br />
-              <span className="font-serif fraunces-soft italic font-bold text-terracotta">Real</span> guts.
-            </h2>
-            <p className="font-editorial text-xs uppercase tracking-[0.22em] text-navy/70 sm:text-sm">
-              Manhattan · Brooklyn · Queens
-              <br />
-              Six neighborhoods. Six guts behaving.
-            </p>
-          </div>
+      {/* The PawBite Wall — Ghetto Gastro: full-bleed navy section,
+          big headline up top, infinite horizontal-scroll dog marquee below */}
+      <section className="w-full overflow-hidden bg-navy py-12 sm:py-16">
+        {/* Headline header — left-aligned editorial */}
+        <div className="mx-auto mb-8 max-w-7xl px-6 sm:px-10">
+          <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-mist/60 sm:text-xs">
+            The PawBite Wall · NYC · Vol. 01
+          </p>
+          <h2
+            className="font-editorial mt-3 leading-[0.85] font-black tracking-tight text-mist"
+            style={{ fontSize: 'clamp(2.5rem, 7vw, 5.5rem)' }}
+          >
+            Real dogs. <span className="font-serif fraunces-soft italic font-bold text-terracotta">Real</span> guts.
+          </h2>
+        </div>
 
-          {/* 6 dog tiles — square, no rounding, tight gap */}
-          {[
-            { src: '/dogs/dog-1-dachshund.jpg', tag: 'Penny · UES' },
-            { src: '/dogs/dog-2-dalmatian.jpg', tag: 'Domino · Chinatown' },
-            { src: '/dogs/dog-3-vizsla.jpg', tag: 'Rio · West Village' },
-            { src: '/dogs/dog-4.jpg', tag: 'Olive · SoHo' },
-            { src: '/dogs/dog-5.jpg', tag: 'Beans · LES' },
-            { src: '/dogs/dog-6.jpg', tag: 'Mochi · Williamsburg' },
-          ].map((d) => (
-            <div key={d.src} className="group relative aspect-square overflow-hidden bg-navy">
-              <Image
-                src={d.src}
-                alt={d.tag}
-                width={800}
-                height={800}
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              {/* Tiny mono caption overlay on hover */}
-              <div className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-navy/90 to-transparent p-3 transition-transform duration-300 group-hover:translate-y-0">
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-mist">
-                  {d.tag}
-                </p>
+        {/* Rotating marquee — duplicates the list so the loop is seamless */}
+        <div className="relative">
+          <div
+            className="flex gap-2 will-change-transform"
+            style={{
+              animation: 'marquee 40s linear infinite',
+              width: 'max-content',
+            }}
+          >
+            {[...wallDogs, ...wallDogs].map((d, idx) => (
+              <div
+                key={`${d.src}-${idx}`}
+                className="group relative aspect-square w-[260px] flex-shrink-0 overflow-hidden bg-navy-deep sm:w-[320px] md:w-[380px]"
+              >
+                <Image
+                  src={d.src}
+                  alt={`${d.name}, ${d.neighborhood}`}
+                  width={500}
+                  height={500}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Caption — always visible bottom-left in mono */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/95 via-navy/40 to-transparent p-3 sm:p-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-mist sm:text-xs">
+                    {d.name} · {d.neighborhood}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        {/* Footer caption */}
+        <div className="mx-auto mt-6 max-w-7xl px-6 sm:px-10">
+          <p className="font-editorial text-xs uppercase tracking-[0.22em] text-mist/60 sm:text-sm">
+            Manhattan · Brooklyn · Queens — and more rolling in weekly.
+          </p>
         </div>
       </section>
 
