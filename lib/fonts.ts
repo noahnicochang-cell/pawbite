@@ -26,7 +26,7 @@ export const fontSans = Inter({
 // Editorial / Founders-Grotesk-alt — headlines + body in the Maev style
 export const fontEditorial = Manrope({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-editorial',
   display: 'swap',
 });

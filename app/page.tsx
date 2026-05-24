@@ -21,10 +21,10 @@ export default function HomePage() {
             </Badge>
 
             <div className="space-y-5">
-              <h1 className="font-sans text-5xl font-bold uppercase leading-tight tracking-tight text-charcoal sm:text-6xl lg:text-7xl">
-                <span className="block">PROBIOTIC</span>
-                <span className="block font-serif fraunces-soft italic text-5xl text-terracotta sm:text-6xl lg:text-7xl">chews</span>
-                <span className="block">FOR DOGS.</span>
+              <h1 className="font-sans text-5xl uppercase leading-tight tracking-tight text-charcoal sm:text-6xl lg:text-7xl">
+                <span className="block font-extrabold">PROBIOTIC</span>
+                <span className="block font-serif fraunces-soft italic font-bold text-5xl text-terracotta sm:text-6xl lg:text-7xl">chews</span>
+                <span className="block font-extrabold">FOR DOGS.</span>
               </h1>
               <p className="font-sans text-base uppercase tracking-[0.24em] text-forest sm:text-lg">
                 One bite. Real gut support.
