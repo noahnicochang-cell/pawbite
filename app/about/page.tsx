@@ -14,6 +14,7 @@ import { Stethoscope } from '@/components/brand/illustrations/icons/stethoscope'
 import { Blob } from '@/components/brand/illustrations/decor/blob';
 import { CalloutPill } from '@/components/brand/illustrations/callout-pill';
 import { SITE_URL } from '@/lib/seo';
+import { ownerDogs } from '@/data/owners';
 
 export const metadata: Metadata = {
   title: 'About PawBite',
@@ -139,6 +140,62 @@ export default function AboutPage() {
           </div>
         </Container>
       </Section>
+
+      {/* Owners + dogs marquee — Ghetto Gastro full-bleed, same animation as the
+          homepage PawBite Wall but with people in the frame */}
+      <style>{`@keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }`}</style>
+      <section className="w-full overflow-hidden bg-navy py-12 sm:py-16">
+        <div className="mx-auto mb-8 max-w-7xl px-6 sm:px-10">
+          <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-mist/60 sm:text-xs">
+            The owners · NYC · Vol. 01
+          </p>
+          <h2
+            className="font-editorial mt-3 leading-[0.85] font-black tracking-tight text-mist"
+            style={{ fontSize: 'clamp(2.5rem, 7vw, 5.5rem)' }}
+          >
+            Real owners. <span className="font-serif fraunces-soft italic font-bold text-terracotta">Real</span> dogs.
+          </h2>
+        </div>
+
+        <div className="relative">
+          <div
+            className="flex gap-2 will-change-transform"
+            style={{
+              animation: 'marquee 45s linear infinite',
+              width: 'max-content',
+            }}
+          >
+            {[...ownerDogs, ...ownerDogs].map((d, idx) => (
+              <div
+                key={`${d.src}-${idx}`}
+                className="group relative aspect-square w-[260px] flex-shrink-0 overflow-hidden bg-navy-deep sm:w-[320px] md:w-[380px]"
+              >
+                <Image
+                  src={d.src}
+                  alt={`${d.dogName} + ${d.ownerName}, ${d.neighborhood}`}
+                  width={500}
+                  height={500}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/95 via-navy/40 to-transparent p-3 sm:p-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-mist sm:text-xs">
+                    {d.dogName} + {d.ownerName}
+                  </p>
+                  <p className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.22em] text-mist/60 sm:text-[10px]">
+                    {d.neighborhood}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mx-auto mt-6 max-w-7xl px-6 sm:px-10">
+          <p className="font-editorial text-xs uppercase tracking-[0.22em] text-mist/60 sm:text-sm">
+            5 households. More rolling in weekly.
+          </p>
+        </div>
+      </section>
 
       {/* What we won't do */}
       <Section background="mint" spacing="default">
