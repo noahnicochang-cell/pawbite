@@ -4,6 +4,7 @@ export type Testimonial = {
   ownerName: string;
   ownerLocation: string;
   avatarVariant: 1 | 2 | 3 | 4 | 5 | 6;
+  photo: string;
   quote: string;
   beforeAfter?: {
     metric: string;
@@ -15,33 +16,36 @@ export type Testimonial = {
 
 export const testimonials: Testimonial[] = [
   {
-    dogName: 'Bella',
-    dogBreed: 'Rescue mix, 7 yo',
-    ownerName: 'Maya R.',
-    ownerLocation: 'Brooklyn, NY',
+    dogName: 'Penny',
+    dogBreed: 'Mini Dachshund, 4 yo',
+    ownerName: 'Sarah L.',
+    ownerLocation: 'Upper East Side, NYC',
     avatarVariant: 1,
+    photo: '/dogs/dog-1-dachshund.jpg',
     quote:
-      "When we adopted Bella she'd been through three different probiotics with no improvement. PawBite is the first one that genuinely worked — within a couple of weeks her stool was firm and the gas was gone. I love that I can read the ingredient list without Googling things.",
+      "Penny's stomach was a disaster on city walks — every block was a guessing game. Two weeks on PawBite and we made it from 86th to Central Park without an incident. Game changer for a Manhattan dog.",
     beforeAfter: { metric: 'Stool quality', before: 2, after: 9, days: 14 },
   },
   {
-    dogName: 'Otis',
-    dogBreed: 'Golden Retriever, 9 yo',
-    ownerName: 'Marcus T.',
-    ownerLocation: 'Austin, TX',
+    dogName: 'Domino',
+    dogBreed: 'Dalmatian, 3 yo',
+    ownerName: 'Mae K.',
+    ownerLocation: 'Chinatown, NYC',
     avatarVariant: 2,
+    photo: '/dogs/dog-2-dalmatian.jpg',
     quote:
-      "Otis was getting slow on his morning walks. Two weeks on Hip + Joint and he's back to jumping on the couch like he's two. The duck flavor is the only chew he doesn't side-eye.",
-    beforeAfter: { metric: 'Mobility', before: 4, after: 8, days: 21 },
+      "Dalmatians have notoriously sensitive guts — Domino was on a prescription probiotic that cost twice as much and worked half as well. PawBite is now the only thing in his bowl I don't worry about.",
+    beforeAfter: { metric: 'Gas + bloating', before: 3, after: 9, days: 21 },
   },
   {
-    dogName: 'Pickle',
-    dogBreed: 'French Bulldog, 4 yo',
-    ownerName: 'Priya S.',
-    ownerLocation: 'Chicago, IL',
+    dogName: 'Rio',
+    dogBreed: 'Vizsla, 5 yo',
+    ownerName: 'James P.',
+    ownerLocation: 'West Village, NYC',
     avatarVariant: 4,
+    photo: '/dogs/dog-3-vizsla.jpg',
     quote:
-      "We've tried every probiotic the vet recommended. PawBite is the only one that actually fixed Pickle's gas situation — which, if you've lived with a frenchie, you know is life-changing. The Daily Duo gets here on the same day every month and we never run out.",
-    beforeAfter: { metric: 'Gas + bloating', before: 3, after: 9, days: 30 },
+      "Rio is a 50-lb anxious vizsla who used to throw up on every car ride. The duo of PawBite + a calming chew before trips? No vomiting in 3 weeks. My back seat thanks you.",
+    beforeAfter: { metric: 'Travel anxiety', before: 4, after: 8, days: 21 },
   },
 ];

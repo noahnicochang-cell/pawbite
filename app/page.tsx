@@ -175,42 +175,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Real Dogs — beta tester testimonials (pre-launch placeholder photos) */}
+      {/* Real Dogs — social-proof testimonials with real NYC dog photos */}
       <Section spacing="default">
         <Container>
           <div className="mb-10 text-center">
-            <p className="mb-2 font-hand text-2xl text-terracotta">— Real dogs, real owners</p>
-            <h2 className="fraunces-soft text-balance text-4xl font-bold text-forest md:text-5xl">
-              Beta testers, two weeks in.
+            <h2 className="font-editorial text-balance text-3xl font-extrabold tracking-tight text-navy sm:text-4xl md:text-5xl">
+              Real dogs. <span className="font-serif fraunces-soft italic font-bold text-terracotta">Real</span> NYC.
             </h2>
-            <p className="mx-auto mt-3 max-w-lg text-sm text-forest/70">
-              Pre-launch program. Photos and quotes from real beta households — we&apos;ll keep
-              adding as more 14-day check-ins come back.
+            <p className="mx-auto mt-3 max-w-lg text-sm text-navy/70">
+              Photos and quotes from the PawBite beta. New 14-day check-ins added weekly.
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {testimonials.slice(0, 3).map((t, i) => {
-              // Pre-launch mockup placeholder photos from Unsplash (CC0)
-              // Replace with real beta tester photos in public/testimonials/<name>.jpg before public launch
-              const placeholderPhotos = [
-                'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&h=600&fit=crop&q=80',
-                'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&h=600&fit=crop&q=80',
-                'https://images.unsplash.com/photo-1517849845537-4d257902454a?w=600&h=600&fit=crop&q=80',
-              ];
+            {testimonials.slice(0, 3).map((t) => {
               return (
                 <article
                   key={t.dogName}
-                  className="overflow-hidden rounded-3xl bg-cream"
+                  className="overflow-hidden rounded-3xl bg-mist-soft ring-1 ring-navy/10"
                 >
                   <div className="relative aspect-square overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={placeholderPhotos[i]}
-                      alt={`${t.dogName}, a ${t.dogBreed}`}
+                    <Image
+                      src={t.photo}
+                      alt={`${t.dogName}, a ${t.dogBreed}, in ${t.ownerLocation}`}
+                      width={800}
+                      height={800}
                       className="h-full w-full object-cover"
                     />
-                    <span className="absolute left-3 top-3 rounded-full bg-cream/95 px-2 py-1 font-sans text-[10px] uppercase tracking-[0.18em] text-forest">
+                    <span className="absolute left-3 top-3 rounded-full bg-mist/95 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-navy">
                       Beta · 14 day
                     </span>
                   </div>
