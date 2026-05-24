@@ -1,7 +1,7 @@
-import { Bagel_Fat_One, Fraunces, Inter, Manrope, Caveat, JetBrains_Mono } from 'next/font/google';
+import { Modak, Fraunces, Inter, Manrope, Caveat, JetBrains_Mono } from 'next/font/google';
 
-// Wordmark only — the PawBite logotype
-export const fontDisplay = Bagel_Fat_One({
+// Wordmark only — the PawBite logotype (Modak = bubbly balloon-style display)
+export const fontDisplay = Modak({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-display',
