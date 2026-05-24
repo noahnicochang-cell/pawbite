@@ -10,22 +10,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // PawBite brand palette — Maev/Dog-is-Human soft blue refresh
-        mist: '#E2EAF1',
-        'mist-deep': '#D4DEE8',
-        'mist-soft': '#EEF3F8',
-        navy: '#0F2540',
-        'navy-deep': '#091833',
+        // PawBite brand palette — pulled directly from the product tin
+        // Cream surface = tin body, Royal blue = wordmark + dog illustration
+        mist: '#EBE2CD',
+        'mist-deep': '#DCD1B6',
+        'mist-soft': '#F5EFE0',
+        navy: '#1E40AF',
+        'navy-deep': '#1E3A8A',
         'slate-soft': '#C5CFD9',
         'slate-mid': '#9CA8B5',
         'slate-deep': '#6B7785',
         'slate-ink': '#4B5563',
         // Legacy tokens — kept so existing pages keep rendering during pivot
-        cream: '#E2EAF1',
-        'cream-2': '#EEF3F8',
-        forest: '#0F2540',
-        'forest-deep': '#091833',
-        'forest-mid': '#1A3357',
+        cream: '#EBE2CD',
+        'cream-2': '#F5EFE0',
+        forest: '#1E40AF',
+        'forest-deep': '#1E3A8A',
+        'forest-mid': '#2851C7',
         // Brighter Claude-style orange — coral-warm, more saturation than the old muted terracotta
         terracotta: '#E97757',
         'terracotta-dark': '#D2624A',
@@ -37,8 +38,8 @@ const config: Config = {
         mint: '#DCE6DF',
         'mint-deep': '#BFCFC5',
         offwhite: '#FAFAFA',
-        charcoal: '#0F2540',
-        'cream-muted': '#D4DEE8',
+        charcoal: '#1E40AF',
+        'cream-muted': '#DCD1B6',
       },
       borderRadius: {
         pill: '9999px',
