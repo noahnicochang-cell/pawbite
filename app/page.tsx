@@ -2,8 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Canister } from '@/components/brand/canister';
-import { PawBiteWordmark } from '@/components/brand/pawbite-wordmark';
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { heroStats } from '@/data/stats';
