@@ -161,7 +161,7 @@ export default function AboutPage() {
           <div
             className="flex gap-2 will-change-transform"
             style={{
-              animation: 'marquee 45s linear infinite',
+              animation: 'marquee 80s linear infinite',
               width: 'max-content',
             }}
           >

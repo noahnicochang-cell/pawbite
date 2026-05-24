@@ -196,7 +196,7 @@ export default function HomePage() {
           <div
             className="flex gap-2 will-change-transform"
             style={{
-              animation: 'marquee 40s linear infinite',
+              animation: 'marquee 90s linear infinite',
               width: 'max-content',
             }}
           >
