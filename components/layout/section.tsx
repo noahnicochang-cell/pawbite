@@ -25,10 +25,11 @@ const backgrounds: Record<NonNullable<SectionProps['background']>, string> = {
   transparent: 'bg-transparent',
 };
 
+// Tightened globally — was py-10/14/16/24/24/32. Site felt too airy.
 const spacings: Record<NonNullable<SectionProps['spacing']>, string> = {
-  tight: 'py-10 md:py-14',
-  default: 'py-16 md:py-24',
-  loose: 'py-24 md:py-32',
+  tight: 'py-6 md:py-8',
+  default: 'py-10 md:py-14',
+  loose: 'py-14 md:py-20',
 };
 
 export function Section({

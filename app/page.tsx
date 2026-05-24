@@ -14,16 +14,16 @@ export default function HomePage() {
       <style>{`@keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }`}</style>
 
       <Section className="bg-mist-soft py-0">
-        <Container className="grid gap-10 py-6 lg:grid-cols-[1.3fr_0.9fr] lg:items-center lg:py-8">
-          <div className="space-y-8">
+        <Container className="grid gap-6 py-4 lg:grid-cols-[1.3fr_0.9fr] lg:items-center lg:py-6">
+          <div className="space-y-4">
             <Badge variant="forest" className="text-[11px] tracking-[0.28em] font-semibold text-cream">
               NEW RELEASE · PB-01
             </Badge>
 
-            <div className="space-y-5">
-              <h1 className="font-sans text-5xl uppercase leading-tight tracking-tight text-charcoal sm:text-6xl lg:text-7xl">
+            <div className="space-y-3">
+              <h1 className="font-sans text-6xl uppercase leading-[0.92] tracking-tighter text-charcoal sm:text-7xl lg:text-8xl xl:text-9xl">
                 <span className="block font-extrabold">PROBIOTIC</span>
-                <span className="block font-serif fraunces-soft italic font-bold text-5xl text-terracotta sm:text-6xl lg:text-7xl">chews</span>
+                <span className="block font-serif fraunces-soft italic font-bold text-terracotta">chews</span>
                 <span className="block font-extrabold">FOR DOGS.</span>
               </h1>
               <p className="font-sans text-base uppercase tracking-[0.24em] text-forest sm:text-lg">
