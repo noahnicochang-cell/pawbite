@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Canister } from '@/components/brand/canister';
@@ -33,7 +34,8 @@ export default function HomePage() {
             </div>
 
             <p className="max-w-2xl text-base leading-7 text-charcoal font-sans">
-              5-strain targeted probiotic protocol, 5 billion CFU per chew, vet-formulated for daily gut support.
+              Multi-Strain Probiotic Complex with Complex Digestive Blend. Soft-baked beef liver chews,
+              5 billion CFU each, vet-formulated for daily gut support.
             </p>
 
             <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
@@ -41,7 +43,7 @@ export default function HomePage() {
                 SHOP NOW — $30
               </Button>
               <span className="font-sans text-sm uppercase tracking-[0.22em] text-forest">
-                30-day supply · Free US shipping
+                90 soft chews · 11.1 oz · Free US shipping
               </span>
             </div>
 
@@ -53,7 +55,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Product mockup — CSS-rendered PawBite pouch, stand-in until real photoshoot */}
+          {/* Real product photo — PawBite tin */}
           <div className="relative mx-auto flex w-full max-w-md flex-col items-center justify-center gap-6">
             <div className="relative">
               {/* Floating badges */}
@@ -68,54 +70,15 @@ export default function HomePage() {
                 </Badge>
               </div>
 
-              {/* The "canister" — tall rounded label that reads as a real product */}
-              <div className="relative h-[440px] w-[300px] overflow-hidden rounded-[36px] bg-gradient-to-b from-white to-mist-soft shadow-2xl ring-1 ring-navy/10">
-                {/* Top seal */}
-                <div className="border-b border-navy/10 bg-mist/40 px-6 py-3 text-center">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-navy/60">
-                    Daily Probiotic · 30 chews
-                  </p>
-                </div>
-
-                {/* Label body */}
-                <div className="flex flex-col items-center px-7 pt-9">
-                  {/* Wordmark */}
-                  <PawBiteWordmark
-                    className="text-[44px] leading-none text-navy"
-                    pawColor="#E97757"
-                  />
-
-                  {/* Tagline */}
-                  <p className="mt-3 font-editorial text-[11px] uppercase tracking-[0.28em] text-navy/70">
-                    Soft-baked chews · Duck
-                  </p>
-
-                  {/* Accent disc */}
-                  <div className="my-7 flex h-24 w-24 items-center justify-center rounded-full bg-terracotta/15 ring-1 ring-terracotta/30">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-terracotta text-white shadow-soft">
-                      <span className="font-display text-3xl leading-none">PB</span>
-                    </div>
-                  </div>
-
-                  {/* Big spec */}
-                  <p className="font-display text-[2.5rem] leading-none text-navy">5 STRAINS</p>
-                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.3em] text-navy/60">
-                    5 Billion CFU · per chew
-                  </p>
-                </div>
-
-                {/* Footer band */}
-                <div className="absolute bottom-0 left-0 right-0 border-t border-navy/10 bg-mist/40 px-6 py-3 text-center">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-navy/60">
-                    Vet-formulated · Made in NYC
-                  </p>
-                </div>
-              </div>
+              <Image
+                src="/product/pawbite-tin.jpg"
+                alt="PawBite Pet Probiotic Chews tin — 90 soft chews, beef liver flavor"
+                width={500}
+                height={500}
+                priority
+                className="h-auto w-[420px] max-w-full drop-shadow-2xl"
+              />
             </div>
-
-            <p className="text-center font-mono text-[10px] uppercase tracking-[0.22em] text-navy/50">
-              Product render — real photography coming
-            </p>
           </div>
         </Container>
 
