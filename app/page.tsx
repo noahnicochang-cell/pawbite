@@ -123,6 +123,58 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* Full-bleed magazine-style square tile grid — Ghetto Gastro influence.
+          6 squares, edge-to-edge, no container padding. Bold color blocking
+          with Epilogue Black for the Ayoh-style typographic punch. */}
+      <section className="w-full">
+        <div className="grid grid-cols-2 gap-0 md:grid-cols-3">
+          <div className="relative flex aspect-square items-center justify-center bg-navy p-6 text-center">
+            <p className="font-editorial text-4xl font-black leading-none tracking-tight text-mist sm:text-6xl md:text-7xl">
+              5
+              <span className="block text-xl font-semibold tracking-[0.2em] sm:text-2xl">STRAINS</span>
+            </p>
+          </div>
+
+          <div className="relative flex aspect-square items-center justify-center bg-mist-deep p-6 text-center">
+            <p className="font-editorial text-3xl font-black leading-tight tracking-tight text-navy sm:text-4xl md:text-5xl">
+              Beef
+              <span className="block font-serif fraunces-soft italic font-bold text-terracotta">liver</span>
+              <span className="block text-xl font-semibold tracking-[0.18em] sm:text-2xl">FLAVOR</span>
+            </p>
+          </div>
+
+          <div className="relative flex aspect-square items-center justify-center bg-terracotta p-6 text-center">
+            <p className="font-editorial text-3xl font-black leading-none tracking-tight text-mist sm:text-5xl md:text-6xl">
+              5B
+              <span className="block text-base font-semibold tracking-[0.22em] sm:text-lg">CFU / CHEW</span>
+            </p>
+          </div>
+
+          <div className="relative flex aspect-square items-center justify-center bg-mist p-6 text-center">
+            <p className="font-editorial text-3xl font-black leading-tight tracking-tight text-navy sm:text-4xl md:text-5xl">
+              VET
+              <span className="block font-serif fraunces-soft italic font-bold text-terracotta">formulated</span>
+              <span className="block text-xs font-semibold tracking-[0.28em] text-navy/70 sm:text-sm">DAILY</span>
+            </p>
+          </div>
+
+          <div className="relative flex aspect-square items-center justify-center bg-navy p-6 text-center">
+            <p className="font-editorial text-3xl font-black leading-none tracking-tight text-mist sm:text-5xl md:text-6xl">
+              90
+              <span className="block text-base font-semibold tracking-[0.22em] sm:text-lg">SOFT CHEWS</span>
+            </p>
+          </div>
+
+          <div className="relative flex aspect-square items-center justify-center bg-mist-deep p-6 text-center">
+            <p className="font-editorial text-3xl font-black leading-tight tracking-tight text-navy sm:text-4xl md:text-5xl">
+              Built
+              <span className="block font-serif fraunces-soft italic font-bold text-terracotta">for</span>
+              <span className="block">Lola.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Real Dogs — beta tester testimonials (pre-launch placeholder photos) */}
       <Section spacing="default">
         <Container>

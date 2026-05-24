@@ -1,4 +1,4 @@
-import { Modak, Fraunces, Inter, Manrope, Caveat, JetBrains_Mono } from 'next/font/google';
+import { Modak, Fraunces, Inter, Epilogue, Caveat, JetBrains_Mono } from 'next/font/google';
 
 // Wordmark only — the PawBite logotype (Modak = bubbly balloon-style display)
 export const fontDisplay = Modak({
@@ -23,10 +23,11 @@ export const fontSans = Inter({
   display: 'swap',
 });
 
-// Editorial / Founders-Grotesk-alt — headlines + body in the Maev style
-export const fontEditorial = Manrope({
+// Editorial — Ayoh-inspired headline + body font. Epilogue carries weight
+// the way Founders Grotesk does on Ayoh's site (heavier 800/900 for headlines)
+export const fontEditorial = Epilogue({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
   variable: '--font-editorial',
   display: 'swap',
 });
