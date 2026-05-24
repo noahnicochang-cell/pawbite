@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <style>{`@keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }`}</style>
 
-      <Section className="bg-cream py-0">
+      <Section className="bg-mist-soft py-0">
         <Container className="grid gap-10 py-6 lg:grid-cols-[1.3fr_0.9fr] lg:items-center lg:py-8">
           <div className="space-y-8">
             <Badge variant="forest" className="text-[11px] tracking-[0.28em] font-semibold text-cream">
@@ -53,9 +53,19 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Real product photo — PawBite tin */}
+          {/* Real product photo — PawBite tin on a soft halo */}
           <div className="relative mx-auto flex w-full max-w-md flex-col items-center justify-center gap-6">
             <div className="relative">
+              {/* Soft radial halo behind the tin for separation */}
+              <div
+                aria-hidden
+                className="absolute inset-0 -z-0 mx-auto h-[420px] w-[420px] rounded-full blur-3xl"
+                style={{
+                  background:
+                    'radial-gradient(closest-side, rgba(30,64,175,0.10), rgba(30,64,175,0) 70%)',
+                }}
+              />
+
               {/* Floating badges */}
               <div className="absolute -left-2 top-6 z-10">
                 <Badge variant="forest" className="text-[11px] tracking-[0.24em] font-semibold">
@@ -74,7 +84,7 @@ export default function HomePage() {
                 width={1024}
                 height={1024}
                 priority
-                className="h-auto w-[420px] max-w-full drop-shadow-2xl"
+                className="relative h-auto w-[420px] max-w-full drop-shadow-2xl"
               />
             </div>
           </div>
