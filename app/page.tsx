@@ -69,10 +69,10 @@ export default function HomePage() {
               </div>
 
               <Image
-                src="/product/pawbite-tin.jpg"
+                src="/product/pawbite-tin.png"
                 alt="PawBite Pet Probiotic Chews tin — 90 soft chews, beef liver flavor"
-                width={500}
-                height={500}
+                width={1024}
+                height={1024}
                 priority
                 className="h-auto w-[420px] max-w-full drop-shadow-2xl"
               />
