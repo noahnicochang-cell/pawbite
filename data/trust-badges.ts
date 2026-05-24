@@ -9,5 +9,4 @@ export const trustBadges: TrustBadge[] = [
   { label: 'Third-party tested', iconKey: 'star', bgColor: 'pinky' },
   { label: '90-day guarantee', iconKey: 'shield', bgColor: 'mint' },
   { label: 'Free ship $40+', iconKey: 'paw', bgColor: 'terracotta' },
-  { label: 'Made in USA', iconKey: 'us-factory', bgColor: 'cream' },
 ];

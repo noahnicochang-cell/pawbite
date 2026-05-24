@@ -5,7 +5,6 @@ import { Canister } from '@/components/brand/canister';
 import { PawBiteWordmark } from '@/components/brand/pawbite-wordmark';
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
-import { trustBadges } from '@/data/trust-badges';
 import { heroStats } from '@/data/stats';
 import { promises } from '@/data/promises';
 import { testimonials } from '@/data/testimonials';
@@ -16,7 +15,7 @@ export default function HomePage() {
       <style>{`@keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }`}</style>
 
       <Section className="bg-cream py-0">
-        <Container className="grid gap-12 py-12 lg:grid-cols-[1.3fr_0.9fr] lg:items-center lg:py-16">
+        <Container className="grid gap-10 py-6 lg:grid-cols-[1.3fr_0.9fr] lg:items-center lg:py-8">
           <div className="space-y-8">
             <Badge variant="forest" className="text-[11px] tracking-[0.28em] font-semibold text-cream">
               NEW RELEASE · PB-01
@@ -135,28 +134,10 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Trust strip — 5 credibility badges */}
+      {/* Stat band — no repeats, no MADE IN USA */}
       <Section spacing="tight">
         <Container>
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-            {trustBadges.map((badge) => (
-              <div key={badge.label} className="flex flex-col items-center text-center">
-                <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-full border border-forest/15 bg-cream-2">
-                  <span className="font-display text-xl text-forest">★</span>
-                </div>
-                <p className="font-sans text-xs uppercase tracking-[0.18em] text-forest">
-                  {badge.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* 4-stat band */}
-      <Section spacing="tight">
-        <Container>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-3">
             {heroStats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <p className="fraunces-soft text-3xl font-bold text-forest sm:text-4xl">
@@ -234,8 +215,7 @@ export default function HomePage() {
       <Section spacing="default">
         <Container size="narrow">
           <div className="mb-10 text-center">
-            <p className="mb-2 font-hand text-2xl text-terracotta">— The promises</p>
-            <h2 className="fraunces-soft text-balance text-4xl font-bold text-forest md:text-5xl">
+            <h2 className="font-editorial text-balance text-3xl font-semibold tracking-tight text-navy sm:text-4xl md:text-5xl">
               What we won&apos;t do.
             </h2>
           </div>
