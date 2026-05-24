@@ -7,7 +7,6 @@ import { Container } from '@/components/layout/container';
 import { Button } from '@/components/ui/button';
 import { QuizProgress } from '@/components/quiz/quiz-progress';
 import { QuizOption } from '@/components/quiz/quiz-option';
-import { CalloutPill } from '@/components/brand/illustrations/callout-pill';
 import { quizQuestions, type QuizAnswers, type QuizQuestionId } from '@/lib/quiz';
 
 export default function QuizPage() {
