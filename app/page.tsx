@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { BuyButton } from '@/components/buy-button';
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { heroStats } from '@/data/stats';
@@ -17,31 +18,29 @@ export default function HomePage() {
         <Container className="grid gap-6 py-4 lg:grid-cols-[1.3fr_0.9fr] lg:items-center lg:py-6">
           <div className="space-y-4">
             <Badge variant="forest" className="text-[11px] tracking-[0.28em] font-semibold text-cream">
-              NEW RELEASE · PB-01
+              NEW RELEASE · CB-01
             </Badge>
 
             <div className="space-y-3">
               <h1 className="font-sans text-6xl uppercase leading-[0.92] tracking-tighter text-charcoal sm:text-7xl lg:text-8xl xl:text-9xl">
-                <span className="block font-extrabold">PROBIOTIC</span>
+                <span className="block font-extrabold">CALMING</span>
                 <span className="block font-serif fraunces-soft italic font-bold text-terracotta">chews</span>
                 <span className="block font-extrabold">FOR DOGS.</span>
               </h1>
               <p className="font-sans text-base uppercase tracking-[0.24em] text-forest sm:text-lg">
-                One bite. Real gut support.
+                Adaptogens, not sedation.
               </p>
             </div>
 
             <p className="max-w-2xl text-base leading-7 text-charcoal font-sans">
-              Multi-Strain Probiotic Complex with Complex Digestive Blend. Soft-baked beef liver chews,
-              5 billion CFU each, vet-formulated for daily gut support.
+              L-theanine + ashwagandha + chamomile. Soft-baked chews that take the edge off without
+              knocking your dog out — no CBD, no melatonin, no sedatives.
             </p>
 
             <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <Button variant="primary" size="lg" className="rounded-full bg-forest px-8 py-4 text-cream hover:bg-forest/90">
-                SHOP NOW — $30
-              </Button>
+              <BuyButton className="rounded-full bg-forest px-8 py-4 text-cream hover:bg-forest/90" />
               <span className="font-sans text-sm uppercase tracking-[0.22em] text-forest">
-                90 soft chews · 11.1 oz · Free US shipping
+                90 soft chews · 200g · Free US shipping
               </span>
             </div>
 
@@ -74,13 +73,13 @@ export default function HomePage() {
               </div>
               <div className="absolute -right-2 top-6 z-10">
                 <Badge variant="warmyellow" className="text-[11px] tracking-[0.24em] font-semibold text-navy">
-                  $30
+                  $38.99
                 </Badge>
               </div>
 
               <Image
                 src="/product/pawbite-tin.png"
-                alt="PawBite Pet Probiotic Chews tin — 90 soft chews, beef liver flavor"
+                alt="PawBite Calming Chews — 90 soft chews, L-theanine + ashwagandha + chamomile"
                 width={1024}
                 height={1024}
                 priority
@@ -130,23 +129,23 @@ export default function HomePage() {
         <div className="grid grid-cols-2 gap-0 md:grid-cols-3">
           <div className="relative flex aspect-square items-center justify-center bg-navy p-6 text-center">
             <p className="font-editorial text-4xl font-black leading-none tracking-tight text-mist sm:text-6xl md:text-7xl">
-              5
-              <span className="block text-xl font-semibold tracking-[0.2em] sm:text-2xl">STRAINS</span>
+              3
+              <span className="block text-xl font-semibold tracking-[0.2em] sm:text-2xl">ADAPTOGENS</span>
             </p>
           </div>
 
           <div className="relative flex aspect-square items-center justify-center bg-mist-deep p-6 text-center">
             <p className="font-editorial text-3xl font-black leading-tight tracking-tight text-navy sm:text-4xl md:text-5xl">
-              Beef
-              <span className="block font-serif fraunces-soft italic font-bold text-terracotta">liver</span>
-              <span className="block text-xl font-semibold tracking-[0.18em] sm:text-2xl">FLAVOR</span>
+              No
+              <span className="block font-serif fraunces-soft italic font-bold text-terracotta">sedatives</span>
+              <span className="block text-xl font-semibold tracking-[0.18em] sm:text-2xl">EVER.</span>
             </p>
           </div>
 
           <div className="relative flex aspect-square items-center justify-center bg-terracotta p-6 text-center">
             <p className="font-editorial text-3xl font-black leading-none tracking-tight text-mist sm:text-5xl md:text-6xl">
-              5B
-              <span className="block text-base font-semibold tracking-[0.22em] sm:text-lg">CFU / CHEW</span>
+              90
+              <span className="block text-base font-semibold tracking-[0.22em] sm:text-lg">SOFT CHEWS</span>
             </p>
           </div>
 
@@ -160,8 +159,8 @@ export default function HomePage() {
 
           <div className="relative flex aspect-square items-center justify-center bg-navy p-6 text-center">
             <p className="font-editorial text-3xl font-black leading-none tracking-tight text-mist sm:text-5xl md:text-6xl">
-              90
-              <span className="block text-base font-semibold tracking-[0.22em] sm:text-lg">SOFT CHEWS</span>
+              No
+              <span className="block text-base font-semibold tracking-[0.22em] sm:text-lg">CBD. NO MELATONIN.</span>
             </p>
           </div>
 
@@ -187,7 +186,7 @@ export default function HomePage() {
             className="font-editorial mt-3 leading-[0.85] font-black tracking-tight text-mist"
             style={{ fontSize: 'clamp(2.5rem, 7vw, 5.5rem)' }}
           >
-            Real dogs. <span className="font-serif fraunces-soft italic font-bold text-terracotta">Real</span> guts.
+            Real dogs. <span className="font-serif fraunces-soft italic font-bold text-terracotta">Real</span> calm.
           </h2>
         </div>
 
@@ -313,13 +312,13 @@ export default function HomePage() {
         <Container className="py-20 sm:py-28">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-editorial text-3xl font-semibold tracking-tight text-navy sm:text-4xl md:text-5xl">
-              Elevating <span className="font-serif fraunces-soft italic font-normal">Real-Strain</span> Gut Health<sup className="text-base">™</sup>
+              Calm without the <span className="font-serif fraunces-soft italic font-normal">knockout</span>
             </h2>
             <p className="mx-auto mt-5 max-w-xl font-editorial text-base leading-relaxed text-navy/80 sm:text-lg">
-              At PawBite, we&apos;re raising the standard of canine gut care. Every chew is built on a
-              5-strain probiotic protocol — 5 billion CFU, guaranteed through end-of-shelf-life —
-              paired with prebiotic fiber and clean whole-food ingredients. Nothing your dog
-              doesn&apos;t need.
+              PawBite Calming Chews work with your dog&apos;s nervous system, not against it. L-theanine
+              promotes alpha-wave activity. Ashwagandha lowers cortisol. Chamomile soothes without
+              sedation. No CBD, no melatonin, no pharmaceutical calming agents. Just adaptogens —
+              the way calm should work.
             </p>
             <Link
               href="/learn"
@@ -331,10 +330,10 @@ export default function HomePage() {
 
           <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
             {[
-              { label: 'Vet-formulated', desc: '5-strain protocol' },
-              { label: 'Research-backed', desc: '5B CFU per chew' },
+              { label: 'L-theanine', desc: 'Alpha-wave support' },
+              { label: 'Ashwagandha', desc: 'Cortisol reduction' },
+              { label: 'Chamomile', desc: 'Soothing, not sedating' },
               { label: 'Third-party tested', desc: 'Potency-verified' },
-              { label: 'Real food base', desc: 'Pumpkin · sweet potato' },
             ].map((badge) => (
               <div key={badge.label} className="flex flex-col items-center text-center">
                 <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-navy">
@@ -362,7 +361,7 @@ export default function HomePage() {
         </div>
         <div className="border-t border-navy/15 px-4 py-6 text-center">
           <p className="font-editorial text-xs uppercase tracking-[0.32em] text-navy/70">
-            real food. real strains. real dogs.
+            real calm. no sedatives. real dogs.
           </p>
         </div>
       </section>

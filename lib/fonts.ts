@@ -1,14 +1,31 @@
-import { Modak, Fraunces, Inter, Epilogue, Caveat, JetBrains_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
+import { Fraunces, Epilogue, Caveat, JetBrains_Mono } from 'next/font/google';
 
-// Wordmark only — the PawBite logotype (Modak = bubbly balloon-style display)
-export const fontDisplay = Modak({
-  subsets: ['latin'],
-  weight: '400',
+// Brand primary — Neue Haas Grotesk Display (from WWWESH brand package)
+export const fontSans = localFont({
+  src: [
+    { path: '../public/fonts/HaasGrotDisp-55Roman.otf', weight: '400', style: 'normal' },
+    { path: '../public/fonts/HaasGrotDisp-56Italic.otf', weight: '400', style: 'italic' },
+    { path: '../public/fonts/HaasGrotDisp-65Medium.otf', weight: '500', style: 'normal' },
+    { path: '../public/fonts/HaasGrotDisp-66MediumItalic.otf', weight: '500', style: 'italic' },
+    { path: '../public/fonts/HaasGrotDisp-75Bold.otf', weight: '700', style: 'normal' },
+    { path: '../public/fonts/HaasGrotDisp-76BoldItalic.otf', weight: '700', style: 'italic' },
+    { path: '../public/fonts/HaasGrotDisp-95Black.otf', weight: '900', style: 'normal' },
+    { path: '../public/fonts/HaasGrotDisp-96BlackItalic.otf', weight: '900', style: 'italic' },
+  ],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+// Brand accent display — Cooper Black (from WWWESH brand package)
+export const fontDisplay = localFont({
+  src: '../public/fonts/coopbl.ttf',
+  weight: '900',
   variable: '--font-display',
   display: 'swap',
 });
 
-// Headlines — use the SOFT axis for round/bouncy feel via CSS
+// Headlines — Fraunces SOFT axis for round/bouncy serif feel
 export const fontSerif = Fraunces({
   subsets: ['latin'],
   variable: '--font-serif',
@@ -16,15 +33,7 @@ export const fontSerif = Fraunces({
   axes: ['SOFT', 'opsz'],
 });
 
-// Body text
-export const fontSans = Inter({
-  subsets: ['latin'],
-  variable: '--font-sans',
-  display: 'swap',
-});
-
-// Editorial — Ayoh-inspired headline + body font. Epilogue carries weight
-// the way Founders Grotesk does on Ayoh's site (heavier 800/900 for headlines)
+// Editorial headlines — heavy Epilogue for typographic punch
 export const fontEditorial = Epilogue({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800', '900'],
@@ -40,7 +49,7 @@ export const fontHand = Caveat({
   display: 'swap',
 });
 
-// Numerical data — strain names, CFU counts
+// Numerical data — CFU counts, stats
 export const fontMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',

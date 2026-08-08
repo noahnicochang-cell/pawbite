@@ -4,7 +4,7 @@ export type HeroStat = {
 };
 
 export const heroStats: HeroStat[] = [
-  { bigNumber: '5 BILLION', label: 'CFUs per chew' },
-  { bigNumber: '5 STRAINS', label: 'all third-party tested' },
-  { bigNumber: '90 DAYS', label: 'money-back guarantee' },
+  { bigNumber: '3 ADAPTOGENS', label: 'L-theanine · ashwagandha · chamomile' },
+  { bigNumber: 'ZERO', label: 'CBD, melatonin, or sedatives' },
+  { bigNumber: '30 DAYS', label: 'money-back guarantee' },
 ];

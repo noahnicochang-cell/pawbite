@@ -41,7 +41,7 @@ export function StickyATCBar({ show = true }: StickyATCBarProps) {
                 Reserve your spot — 30% off forever
               </div>
               <div className="text-xs text-forest/70">
-                Daily probiotic chews · $30/month · ships at launch
+                Calming chews — L-theanine + ashwagandha · $38.99 · ships at launch
               </div>
             </div>
           </div>
