@@ -10,7 +10,7 @@ export const promises: FounderPromise[] = [
   },
   {
     headline: "We won't make claims we can't back up.",
-    body: "Every strain we list cites a real study. No vague 'supports immune health' fluff.",
+    body: "Every ingredient cites a real study. No vague 'supports calm behavior' fluff.",
   },
   {
     headline: "We won't lock you into anything.",

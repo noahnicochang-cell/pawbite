@@ -21,10 +21,9 @@
     font-family: var(--font-sans), system-ui, sans-serif;
   }
 
-  /* Fraunces SOFT-axis utility — use on headlines for the bouncy round serif feel (per spec) */
+  /* Cooper Black accent — used for italic/serif emphasis words */
   .fraunces-soft {
     font-family: var(--font-serif);
-    font-variation-settings: 'SOFT' 100;
   }
 
   /* Default heading typography */
@@ -32,8 +31,7 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-serif);
-    font-variation-settings: 'SOFT' 100;
+    font-family: var(--font-sans);
     color: #1f3a2e;
   }
 
