@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const blobVariants: Array<1 | 2 | 3 | 4 | 5 | 6> = [1, 3, 5];
-const rotations = [-2, 0, 2];
+const rotations = [0, 0, 0];
 
 export default function ProductsCollectionPage() {
   return (
@@ -22,11 +22,10 @@ export default function ProductsCollectionPage() {
         <div className="mb-12 text-center">
           <p className="mb-2 font-hand text-2xl text-terracotta">Shop the line —</p>
           <h1 className="fraunces-soft mb-4 text-balance text-4xl font-bold md:text-5xl">
-            Two products. Both daily.
+            Three formulas. All science-backed.
           </h1>
           <p className="mx-auto max-w-xl text-lg text-charcoal">
-            We make exactly two: a daily probiotic and a hip + joint chew. The Duo combines both —
-            what most subscribers go with.
+            Calming Chews are live now. Probiotic and Joint + Mobility drop Oct 30 and Dec 30.
           </p>
         </div>
 
@@ -37,7 +36,7 @@ export default function ProductsCollectionPage() {
               product={p}
               rotation={rotations[i]}
               blobVariant={blobVariants[i]}
-              featured={p.slug === 'daily-duo'}
+              featured={p.slug === 'calming-chews'}
             />
           ))}
         </div>

@@ -8,9 +8,10 @@ const linkColumns = [
   {
     title: 'Shop',
     links: [
-      { href: '/products/daily-probiotic', label: 'Daily Probiotic' },
-      { href: '/products/hip-and-joint', label: 'Hip + Joint' },
-      { href: '/products/daily-duo', label: 'The Daily Duo' },
+      { href: '/products/calming-chews', label: 'Calming Chews' },
+      { href: '/products/daily-probiotic', label: 'Probiotic Chews' },
+      { href: '/products/hip-and-joint', label: 'Joint + Mobility' },
+      { href: '/merch', label: 'Merch' },
       { href: '/quiz', label: 'Take the quiz' },
     ],
   },
@@ -39,10 +40,29 @@ const linkColumns = [
       { href: '/about', label: 'About PawBite' },
       { href: '/vets', label: 'Our vets' },
       { href: '/reviews', label: 'Reviews' },
-      { href: '/perks', label: 'Subscriber perks' },
+      { href: 'https://instagram.com/pawbite', label: 'Instagram', external: true },
+      { href: 'https://www.tiktok.com/@pawbite.nyc', label: 'TikTok', external: true },
     ],
   },
 ];
+
+function InstagramIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
+function TikTokIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.77 1.52V6.76a4.85 4.85 0 0 1-1-.07z"/>
+    </svg>
+  );
+}
 
 export function Footer() {
   return (
@@ -70,6 +90,8 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
+                      target={'external' in link && link.external ? '_blank' : undefined}
+                      rel={'external' in link && link.external ? 'noopener noreferrer' : undefined}
                       className="text-sm text-cream/85 transition-colors hover:text-warmyellow"
                     >
                       {link.label}
@@ -88,17 +110,34 @@ export function Footer() {
               Made in New York, NY
             </p>
           </div>
+
+          {/* Social icons */}
+          <div className="flex items-center gap-4">
+            <Link
+              href="https://instagram.com/pawbite"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="PawBite on Instagram"
+              className="text-cream/60 transition-colors hover:text-warmyellow"
+            >
+              <InstagramIcon />
+            </Link>
+            <Link
+              href="https://www.tiktok.com/@pawbite.nyc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="PawBite on TikTok"
+              className="text-cream/60 transition-colors hover:text-warmyellow"
+            >
+              <TikTokIcon />
+            </Link>
+          </div>
+
           <div className="flex flex-col gap-2 text-xs text-cream/60 md:items-end">
             <div className="flex gap-4">
-              <Link href="/privacy" className="hover:text-cream">
-                Privacy
-              </Link>
-              <Link href="/terms" className="hover:text-cream">
-                Terms
-              </Link>
-              <Link href="/editorial" className="hover:text-cream">
-                Editorial policy
-              </Link>
+              <Link href="/privacy" className="hover:text-cream">Privacy</Link>
+              <Link href="/terms" className="hover:text-cream">Terms</Link>
+              <Link href="/editorial" className="hover:text-cream">Editorial policy</Link>
             </div>
             <p>© {new Date().getFullYear()} PawBite. Vet-formulated. Dog-approved.</p>
           </div>

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { BuyButton } from '@/components/buy-button';
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
+import { HeroCycler } from '@/components/hero/hero-cycler';
 import { heroStats } from '@/data/stats';
 import { promises } from '@/data/promises';
 import { wallDogs } from '@/data/dogs';
@@ -14,79 +15,9 @@ export default function HomePage() {
     <>
       <style>{`@keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }`}</style>
 
-      <Section className="bg-mist-soft py-0">
-        <Container className="grid gap-6 py-4 lg:grid-cols-[1.3fr_0.9fr] lg:items-center lg:py-6">
-          <div className="space-y-4">
-            <Badge variant="forest" className="text-[11px] tracking-[0.28em] font-semibold text-cream">
-              NEW RELEASE · CB-01
-            </Badge>
-
-            <div className="space-y-3">
-              <h1 className="font-sans text-6xl uppercase leading-[0.92] tracking-tighter text-charcoal sm:text-7xl lg:text-8xl xl:text-9xl">
-                <span className="block font-extrabold">CALMING</span>
-                <span className="block font-serif fraunces-soft italic font-bold text-terracotta">chews</span>
-                <span className="block font-extrabold">FOR DOGS.</span>
-              </h1>
-              <p className="font-sans text-base uppercase tracking-[0.24em] text-forest sm:text-lg">
-                Adaptogens, not sedation.
-              </p>
-            </div>
-
-            <p className="max-w-2xl text-base leading-7 text-charcoal font-sans">
-              L-theanine + ashwagandha + chamomile. Soft-baked chews that take the edge off without
-              knocking your dog out — no CBD, no melatonin, no sedatives.
-            </p>
-
-            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <BuyButton className="rounded-full bg-forest px-8 py-4 text-cream hover:bg-forest/90" />
-              <span className="font-sans text-sm uppercase tracking-[0.22em] text-forest">
-                90 soft chews · 200g · Free US shipping
-              </span>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3 text-forest">
-              <span className="text-2xl font-mono tracking-[0.15em] text-terracotta">★★★★★</span>
-              <span className="font-mono text-sm uppercase tracking-[0.24em] text-forest">
-                4.9 · 8,420 happy tails
-              </span>
-            </div>
-          </div>
-
-          {/* Real product photo — PawBite tin on a soft halo */}
-          <div className="relative mx-auto flex w-full max-w-md flex-col items-center justify-center gap-6">
-            <div className="relative">
-              {/* Soft radial halo behind the tin for separation */}
-              <div
-                aria-hidden
-                className="absolute inset-0 -z-0 mx-auto h-[420px] w-[420px] rounded-full blur-3xl"
-                style={{
-                  background:
-                    'radial-gradient(closest-side, rgba(30,64,175,0.10), rgba(30,64,175,0) 70%)',
-                }}
-              />
-
-              {/* Floating badges */}
-              <div className="absolute -left-2 top-6 z-10">
-                <Badge variant="forest" className="text-[11px] tracking-[0.24em] font-semibold">
-                  ★ BESTSELLER
-                </Badge>
-              </div>
-              <div className="absolute -right-2 top-6 z-10">
-                <Badge variant="warmyellow" className="text-[11px] tracking-[0.24em] font-semibold text-navy">
-                  $38.99
-                </Badge>
-              </div>
-
-              <Image
-                src="/product/pawbite-tin.png"
-                alt="PawBite Calming Chews — 90 soft chews, L-theanine + ashwagandha + chamomile"
-                width={1024}
-                height={1024}
-                priority
-                className="relative h-auto w-[420px] max-w-full drop-shadow-2xl"
-              />
-            </div>
-          </div>
+      <Section id="hero-section" className="bg-mist-soft py-0">
+        <Container>
+          <HeroCycler />
         </Container>
 
         <div className="overflow-hidden border-t border-forest/10 py-5">
@@ -186,7 +117,7 @@ export default function HomePage() {
             className="font-editorial mt-3 leading-[0.85] font-black tracking-tight text-mist"
             style={{ fontSize: 'clamp(2.5rem, 7vw, 5.5rem)' }}
           >
-            Real dogs. <span className="font-serif fraunces-soft italic font-bold text-terracotta">Real</span> calm.
+            Real dogs. <span className="font-serif fraunces-soft italic font-bold text-terracotta">Real</span> bites.
           </h2>
         </div>
 
@@ -195,7 +126,7 @@ export default function HomePage() {
           <div
             className="flex gap-2 will-change-transform"
             style={{
-              animation: 'marquee 90s linear infinite',
+              animation: 'marquee 160s linear infinite',
               width: 'max-content',
             }}
           >

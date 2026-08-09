@@ -10,49 +10,63 @@ export type Product = {
   retailPrice: number;
   subPrice: number;
   badge?: string;
+  image?: string;
+  accentColor?: string;
+  comingSoon?: string;
 };
 
 export const products: Product[] = [
   {
+    slug: 'calming-chews',
+    name: 'Calming Chews',
+    shortName: 'Calming',
+    bandColor: 'terracotta',
+    blobColor: 'pinky',
+    countLabel: '90 SOFT CHEWS',
+    tagline: 'Adaptogens, not sedation.',
+    oneLineDescription: 'L-theanine + ashwagandha + chamomile. No CBD, no melatonin.',
+    retailPrice: 24.99,
+    subPrice: 24.99,
+    badge: 'Pre-order',
+    image: '/product/calming-tin-label.png',
+    accentColor: '#D9654A',
+    comingSoon: 'Aug 31',
+  },
+  {
     slug: 'daily-probiotic',
-    name: 'Daily Probiotic',
-    shortName: 'Daily',
+    name: 'Probiotic Chews',
+    shortName: 'Probiotic',
     bandColor: 'warmyellow',
     blobColor: 'warmyellow',
-    countLabel: '30 SOFT CHEWS',
-    tagline: 'probiotic + prebiotic',
-    oneLineDescription: '5 strains. 5 billion CFUs. The one your dog eats every day.',
-    retailPrice: 32,
-    subPrice: 26,
+    countLabel: '90 SOFT CHEWS',
+    tagline: 'Real probiotics, named strains, no flash.',
+    oneLineDescription: '2-strain Bacillus probiotic. Verified CFUs. The daily gut anchor.',
+    retailPrice: 24.99,
+    subPrice: 24.99,
+    badge: 'Pre-order',
+    image: '/product/probiotic-tin-label.png',
+    accentColor: '#5B9E2F',
+    comingSoon: 'Oct 30',
   },
   {
     slug: 'hip-and-joint',
-    name: 'Hip + Joint',
-    shortName: 'Hip+Joint',
+    name: 'Joint + Mobility',
+    shortName: 'Joint',
     bandColor: 'terracotta',
     blobColor: 'pinky',
-    countLabel: '60 SOFT CHEWS',
-    tagline: 'glucosamine + chondroitin',
+    countLabel: '90 SOFT CHEWS',
+    tagline: "Built for the dog who's still sharp.",
     oneLineDescription:
-      'Glucosamine, chondroitin, MSM, green-lipped mussel, turmeric. Built to keep moving.',
-    retailPrice: 38,
-    subPrice: 30,
-  },
-  {
-    slug: 'daily-duo',
-    name: 'The Daily Duo',
-    shortName: 'Duo',
-    bandColor: 'mint',
-    blobColor: 'mint',
-    countLabel: '2 PRODUCTS',
-    tagline: 'both, every day',
-    oneLineDescription: 'Daily Probiotic + Hip + Joint. Save 32% when you bundle and subscribe.',
-    retailPrice: 70,
-    subPrice: 47.6,
-    badge: 'Save 32%',
+      'Glucosamine + chondroitin + green-lipped mussel. Senior dog support done right.',
+    retailPrice: 24.99,
+    subPrice: 24.99,
+    badge: 'Pre-order',
+    image: '/product/joint-tin-label.png',
+    accentColor: '#E07B2B',
+    comingSoon: 'Dec 30',
   },
 ];
 
-export const dailyProbiotic = products[0];
-export const hipAndJoint = products[1];
-export const dailyDuo = products[2];
+export const calmingChews = products[0];
+export const dailyProbiotic = products[1];
+export const hipAndJoint = products[2];

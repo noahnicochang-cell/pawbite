@@ -9,7 +9,7 @@ interface BuyButtonProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-export function BuyButton({ label = 'SHOP NOW — $38.99', className, size = 'lg' }: BuyButtonProps) {
+export function BuyButton({ label = 'PRE-ORDER — $24.99', className, size = 'lg' }: BuyButtonProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 

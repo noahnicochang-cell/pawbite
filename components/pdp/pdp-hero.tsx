@@ -33,12 +33,12 @@ export function PdpHero({ product }: { product: ProductDetail }) {
             </Badge>
           </div>
           <Image
-            src="/product/pawbite-tin.png"
-            alt={`${product.name} — PawBite Pet Probiotic Chews tin`}
+            src={product.image ?? '/product/calming-tin-label.png'}
+            alt={`${product.name} — PawBite supplement chews tin`}
             width={1024}
             height={1024}
             priority
-            className="relative h-auto w-[420px] max-w-full drop-shadow-2xl"
+            className="relative h-auto w-[420px] max-w-full"
           />
         </div>
       </div>

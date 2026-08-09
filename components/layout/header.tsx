@@ -9,6 +9,7 @@ import { PawBiteWordmark } from '@/components/brand/pawbite-wordmark';
 
 const navLinks = [
   { href: '/products', label: 'Shop' },
+  { href: '/merch', label: 'Merch' },
   { href: '/quiz', label: 'Quiz' },
   { href: '/learn', label: 'Learn' },
   { href: '/about', label: 'About' },

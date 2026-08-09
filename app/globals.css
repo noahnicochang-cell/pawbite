@@ -19,6 +19,7 @@
     background-color: #f5efe6;
     color: #1f3a2e;
     font-family: var(--font-sans), system-ui, sans-serif;
+    overflow-x: clip;
   }
 
   /* Cooper Black accent — used for italic/serif emphasis words */

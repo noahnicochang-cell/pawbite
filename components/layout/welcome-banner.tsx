@@ -11,7 +11,7 @@ export function WelcomeBanner({ show = true, className, ...props }: WelcomeBanne
   return (
     <div
       className={cn(
-        'w-full bg-terracotta px-4 py-2 text-center text-xs font-medium text-cream md:text-sm',
+        'w-screen bg-terracotta px-4 py-2 text-center text-xs font-medium text-cream md:text-sm',
         className,
       )}
       {...props}

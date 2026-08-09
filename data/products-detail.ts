@@ -1,5 +1,5 @@
 import type { Product } from './products';
-import { dailyProbiotic, hipAndJoint } from './products';
+import { calmingChews, dailyProbiotic, hipAndJoint } from './products';
 
 export type Ingredient = {
   name: string;
@@ -39,6 +39,56 @@ export type ProductDetail = Product & {
   vetQuote: { name: string; credentials: string; quote: string };
   comparison: CompetitorCompare;
   faqs: FAQ[];
+};
+
+export const calmingChewsDetail: ProductDetail = {
+  ...calmingChews,
+  flavor: 'Chicken',
+  longDescription:
+    'A daily soft chew built on three evidence-backed adaptogens — L-theanine, ashwagandha, and chamomile — that work with your dog\'s nervous system, not against it. No CBD, no melatonin, no sedatives. Vet-formulated. Third-party tested.',
+  ingredients: [
+    { name: 'L-theanine', amount: '100 mg', role: 'Alpha-wave promotion / stress reduction' },
+    { name: 'Ashwagandha (KSM-66)', amount: '100 mg', role: 'Cortisol reduction' },
+    { name: 'Chamomile extract', amount: '50 mg', role: 'Soothing without sedation' },
+  ],
+  prebioticsAndExtras: 'No sedatives, no CBD, no melatonin. Just adaptogens.',
+  benefits: [
+    { icon: 'sparkle', title: 'Takes the edge off', body: 'Works on anxiety triggers — storms, travel, separation — without drugging your dog.' },
+    { icon: 'heart', title: 'No next-day fog', body: 'Adaptogens don\'t accumulate. Your dog wakes up sharp, not groggy.' },
+    { icon: 'shield', title: 'Safe daily use', body: 'No pharmaceutical calming agents. Built for years of daily use.' },
+    { icon: 'star', title: 'Works within 30 min', body: 'L-theanine peaks fast. Give 30 min before a trigger when you know one\'s coming.' },
+  ],
+  dosing: [
+    { weightRange: 'Under 25 lbs', amount: '1 chew/day' },
+    { weightRange: '25–50 lbs', amount: '1–2 chews/day' },
+    { weightRange: '50–75 lbs', amount: '2 chews/day' },
+    { weightRange: '75+ lbs', amount: '2–3 chews/day' },
+  ],
+  dosingNote: 'Give daily for best results. For acute anxiety events (storms, vet visits), give 30 minutes before.',
+  vetQuote: {
+    name: 'Dr. M. Hayes, DVM',
+    credentials: 'Board-certified veterinary nutritionist',
+    quote: 'L-theanine is the most-studied calming compound for dogs after CBD — and unlike CBD it has zero psychoactive risk and no drug interaction concerns. PawBite gets the dose right.',
+  },
+  comparison: {
+    competitor: 'Finn Calming Chews',
+    rows: [
+      { feature: 'L-theanine per chew', pawbite: '100 mg', competitor: '75 mg' },
+      { feature: 'Ashwagandha included', pawbite: 'Yes (KSM-66 100mg)', competitor: 'No' },
+      { feature: 'CBD', pawbite: 'None', competitor: 'None' },
+      { feature: 'Melatonin', pawbite: 'None', competitor: 'None' },
+      { feature: 'Third-party tested', pawbite: 'Every batch', competitor: 'Yes' },
+      { feature: 'Subscribe & Save', pawbite: '20% off + free shipping', competitor: '20% off' },
+      { feature: 'Money-back guarantee', pawbite: '90 days', competitor: '30 days' },
+    ],
+  },
+  faqs: [
+    { question: 'How is this different from CBD calming chews?', answer: 'CBD is a cannabinoid that acts on the endocannabinoid system — it\'s unregulated, dosing is inconsistent, and it can interact with medications. L-theanine and ashwagandha are amino acids and adaptogenic herbs with decades of safety data in dogs and humans. No regulation gray area, no drug interactions.' },
+    { question: 'Will these make my dog sleepy?', answer: 'No. L-theanine promotes relaxed alertness — alpha-wave activity — not sedation. Ashwagandha lowers cortisol without inducing sleep. Your dog will be calmer but just as sharp.' },
+    { question: 'How long until I see results?', answer: 'L-theanine peaks within 30–60 minutes for acute effects. Ashwagandha\'s cortisol-lowering effect builds over 2–4 weeks of daily use. Most owners report noticeable calm within the first week.' },
+    { question: 'Can I give these before a vet visit or thunderstorm?', answer: 'Yes — give 30 minutes before a known trigger. The L-theanine component is fast-acting enough to be useful for acute events.' },
+    { question: 'What\'s the 90-day guarantee?', answer: 'If your dog doesn\'t take to it, or you don\'t see results within 90 days, email help@pawbite.com and we\'ll refund your first order in full. Keep the chews.' },
+  ],
 };
 
 export const dailyProbioticDetail: ProductDetail = {
@@ -312,6 +362,7 @@ export const hipAndJointDetail: ProductDetail = {
 };
 
 export const productsDetail = {
+  'calming-chews': calmingChewsDetail,
   'daily-probiotic': dailyProbioticDetail,
   'hip-and-joint': hipAndJointDetail,
 };
