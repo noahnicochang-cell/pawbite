@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { BuyButton } from '@/components/buy-button';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 
 const SKUS = [
   {
@@ -102,13 +100,7 @@ export function HeroCycler() {
         </p>
 
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-          {sku.live ? (
-            <BuyButton className="rounded-full bg-forest px-8 py-4 text-cream hover:bg-forest/90" />
-          ) : (
-            <Button asChild variant="outline" size="lg" className="rounded-full border-forest text-forest">
-              <Link href="/products">{sku.launchLabel}</Link>
-            </Button>
-          )}
+          <BuyButton className="rounded-full bg-forest px-8 py-4 text-cream hover:bg-forest/90" />
           <span className="font-sans text-sm uppercase tracking-[0.22em] text-forest">
             {sku.details}
           </span>

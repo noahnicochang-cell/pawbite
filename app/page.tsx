@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { BuyButton } from '@/components/buy-button';
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { HeroCycler } from '@/components/hero/hero-cycler';

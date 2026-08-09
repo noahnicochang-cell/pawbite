@@ -49,7 +49,7 @@ export default function MerchPage() {
               Gear for good dogs.
             </h1>
             <p className="mx-auto max-w-md text-base leading-relaxed text-charcoal/80">
-              Everything is either dropping soon or joining the waitlist. Join the list and you'll hear first — plus 20% off when it goes live.
+              Everything is either dropping soon or joining the waitlist. Join the list and you&apos;ll hear first — plus 20% off when it goes live.
             </p>
           </div>
         </Container>

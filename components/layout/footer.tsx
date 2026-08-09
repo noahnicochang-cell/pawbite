@@ -105,7 +105,7 @@ export function Footer() {
 
         <div className="flex flex-col items-start justify-between gap-4 border-t border-cream/15 pt-8 md:flex-row md:items-center">
           <div>
-            <PawBiteWordmark className="mb-1 text-2xl text-cream" pawColor="#E8B547" />
+            <PawBiteWordmark className="mb-1 text-2xl text-cream" color="#E8B547" />
             <p className="font-sans text-sm tracking-[0.18em] uppercase text-warmyellow">
               Made in New York, NY
             </p>

@@ -7,13 +7,15 @@ import { cn } from '@/lib/utils';
 
 export function ProductCard({
   product,
-  rotation = 0,
   featured = false,
-  blobVariant = 1,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  rotation: _rotation = 0,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  blobVariant: _blobVariant = 1,
 }: {
   product: Product;
-  rotation?: number;
   featured?: boolean;
+  rotation?: number;
   blobVariant?: 1 | 2 | 3 | 4 | 5 | 6;
 }) {
   const accent = product.accentColor ?? '#2D5016';
