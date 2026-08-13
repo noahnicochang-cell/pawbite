@@ -21,6 +21,28 @@ async function shopifyFetch<T>(query: string, variables?: Record<string, unknown
   return json.data as T;
 }
 
+const GET_PRODUCT_VARIANT = `
+  query GetProductVariant($handle: String!) {
+    productByHandle(handle: $handle) {
+      variants(first: 1) {
+        edges {
+          node { id }
+        }
+      }
+    }
+  }
+`;
+
+export async function getFirstVariantId(productHandle: string): Promise<string> {
+  const data = await shopifyFetch<{
+    productByHandle: { variants: { edges: { node: { id: string } }[] } } | null;
+  }>(GET_PRODUCT_VARIANT, { handle: productHandle });
+
+  const id = data.productByHandle?.variants?.edges?.[0]?.node?.id;
+  if (!id) throw new Error(`Product not found: ${productHandle}`);
+  return id;
+}
+
 const CREATE_CART = `
   mutation CartCreate($variantId: ID!, $quantity: Int!) {
     cartCreate(input: {
