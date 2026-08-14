@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { fontDisplay, fontSerif, fontSans, fontEditorial, fontHand, fontMono, fontFraunces } from '@/lib/fonts';
+import { fontDisplay, fontSerif, fontSans, fontEditorial, fontHand, fontMono } from '@/lib/fonts';
 import {
   JsonLd,
   organizationSchema,
@@ -63,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${fontDisplay.variable} ${fontSerif.variable} ${fontSans.variable} ${fontEditorial.variable} ${fontHand.variable} ${fontMono.variable} ${fontFraunces.variable}`}
+      className={`${fontDisplay.variable} ${fontSerif.variable} ${fontSans.variable} ${fontEditorial.variable} ${fontHand.variable} ${fontMono.variable}`}
     >
       <head>
         <JsonLd data={organizationSchema()} />

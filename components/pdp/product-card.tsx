@@ -71,7 +71,7 @@ export function ProductCard({
       <Button
         variant="outline"
         size="md"
-        className="w-full max-w-[200px] rounded-full border-forest font-fraunces italic text-forest group-hover:bg-forest group-hover:text-cream"
+        className="w-full max-w-[200px] rounded-full border-forest font-mono text-xs tracking-[0.18em] uppercase text-forest group-hover:bg-forest group-hover:text-cream"
       >
         Pre-order →
       </Button>

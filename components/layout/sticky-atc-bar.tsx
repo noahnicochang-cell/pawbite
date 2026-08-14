@@ -38,10 +38,10 @@ export function StickyATCBar({ show = true }: StickyATCBarProps) {
             </Badge>
             <div className="min-w-0">
               <div className="truncate text-xs font-semibold text-forest">
-                Reserve your spot — 30% off forever
+                Calming Chews — L-theanine + ashwagandha + chamomile
               </div>
               <div className="text-xs text-forest/70">
-                Calming chews — L-theanine + ashwagandha · $24.99 · ships Aug 31
+                $24.99 · 90 soft chews · ships Aug 31
               </div>
             </div>
           </div>

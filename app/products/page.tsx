@@ -20,9 +20,9 @@ export default function ProductsCollectionPage() {
     <Section background="cream" spacing="default">
       <Container>
         <div className="mb-12 text-center">
-          <p className="mb-2 font-fraunces text-xl italic font-semibold text-terracotta">Shop the line —</p>
-          <h1 className="fraunces-soft mb-4 text-balance text-4xl font-bold md:text-5xl">
-            Three formulas. <span className="font-fraunces italic font-bold">All science-backed.</span>
+          <p className="mb-3 font-mono text-xs uppercase tracking-[0.32em] font-medium text-terracotta">Shop the line</p>
+          <h1 className="font-editorial mb-4 text-balance text-4xl font-black tracking-tight md:text-5xl">
+            Three formulas. <span className="fraunces-soft text-terracotta">All science-backed.</span>
           </h1>
           <p className="mx-auto max-w-xl text-lg text-charcoal">
             Calming Chews are live now. Probiotic and Joint + Mobility drop Oct 30 and Dec 30.

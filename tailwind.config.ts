@@ -88,7 +88,6 @@ const config: Config = {
         body: ['var(--font-sans)', 'system-ui', 'sans-serif'],
         hand: ['var(--font-hand)', 'cursive'],
         mono: ['var(--font-mono)', 'monospace'],
-        fraunces: ['var(--font-fraunces)', 'serif'],
       },
     },
   },
