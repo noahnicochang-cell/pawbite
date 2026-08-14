@@ -1,4 +1,13 @@
 import localFont from 'next/font/local';
+import { Fraunces } from 'next/font/google';
+
+export const fontFraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-fraunces',
+  display: 'swap',
+});
 
 // Body text — Neue Haas Grotesk Display (WWWESH primary)
 export const fontSans = localFont({
@@ -75,4 +84,5 @@ export const fontVariables = [
   fontEditorial.variable,
   fontHand.variable,
   fontMono.variable,
+  fontFraunces.variable,
 ].join(' ');

@@ -58,7 +58,7 @@ export function ProductCard({
 
       {/* Price + ship */}
       <div className="mb-4 flex items-center gap-2">
-        <span className="text-xl font-bold" style={{ color: accent }}>
+        <span className="font-display text-2xl font-bold" style={{ color: accent }}>
           ${product.subPrice.toFixed(2)}
         </span>
         {product.comingSoon && (
@@ -71,7 +71,7 @@ export function ProductCard({
       <Button
         variant="outline"
         size="md"
-        className="w-full max-w-[200px] rounded-full border-forest text-forest group-hover:bg-forest group-hover:text-cream"
+        className="w-full max-w-[200px] rounded-full border-forest font-fraunces italic text-forest group-hover:bg-forest group-hover:text-cream"
       >
         Pre-order →
       </Button>
