@@ -2,6 +2,14 @@ const SHOPIFY_STORE_DOMAIN = process.env.SHOPIFY_STORE_DOMAIN!;
 const SHOPIFY_STOREFRONT_TOKEN = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN!;
 const API_VERSION = '2024-10';
 
+// Headless-channel private tokens (shpat_*) authenticate with a different header
+// than public Storefront tokens. Sending the wrong one returns 401.
+function authHeader(): Record<string, string> {
+  return SHOPIFY_STOREFRONT_TOKEN?.startsWith('shpat_')
+    ? { 'Shopify-Storefront-Private-Token': SHOPIFY_STOREFRONT_TOKEN }
+    : { 'X-Shopify-Storefront-Access-Token': SHOPIFY_STOREFRONT_TOKEN };
+}
+
 async function shopifyFetch<T>(query: string, variables?: Record<string, unknown>): Promise<T> {
   const res = await fetch(
     `https://${SHOPIFY_STORE_DOMAIN}/api/${API_VERSION}/graphql.json`,
@@ -9,7 +17,7 @@ async function shopifyFetch<T>(query: string, variables?: Record<string, unknown
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-Shopify-Storefront-Access-Token': SHOPIFY_STOREFRONT_TOKEN,
+        ...authHeader(),
       },
       body: JSON.stringify({ query, variables }),
     }
