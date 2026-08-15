@@ -52,7 +52,7 @@ export const vsPages: VsPage[] = [
       },
       {
         feature: 'Strains identified by study ID',
-        pawbite: 'Yes (e.g. L. rhamnosus GG, B. animalis BB-12)',
+        pawbite: 'Yes (all five named on label)',
         competitor: 'No',
       },
       {
@@ -73,7 +73,7 @@ export const vsPages: VsPage[] = [
       { feature: 'Third-party tested per batch', pawbite: 'Yes', competitor: 'Yes' },
       {
         feature: 'cGMP-certified manufacturing',
-        pawbite: 'Yes (USA)',
+        pawbite: 'Yes',
         competitor: 'Yes',
       },
       {
@@ -85,7 +85,7 @@ export const vsPages: VsPage[] = [
     whenCompetitorMakesSense:
       "PetLab has earned its scale. If your dog has been on PetLab Probiotic Chews for months and stool is firm, gas is gone, and you're happy with the price after the Amazon Subscribe & Save discount, there's no urgent reason to switch. PetLab also wins on convenience — if you order most of your household goods on Amazon and want one-click reordering inside Prime, that ecosystem matters. Their 30-day guarantee is shorter than ours but adequate if your dog tends to respond quickly to probiotics.",
     whenPawbiteMakesSense:
-      "If you want to know exactly which strains your dog is getting and at what dose, PawBite tells you. We name each strain by its clinical designation (Lactobacillus rhamnosus GG, Bifidobacterium animalis BB-12) and link each one to the study that supports it. PetLab uses a proprietary 8-strain blend without naming the strains — which is fine, but means you can't cross-reference the research yourself. PawBite is also a better fit if you'd rather buy direct from a brand that doesn't compete with itself on Amazon listings, and if a 90-day guarantee feels more honest than 30.",
+      "If you want to know exactly which strains your dog is getting and at what dose, PawBite tells you. We name every strain on the label — all five, each at a disclosed 1 billion CFU. PetLab uses a proprietary 8-strain blend without naming the strains — which is fine, but means you can't cross-reference the research yourself. PawBite is also a better fit if you'd rather buy direct from a brand that doesn't compete with itself on Amazon listings, and if a 90-day guarantee feels more honest than 30.",
     sections: [
       {
         heading: 'What PetLab does well',
@@ -93,7 +93,7 @@ export const vsPages: VsPage[] = [
       },
       {
         heading: 'Where PawBite is different',
-        body: "We made the opposite decision on transparency. Every strain in PawBite Daily Probiotic is named by its full study designation — Lactobacillus rhamnosus GG, Bifidobacterium animalis subsp. lactis BB-12, Lactobacillus acidophilus LA-5, Lactobacillus plantarum 299v, Bacillus coagulans GBI-30 6086. Each one has decades of human and canine research behind it. You can google any of those names and find the trial data yourself.\n\nWe also include 200 mg of chicory inulin as the prebiotic (named amount, not vague), 250 mg of pumpkin powder for digestive support, and we test every batch with a third-party lab for CFU at expiration (not just at manufacture). The chews are duck-and-chicken liver based, made in the USA in a cGMP-certified facility, and we ship them in a recyclable canister.\n\nThe practical differences for your dog are small. The intellectual difference — knowing exactly what's going into them — is the part most owners we talk to care about once they look closely.",
+        body: "We made the opposite decision on transparency. Every strain in PawBite Daily Probiotic is named on the label — Lactobacillus rhamnosus, Bifidobacterium animalis subsp. lactis, Lactobacillus acidophilus, Lactobacillus plantarum, Bacillus coagulans — each at a disclosed 1 billion CFU. No proprietary blend, no hiding the split behind one big number.\n\nWe also include 200 mg of chicory inulin as the prebiotic (named amount, not vague), 250 mg of pumpkin powder for digestive support, and we test every batch with a third-party lab for CFU at expiration (not just at manufacture). The chews are duck-and-chicken liver based, made in the USA in a cGMP-certified facility, and we ship them in a recyclable canister.\n\nThe practical differences for your dog are small. The intellectual difference — knowing exactly what's going into them — is the part most owners we talk to care about once they look closely.",
       },
       {
         heading: 'On price and subscription',

@@ -19,7 +19,7 @@ export function ProductShowcase() {
             What Theo takes daily.
           </h2>
           <p className="mx-auto max-w-xl text-lg text-charcoal">
-            Two products. Both daily. The Duo is what most subscribers go with.
+            Three formulas, all daily. The Duo is what most subscribers go with.
           </p>
         </div>
 

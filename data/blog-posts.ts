@@ -133,7 +133,7 @@ export const blogPosts: BlogPost[] = [
     ],
     recommendsProduct: 'daily-probiotic',
     recommendsContext:
-      'PawBite Daily Probiotic was built around the strains with the strongest canine evidence (Bacillus coagulans, BB-12, L. plantarum 299v) at a 5 billion CFU dose that holds shelf life in a chew, not a fridge bottle.',
+      'PawBite Daily Probiotic was built around the strains with the strongest canine evidence (Bacillus coagulans, Bifidobacterium animalis subsp. lactis, Lactobacillus plantarum) at a 5 billion CFU dose that holds shelf life in a chew, not a fridge bottle.',
   },
   {
     slug: 'best-dog-probiotic-2026',
@@ -1392,7 +1392,7 @@ export const blogPosts: BlogPost[] = [
     ],
     recommendsProduct: 'daily-probiotic',
     recommendsContext:
-      'PawBite Daily Probiotic is built around the strains most studied for canine dysbiosis (Bacillus coagulans, BB-12, L. plantarum 299v) with a prebiotic to support recovery in 4 to 8 weeks.',
+      'PawBite Daily Probiotic is built around the strains most studied for canine dysbiosis (Bacillus coagulans, Bifidobacterium animalis subsp. lactis, Lactobacillus plantarum) with a prebiotic to support recovery in 4 to 8 weeks.',
   },
   {
     slug: 'probiotic-strains-for-dogs-explained',

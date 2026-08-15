@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About PawBite',
     description:
-      'Two products. Vet-formulated. Made by humans who actually own dogs. The story behind PawBite, written by founder Noah Chang.',
+      'Three products. Vet-formulated. Made by humans who actually own dogs. The story behind PawBite, written by founder Noah Chang.',
     type: 'website',
   },
 };
@@ -244,7 +244,7 @@ export default function AboutPage() {
             <div className="relative">
               <p className="mb-2 font-hand text-2xl text-terracotta">— The focused line</p>
               <h2 className="fraunces-soft mb-6 text-balance text-4xl font-bold text-forest md:text-5xl">
-                Why we only make two products.
+                Why we only make three products.
               </h2>
               <div className="space-y-4 text-lg leading-relaxed text-charcoal">
                 <p>
@@ -253,15 +253,15 @@ export default function AboutPage() {
                   are the same base recipe with a different sticker.
                 </p>
                 <p>
-                  We make two: a daily probiotic and a hip + joint chew. That&apos;s what most dogs
-                  actually need, and it&apos;s what we can stand behind without bending the
-                  evidence. Every dollar we don&apos;t spend launching a fourteenth flavor of
-                  calming chew goes into better strains, higher doses, and slower, more careful
-                  formulation. Two products means we know every ingredient, every supplier, and
+                  We make three: calming chews, a daily probiotic, and a hip + joint chew.
+                  That&apos;s what most dogs actually need, and it&apos;s what we can stand behind
+                  without bending the evidence. Every dollar we don&apos;t spend launching a
+                  fourteenth flavor goes into better strains, better doses, and slower, more careful
+                  formulation. Three products means we know every ingredient, every supplier, and
                   every batch. It also means if your dog only needs one, we&apos;ll tell you.
                 </p>
                 <p>
-                  We&apos;ll add a third SKU when there&apos;s a category we can do meaningfully
+                  We&apos;ll add a fourth SKU when there&apos;s a category we can do meaningfully
                   better than what&apos;s already on the shelf — not before.
                 </p>
               </div>

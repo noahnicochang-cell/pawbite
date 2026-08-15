@@ -43,15 +43,17 @@ export type ProductDetail = Product & {
 
 export const calmingChewsDetail: ProductDetail = {
   ...calmingChews,
-  flavor: 'Chicken',
+  flavor: 'Peanut Butter',
   longDescription:
     'A daily soft chew built on three evidence-backed adaptogens — L-theanine, ashwagandha, and chamomile — that work with your dog\'s nervous system, not against it. No CBD, no melatonin, no sedatives. Vet-formulated. Third-party tested.',
   ingredients: [
     { name: 'L-theanine', amount: '100 mg', role: 'Alpha-wave promotion / stress reduction' },
-    { name: 'Ashwagandha (KSM-66)', amount: '100 mg', role: 'Cortisol reduction' },
-    { name: 'Chamomile extract', amount: '50 mg', role: 'Soothing without sedation' },
+    { name: 'Organic chamomile', amount: '100 mg', role: 'Soothing without sedation' },
+    { name: 'Ashwagandha root extract', amount: '50 mg', role: 'Cortisol reduction' },
+    { name: 'Bacillus coagulans', amount: '1 billion CFU', role: 'Gut–brain axis support' },
   ],
-  prebioticsAndExtras: 'No sedatives, no CBD, no melatonin. Just adaptogens.',
+  prebioticsAndExtras:
+    'No sedatives, no CBD, no melatonin. Adaptogens plus a probiotic strain for gut–brain support.',
   benefits: [
     { icon: 'sparkle', title: 'Takes the edge off', body: 'Works on anxiety triggers — storms, travel, separation — without drugging your dog.' },
     { icon: 'heart', title: 'No next-day fog', body: 'Adaptogens don\'t accumulate. Your dog wakes up sharp, not groggy.' },
@@ -59,10 +61,10 @@ export const calmingChewsDetail: ProductDetail = {
     { icon: 'star', title: 'Works within 30 min', body: 'L-theanine peaks fast. Give 30 min before a trigger when you know one\'s coming.' },
   ],
   dosing: [
-    { weightRange: 'Under 25 lbs', amount: '1 chew/day' },
-    { weightRange: '25–50 lbs', amount: '1–2 chews/day' },
-    { weightRange: '50–75 lbs', amount: '2 chews/day' },
-    { weightRange: '75+ lbs', amount: '2–3 chews/day' },
+    { weightRange: 'Up to 11 lbs (5 kg)', amount: '1 chew/day' },
+    { weightRange: '12–22 lbs (6–10 kg)', amount: '2 chews/day' },
+    { weightRange: '23–44 lbs (11–20 kg)', amount: '3 chews/day' },
+    { weightRange: 'Over 44 lbs (20+ kg)', amount: '4 chews/day' },
   ],
   dosingNote: 'Give daily for best results. For acute anxiety events (storms, vet visits), give 30 minutes before.',
   vetQuote: {
@@ -74,7 +76,7 @@ export const calmingChewsDetail: ProductDetail = {
     competitor: 'Finn Calming Chews',
     rows: [
       { feature: 'L-theanine per chew', pawbite: '100 mg', competitor: '75 mg' },
-      { feature: 'Ashwagandha included', pawbite: 'Yes (KSM-66 100mg)', competitor: 'No' },
+      { feature: 'Ashwagandha included', pawbite: 'Yes (50 mg root extract)', competitor: 'No' },
       { feature: 'CBD', pawbite: 'None', competitor: 'None' },
       { feature: 'Melatonin', pawbite: 'None', competitor: 'None' },
       { feature: 'Third-party tested', pawbite: 'Every batch', competitor: 'Yes' },
@@ -87,6 +89,7 @@ export const calmingChewsDetail: ProductDetail = {
     { question: 'Will these make my dog sleepy?', answer: 'No. L-theanine promotes relaxed alertness — alpha-wave activity — not sedation. Ashwagandha lowers cortisol without inducing sleep. Your dog will be calmer but just as sharp.' },
     { question: 'How long until I see results?', answer: 'L-theanine peaks within 30–60 minutes for acute effects. Ashwagandha\'s cortisol-lowering effect builds over 2–4 weeks of daily use. Most owners report noticeable calm within the first week.' },
     { question: 'Can I give these before a vet visit or thunderstorm?', answer: 'Yes — give 30 minutes before a known trigger. The L-theanine component is fast-acting enough to be useful for acute events.' },
+    { question: 'Do these contain any allergens?', answer: 'Calming Chews are peanut butter flavored and contain a peanut butter base. If your dog has a known nut sensitivity, talk to your vet before giving them. No corn, soy, wheat, or dairy.' },
     { question: 'What\'s the 90-day guarantee?', answer: 'If your dog doesn\'t take to it, or you don\'t see results within 90 days, email help@pawbite.com and we\'ll refund your first order in full. Keep the chews.' },
   ],
 };
@@ -95,42 +98,37 @@ export const dailyProbioticDetail: ProductDetail = {
   ...dailyProbiotic,
   flavor: 'Chicken',
   longDescription:
-    'A daily soft chew built on five clinically referenced probiotic strains, plus chicory inulin and pumpkin powder to feed the strains once they get there. Vet-formulated. Third-party tested. Made in a cGMP-certified facility in the USA.',
+    'A daily soft chew built on five named probiotic strains at 5 billion CFU, plus chicory inulin and pumpkin powder to feed the strains once they get there. Vet-formulated. Third-party tested.',
   ingredients: [
     {
-      name: 'Bacillus coagulans GBI-30, 6086',
+      name: 'Bacillus coagulans',
       scientificName: 'Bacillus coagulans',
       amount: '1 billion CFU',
       role: 'Gut barrier integrity',
-      reference: 'Kalman et al., 2009',
     },
     {
-      name: 'Bifidobacterium animalis subsp. lactis BB-12',
+      name: 'Bifidobacterium animalis subsp. lactis',
       scientificName: 'Bifidobacterium animalis',
       amount: '1 billion CFU',
       role: 'Stool consistency',
-      reference: 'Eskesen et al., 2015',
     },
     {
-      name: 'Lactobacillus acidophilus LA-5',
+      name: 'Lactobacillus acidophilus',
       scientificName: 'Lactobacillus acidophilus',
       amount: '1 billion CFU',
       role: 'Pathogen exclusion',
-      reference: 'Saggioro, 2004',
     },
     {
-      name: 'Lactobacillus plantarum 299v',
+      name: 'Lactobacillus plantarum',
       scientificName: 'Lactobacillus plantarum',
       amount: '1 billion CFU',
       role: 'Short-chain fatty acid production',
-      reference: 'Nobaek et al., 2000',
     },
     {
-      name: 'Lactobacillus rhamnosus GG',
+      name: 'Lactobacillus rhamnosus',
       scientificName: 'Lactobacillus rhamnosus',
       amount: '1 billion CFU',
       role: 'Immune modulation',
-      reference: 'Hatakka et al., 2001',
     },
   ],
   prebioticsAndExtras:
@@ -149,7 +147,7 @@ export const dailyProbioticDetail: ProductDetail = {
     {
       icon: 'shield',
       title: 'Immune support',
-      body: 'L. rhamnosus GG is the most-studied immune-modulating strain in pets and humans.',
+      body: 'L. rhamnosus is among the most-studied immune-modulating species in pets and humans.',
     },
     {
       icon: 'star',
@@ -158,13 +156,14 @@ export const dailyProbioticDetail: ProductDetail = {
     },
   ],
   dosing: [
-    { weightRange: 'Under 25 lbs', amount: '1 chew/day' },
-    { weightRange: '25–50 lbs', amount: '1 chew/day' },
-    { weightRange: '50–75 lbs', amount: '1 chew/day' },
-    { weightRange: '75+ lbs', amount: '2 chews/day' },
+    { weightRange: 'Up to 11 lbs (5 kg)', amount: '1 chew/day' },
+    { weightRange: '12–22 lbs (6–10 kg)', amount: '2 chews/day' },
+    { weightRange: '23–44 lbs (11–20 kg)', amount: '3 chews/day' },
+    { weightRange: '45–88 lbs (21–40 kg)', amount: '4 chews/day' },
+    { weightRange: 'Over 88 lbs (40+ kg)', amount: '5 chews/day' },
   ],
   dosingNote:
-    'One chew daily works for almost every dog. Larger breeds (75+ lbs) double up if you want a CFU bump.',
+    'Dose by weight, daily, with or without food. Most owners give it with the morning meal.',
   vetQuote: {
     name: 'Dr. M. Hayes, DVM',
     credentials: 'Board-certified veterinary nutritionist',
@@ -180,7 +179,7 @@ export const dailyProbioticDetail: ProductDetail = {
         pawbite: '5 (all named)',
         competitor: '8 (proprietary blend)',
       },
-      { feature: 'Strains identified by study designation', pawbite: 'Yes', competitor: 'No' },
+      { feature: 'All strains named on label', pawbite: 'Yes', competitor: 'No (proprietary blend)' },
       {
         feature: 'Prebiotic included',
         pawbite: 'Chicory inulin 200mg',
@@ -215,7 +214,7 @@ export const dailyProbioticDetail: ProductDetail = {
     {
       question: 'Are these chews safe for puppies?',
       answer:
-        'Yes for puppies 8 weeks and older. The strains are gentle and the CFU count is appropriate. For puppies under 25 lbs, one chew a day is enough.',
+        'Yes for puppies 8 weeks and older. The strains are gentle and the CFU count is appropriate. Dose by current weight using the chart above.',
     },
     {
       question: 'What’s in the chew besides the probiotics?',
@@ -244,18 +243,18 @@ export const hipAndJointDetail: ProductDetail = {
   ...hipAndJoint,
   flavor: 'Duck',
   longDescription:
-    'A daily soft chew built on clinically-dosed joint support actives — glucosamine, chondroitin, MSM — plus green-lipped mussel and turmeric for a broader inflammation profile. Vet-formulated. Third-party tested. Made in a cGMP-certified facility in the USA.',
+    'A daily soft chew built on seven joint-support actives — glucosamine, chondroitin, MSM — plus green-lipped mussel and turmeric for a broader inflammation profile. Vet-formulated. Third-party tested.',
   ingredients: [
-    { name: 'Glucosamine HCl', amount: '500 mg', role: 'Cartilage building block' },
-    { name: 'Chondroitin sulfate', amount: '400 mg', role: 'Joint cushion + lubrication' },
+    { name: 'Glucosamine HCl', amount: '320 mg', role: 'Cartilage building block' },
+    { name: 'Chondroitin sulfate', amount: '225 mg', role: 'Joint cushion + lubrication' },
     {
       name: 'MSM (methylsulfonylmethane)',
-      amount: '250 mg',
+      amount: '160 mg',
       role: 'Anti-inflammatory sulfur source',
     },
     { name: 'Green-lipped mussel', amount: '150 mg', role: 'Omega-3 + glycosaminoglycans' },
     {
-      name: 'Turmeric (curcumin standardized)',
+      name: 'Turmeric extract (95% curcumin)',
       amount: '100 mg',
       role: 'Anti-inflammatory antioxidant',
     },
@@ -286,25 +285,25 @@ export const hipAndJointDetail: ProductDetail = {
     },
   ],
   dosing: [
-    { weightRange: 'Under 25 lbs', amount: '1 chew/day' },
-    { weightRange: '25–50 lbs', amount: '2 chews/day' },
-    { weightRange: '50–75 lbs', amount: '2 chews/day' },
-    { weightRange: '75+ lbs', amount: '3 chews/day' },
+    { weightRange: 'Up to 11 lbs (5 kg)', amount: '1 chew/day' },
+    { weightRange: '12–22 lbs (6–10 kg)', amount: '1 chew/day' },
+    { weightRange: '23–44 lbs (11–20 kg)', amount: '1 chew/day' },
+    { weightRange: 'Over 44 lbs (20+ kg)', amount: '1 chew/day' },
   ],
   dosingNote:
-    'A 60-chew canister lasts ~30 days for a medium-large dog. Senior dogs and dogs with diagnosed arthritis often benefit from the higher end of their weight band.',
+    'One chew a day at every weight — the 4 g chew is dosed so you do not have to scale. A 50-chew tin lasts about 7 weeks.',
   vetQuote: {
     name: 'Dr. M. Hayes, DVM',
     credentials: 'Board-certified veterinary nutritionist',
     quote:
-      'Most dog joint chews are underdosed on glucosamine — usually 250mg per serving. PawBite is at 500mg, which is the dose actually backed by trial data. The green-lipped mussel addition is the right kind of belt-and-suspenders.',
+      'What matters in a joint chew is the whole stack, not one headline number. PawBite pairs glucosamine and chondroitin with MSM, green-lipped mussel, and turmeric — five actives with canine evidence behind them — in a single daily chew. That combination is the right kind of belt-and-suspenders.',
   },
   comparison: {
     competitor: 'Cosequin',
     rows: [
-      { feature: 'Glucosamine HCl per serving', pawbite: '500 mg', competitor: '500 mg' },
-      { feature: 'Chondroitin sulfate per serving', pawbite: '400 mg', competitor: '400 mg' },
-      { feature: 'MSM included', pawbite: 'Yes (250mg)', competitor: 'No (DS version only)' },
+      { feature: 'Glucosamine HCl per serving', pawbite: '320 mg', competitor: '500 mg' },
+      { feature: 'Chondroitin sulfate per serving', pawbite: '225 mg', competitor: '400 mg' },
+      { feature: 'MSM included', pawbite: 'Yes (160mg)', competitor: 'No (DS version only)' },
       { feature: 'Green-lipped mussel', pawbite: 'Yes (150mg)', competitor: 'No' },
       { feature: 'Turmeric / curcumin', pawbite: 'Yes (100mg)', competitor: 'No' },
       { feature: 'Form', pawbite: 'Soft chew', competitor: 'Capsule / soft chew' },
