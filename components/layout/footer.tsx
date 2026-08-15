@@ -107,7 +107,7 @@ export function Footer() {
           <div>
             <PawBiteWordmark className="mb-1 text-2xl text-cream" color="#E8B547" />
             <p className="font-sans text-sm tracking-[0.18em] uppercase text-warmyellow">
-              Made in New York, NY
+              Formulated in New York, NY · Made in China
             </p>
           </div>
 

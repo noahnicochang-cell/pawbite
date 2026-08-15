@@ -248,21 +248,24 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-lg leading-relaxed text-charcoal">
                 <p>
-                  Most dog supplement brands sell twenty or thirty SKUs. Skin chew, calming chew,
-                  allergy chew, anxiety chew, multivitamin chew, dental chew, eye chew. Half of them
-                  are the same base recipe with a different sticker.
+                  Most dog supplement brands sell twenty or thirty SKUs. Skin chew, allergy chew,
+                  multivitamin chew, dental chew, eye chew. Half of them are the same base recipe
+                  with a different sticker.
                 </p>
                 <p>
-                  We make three: calming chews, a daily probiotic, and a hip + joint chew.
-                  That&apos;s what most dogs actually need, and it&apos;s what we can stand behind
-                  without bending the evidence. Every dollar we don&apos;t spend launching a
-                  fourteenth flavor goes into better strains, better doses, and slower, more careful
-                  formulation. Three products means we know every ingredient, every supplier, and
-                  every batch. It also means if your dog only needs one, we&apos;ll tell you.
+                  We started the other way around — by listening. Talk to enough dog owners and the
+                  same three worries come up again and again: <em>my dog can&apos;t settle</em>,
+                  <em> my dog&apos;s stomach is a mess</em>, and <em>my dog is slowing down</em>. So
+                  we made exactly three chews for exactly those three things: calming, a daily
+                  probiotic, and hip + joint. Not a guess at what might sell — the things owners
+                  actually kept telling us they needed.
                 </p>
                 <p>
-                  We&apos;ll add a fourth SKU when there&apos;s a category we can do meaningfully
-                  better than what&apos;s already on the shelf — not before.
+                  Three products means every dollar goes into better strains, better doses, and
+                  slower, more careful formulation instead of a fourteenth flavor. It means we know
+                  every ingredient, every supplier, and every batch. And it means if your dog only
+                  needs one, we&apos;ll tell you. We&apos;ll add a fourth only when we hear a fourth
+                  need as clearly as we heard these three.
                 </p>
               </div>
             </div>
@@ -323,9 +326,10 @@ export default function AboutPage() {
               Born on 30th &amp; 1st · NYC
             </CalloutPill>
             <p className="max-w-xl text-base leading-relaxed text-forest">
-              PawBite is independently owned and US-formulated. Started in a Manhattan apartment
-              during COVID, still made by humans who actually own dogs. No private equity, no
-              celebrity stakeholders, no investor slide deck.
+              PawBite is independently owned and formulated with veterinarians and human-grade
+              supplement nutritionists. Started in a Manhattan apartment during COVID, still run by
+              humans who actually own dogs. No private equity, no celebrity stakeholders, no
+              investor slide deck.
             </p>
             <div className="flex flex-col gap-3 pt-2 sm:flex-row">
               <Button variant="primary" size="md" asChild>
